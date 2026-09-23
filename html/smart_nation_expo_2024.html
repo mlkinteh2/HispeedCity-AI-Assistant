@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Smart Nation Expo 2024 — Highlights & Takeaways | Hispeedcity</title>
+  <meta name="description" content="Key takeaways from Smart Nation Expo 2024 at MITEC, Kuala Lumpur — themes, highlights, and why it matters to smarter mobility and access."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+
+  <style>
+    :root{
+  --hispeed-green:#1A7C34;
+  --hispeed-green-2:#36A528;
+  --hispeed-teal:#80D0C7;
+  --hispeed-slate:#2C2F38;
+}
+
+
+/* ================== NAVBAR (scoped to .site-nav) ================== */
+.site-nav{background:var(--hispeed-green)!important;}
+.site-nav .nav-link{
+  color:#fff!important;text-transform:uppercase;letter-spacing:.04em;font-weight:600;
+  position:relative;padding:.9rem 1rem;
+}
+.site-nav .nav-link::before{
+  content:"";position:absolute;inset:.45rem .6rem;border-radius:999px;
+  background:rgba(255,255,255,.12);transform:scaleX(0);transform-origin:left;
+  transition:transform .18s ease;
+}
+.site-nav .nav-link:hover::before,
+.site-nav .nav-link:focus::before,
+.site-nav .nav-link.active::before{transform:scaleX(1)}
+.site-nav .navbar-toggler{border-color:rgba(255,255,255,.5)}
+.site-nav .navbar-toggler-icon{filter:invert(1)}
+
+/* Language button for NAVBAR only */
+.site-nav .btn-language{
+  background:rgba(255,255,255,.14)!important;
+  color:#fff!important;border:1px solid rgba(255,255,255,.45)!important;
+}
+.site-nav .btn-language:hover,
+.site-nav .btn-language:focus{
+  background:#fff!important;color:var(--hispeed-green)!important;border-color:#fff!important;
+}
+
+/* Dark dropdown used by the language menu */
+.dropdown-menu-dark{
+  background:#1b221f!important;color:#fff!important;border-color:rgba(255,255,255,.12)!important;
+}
+.dropdown-menu-dark .dropdown-item{color:#fff!important}
+.dropdown-menu-dark .dropdown-item:hover{background:rgba(255,255,255,.08)!important}
+
+/* ================== HERO (Smart Nation banner) ================== */
+/* Remove any earlier .hero block; keep ONLY this one */
+.hero{
+  position:relative;min-height:58vh;display:flex;align-items:center;color:#fff;
+  background:#0e1713 url('images/sn.jpg') center/cover no-repeat;
+  margin-left:calc(50% - 50vw);width:100vw;
+}
+
+.hero .container{position:relative;z-index:2}
+.hero h1{font-weight:800;letter-spacing:.01em}
+.hero .lead{opacity:.95;max-width:60ch}
+.section{padding:56px 0}
+.tag{
+  background:#eaf7ef;color:var(--hispeed-green);border:1px solid #cfe8d7;
+  border-radius:999px;padding:.35rem .7rem;font-weight:700;font-size:.8rem;display:inline-block;
+}
+@media (max-width:576px){
+  .hero{min-height:62vh;background-position:center 35%}
+  .hero::before{background:linear-gradient(180deg, rgba(26,124,52,.92), rgba(26,124,52,.82))}
+}
+
+/* ================== CARDS / LISTS ================== */
+.card-soft{background:#fff;border-radius:20px;box-shadow:0 12px 34px rgba(0,0,0,.08);border:0}
+.metric{display:flex;align-items:center;gap:.75rem}
+.metric .icon{
+  width:42px;height:42px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;
+  background:#fff;color:var(--hispeed-green);border:1px solid #d7eee0;
+}
+.metric strong{font-size:1.15rem}
+
+.timeline{position:relative;padding-left:1.25rem}
+.timeline::before{
+  content:"";position:absolute;left:.3rem;top:.25rem;bottom:.25rem;width:4px;
+  background:linear-gradient(var(--hispeed-green), var(--hispeed-green-2));border-radius:4px;
+}
+.timeline li{margin:0 0 1.25rem 0}
+.timeline .ti{display:inline-flex;align-items:center;gap:.5rem}
+.timeline .ti .bi{color:var(--hispeed-green)}
+
+/* ================== GALLERY ================== */
+.g-card{border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.08);background:#fff}
+.g-img{width:100%;height:260px;object-fit:cover;cursor:pointer}
+@media (max-width:576px){.g-img{height:220px}}
+.g-card:first-child .g-img{object-position:center 35%}
+
+/* ================== CTA (as you had) ================== */
+.site-header .custom-border-btn,
+.topics-detail-header .custom-border-btn{
+  border-color:#fff!important;color:#fff!important;background:transparent!important;
+}
+.site-header .custom-border-btn:hover,
+.topics-detail-header .custom-border-btn:hover{
+  background:#fff!important;color:var(--hispeed-green)!important;
+}
+.site-header .custom-btn,
+.topics-detail-header .custom-btn{
+  background:#fff!important;color:var(--hispeed-green)!important;border-color:#fff!important;
+}
+.site-header .custom-btn:hover,
+.topics-detail-header .custom-btn:hover{
+  background:#eaf7ef!important;color:var(--hispeed-green)!important;
+}
+.site-header .custom-btn i,
+.topics-detail-header .custom-btn i{color:inherit!important}
+
+/* ================== FOOTER (dark) ================== */
+.site-footer--dark{
+  --footer-bg:#0f1412;--footer-text:#e8efe9;--footer-muted:#a7b2ab;--footer-accent:var(--hispeed-teal,#80D0C7);
+  background:var(--footer-bg);color:var(--footer-text);padding-top:64px;padding-bottom:56px;
+}
+.site-footer--dark .site-footer-title{color:var(--footer-text)}
+.site-footer--dark .site-footer-link{color:var(--footer-text);opacity:.9;text-decoration:none}
+.site-footer--dark .site-footer-link:hover{opacity:1;color:var(--hispeed-teal)}
+.text-muted-contrast{color:var(--footer-muted)!important}
+.footer-divider{border-color:rgba(255,255,255,.12);margin:24px 0 0}
+.footer-logo{height:38px;width:auto;display:block}
+.footer-brand{text-decoration:none}
+.card-qr{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:10px;
+  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;box-shadow:0 10px 30px rgba(0,0,0,.18);
+}
+.card-qr:hover{transform:translateY(-2px);border-color:var(--hispeed-teal);box-shadow:0 12px 36px rgba(0,0,0,.24)}
+.qr-img{display:block;width:148px;height:148px;object-fit:contain}
+.footer-socials .social-btn{
+  display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;margin-right:8px;
+  border-radius:50%;background:rgba(255,255,255,.06);color:var(--footer-text);
+  transition:transform .15s ease, background .15s ease, color .15s ease;
+}
+.footer-socials .social-btn:hover{transform:translateY(-2px);background:var(--hispeed-green);color:#fff}
+
+/* Language button in FOOTER only (avoid clashing with nav) */
+.site-footer--dark .btn-language{
+  background:rgba(255,255,255,.06);color:var(--footer-text);border:1px solid rgba(255,255,255,.12);
+}
+.site-footer--dark .btn-language:hover{background:rgba(255,255,255,.12);color:#fff}
+
+/* Footer dropdown stays dark */
+.site-footer--dark .dropdown-menu-dark{
+  background:#1b221f;color:#fff;border-color:rgba(255,255,255,.1);
+}
+.site-footer--dark .dropdown-menu-dark .dropdown-item{color:#fff}
+.site-footer--dark .dropdown-menu-dark .dropdown-item:hover{background:rgba(255,255,255,.08)}
+.site-footer--dark a{color:var(--footer-text)}
+.site-footer--dark a:hover{color:var(--hispeed-teal)}
+
+/* --- FORCE SOLID GREEN HEADER --- */
+:root{
+  --hispeed-green:#1A7C34;
+}
+
+/* Make ALL navbar variants solid green */
+.navbar,
+.navbar.site-nav--glass,
+.custom-navbar{
+  background: var(--hispeed-green) !important;
+  border-bottom: none !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
+}
+
+/* Mobile stays green */
+@media (max-width: 992px){
+  .navbar{ background: var(--hispeed-green) !important; }
+}
+
+/* If your nav is fixed, add top offset so anchors don't hide */
+body{ scroll-padding-top: 78px; }
+
+/* === Make hero CTA buttons visible on green backgrounds === */
+/* Outline button (Read More) */
+.site-header .custom-border-btn,
+.topics-detail-header .custom-border-btn {
+  border-color: #fff !important;
+  color: #fff !important;
+  background: transparent !important;
+}
+.site-header .custom-border-btn:hover,
+.topics-detail-header .custom-border-btn:hover {
+  background: #fff !important;
+  color: var(--hispeed-green, #1A7C34) !important;
+}
+
+/* Solid button (Watch Video) */
+.site-header .custom-btn,
+.topics-detail-header .custom-btn {
+  background: #fff !important;
+  color: var(--hispeed-green, #1A7C34) !important;
+  border-color: #fff !important;
+}
+.site-header .custom-btn:hover,
+.topics-detail-header .custom-btn:hover {
+  background: #eaf7ef !important;  /* soft white-green */
+  color: var(--hispeed-green, #1A7C34) !important;
+}
+
+/* If the play icon is inside the button, keep it visible */
+.site-header .custom-btn i,
+.topics-detail-header .custom-btn i {
+  color: inherit !important;
+}
+
+/* === Language dropdown on green navbar === */
+.btn-language {
+  background: rgba(255,255,255,.14) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.45) !important;
+}
+.btn-language:hover,
+.btn-language:focus {
+  background: #fff !important;
+  color: var(--hispeed-green, #1A7C34) !important;
+  border-color: #fff !important;
+}
+.dropdown-menu-dark {
+  background: #1b221f !important;
+  color: #fff !important;
+  border-color: rgba(255,255,255,.12) !important;
+}
+.dropdown-menu-dark .dropdown-item { color: #fff !important; }
+.dropdown-menu-dark .dropdown-item:hover { background: rgba(255,255,255,.08) !important; }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+      <nav class="navbar navbar-expand-lg navbar--green">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/HI-LOGO.png" alt="Hispeedcity Logo" height="45">
+          </a>
+
+        
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-5 me-lg-auto">
+              <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="index.html">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="#section_2">Solutions</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="howitwork.html">How it works</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="scango.html">Scan & Go</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="offering.html">Our Offering</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="team.html">Our Team</a>
+                            </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="pagesMenu">
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="contactus.html"><i class="bi-envelope"></i>Contact Us</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="joinus.html"><i class="bi-people"></i>Join Us</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="news.html"><i class="bi-newspaper"></i>Newsroom</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="cp.html"><i class="bi-diagram-3"></i>Project Reference</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            
+                  </div>
+                </div>
+              </nav>
+
+
+  <!-- /NAV -->
+
+  <!-- ====== HERO ====== -->
+  <header class="hero">
+    <div class="container py-5">
+      
+      
+    </div>
+  </header>
+
+  <!-- ====== OVERVIEW ====== -->
+  <section class="section">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-7">
+          <div class="card card-soft h-100 p-4 p-md-5">
+            <h2 class="h3 mb-3">Why it matters</h2>
+            <p class="mb-3">
+              The expo spotlighted how 5G, AI, IoT and IR4.0 unlock smarter cities, operations, and mobility across Southeast Asia.
+              Exhibitors showcased solutions from AI to e-mobility and smart infrastructure.
+            </p>
+            <ul class="list-unstyled mb-0">
+              <li class="metric mb-3">
+                <span class="icon"><i class="bi bi-broadcast-pin"></i></span>
+                <div><strong>5G & Edge</strong><br><small class="text-muted">Low-latency infra powering cameras, sensors, and payments.</small></div>
+              </li>
+              <li class="metric mb-3">
+                <span class="icon"><i class="bi bi-cpu"></i></span>
+                <div><strong>AI & Computer Vision</strong><br><small class="text-muted">From LPR accuracy to real-time analytics for smarter ops.</small></div>
+              </li>
+              <li class="metric">
+                <span class="icon"><i class="bi bi-diagram-3"></i></span>
+                <div><strong>IoT & Digital Platforms</strong><br><small class="text-muted">Interoperable systems for cities, campuses, and mobility hubs.</small></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="card card-soft h-100 p-4 p-md-5">
+            <h2 class="h3 mb-3">Event basics</h2>
+            <ul class="list-unstyled mb-4">
+              <li class="mb-2"><i class="bi bi-calendar-event me-2 text-success"></i><strong>19–21 Nov 2024</strong></li>
+              <li class="mb-2"><i class="bi bi-geo-alt me-2 text-success"></i>MITEC, Kuala Lumpur</li>
+              <li class="mb-2"><i class="bi bi-stars me-2 text-success"></i>Theme: <em>Smart Innovations for Digital Transformation</em></li>
+            </ul>
+            <p class="small text-muted mb-0">Coverage inspired by Biz+Leisure’s story on Smart Nation Expo 2024.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== HIGHLIGHTS ====== -->
+  <section id="highlights" class="section">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-4">
+        <div class="col-lg-8">
+          <span class="tag">Highlights</span>
+          <h2 class="mt-3">What stood out at the expo</h2>
+          <p class="text-muted">Core themes and numbers that shaped the conversation.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card card-soft p-4 h-100">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"><i class="bi bi-people-fill"></i></div>
+              <h3 class="h5 mb-0">Regional scale</h3>
+            </div>
+            <p class="mb-0">Largest tech event of its kind in SEA focusing on 5G, Smart Cities & IR4.0.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-soft p-4 h-100">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"><i class="bi bi-shop"></i></div>
+              <h3 class="h5 mb-0">600+ brands</h3>
+            </div>
+            <p class="mb-0">Exhibitors spanned AI, Web 4.0, e-mobility, smart infrastructure and more.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-soft p-4 h-100">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon"><i class="bi bi-diagram-2"></i></div>
+              <h3 class="h5 mb-0">Co-located events</h3>
+            </div>
+            <p class="mb-0">EVM Asia & AgriX ran alongside, highlighting e-mobility & smart agriculture.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== GALLERY (real photos) ====== -->
+<section id="gallery" class="section">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-4">
+      <div class="col-lg-8">
+        <span class="tag">Gallery</span>
+        <h2 class="mt-3">Scenes from Smart Nation Expo 2024</h2>
+        <p class="text-muted">Snapshots from our booth and conversations at MITEC.</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- 1 -->
+      <div class="col-md-4">
+        <figure class="g-card m-0">
+          <img
+            class="g-img"
+            src="images/booth1.jpg"
+            alt="Team selfie at the Smart Nation Expo entrance backdrop"
+            loading="lazy" width="1024" height="768"
+            data-bs-toggle="modal" data-bs-target="#galleryModal">
+        </figure>
+      </div>
+      <!-- 2 -->
+      <div class="col-md-4">
+        <figure class="g-card m-0">
+          <img
+            class="g-img"
+            src="images/booth2.jpg"
+            alt="Discussing LPR and smart parking with international visitors"
+            loading="lazy" width="1024" height="768"
+            data-bs-toggle="modal" data-bs-target="#galleryModal">
+        </figure>
+      </div>
+      <!-- 3 -->
+      <div class="col-md-4">
+        <figure class="g-card m-0">
+          <img
+            class="g-img"
+            src="images/booth3.jpg"
+            alt="Product walkthrough with a group of visitors at the booth"
+            loading="lazy" width="1024" height="768"
+            data-bs-toggle="modal" data-bs-target="#galleryModal">
+        </figure>
+      </div>
+      <!-- 4 -->
+      <div class="col-md-4">
+        <figure class="g-card m-0">
+          <img
+            class="g-img"
+            src="images/booth4.jpg"
+            alt="Explaining QR + LPR flow to attendees"
+            loading="lazy" width="1024" height="768"
+            data-bs-toggle="modal" data-bs-target="#galleryModal">
+        </figure>
+      </div>
+      <!-- 5 -->
+      <div class="col-md-4">
+        <figure class="g-card m-0">
+          <img
+            class="g-img"
+            src="images/booth5.jpg"
+            alt="Hispeedcity banner and team chatting with visitors"
+            loading="lazy" width="1024" height="768"
+            data-bs-toggle="modal" data-bs-target="#galleryModal">
+        </figure>
+      </div>
+      <!-- 6 -->
+      <div class="col-md-4">
+        <figure class="g-card m-0">
+          <img
+            class="g-img"
+            src="images/booth6.jpg"
+            alt="How It Works panel and live demo setup at the booth"
+            loading="lazy" width="1024" height="768"
+            data-bs-toggle="modal" data-bs-target="#galleryModal">
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox (Bootstrap modal) -->
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark">
+        <button type="button" class="btn-close btn-close-white ms-auto me-2 mt-2" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="ratio ratio-16x9">
+          <img id="galleryModalImg" src="" alt="" style="object-fit:contain">
+        </div>
+        <div class="p-3 text-white-50 small" id="galleryModalCap"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ====== YOUR FOOTER (unchanged) ====== -->
+  <footer class="site-footer site-footer--dark section-padding">
+    <div class="container">
+      <div class="row align-items-start">
+
+        <!-- Brand + blurb -->
+        <div class="col-lg-4 col-md-6 col-12 mb-4">
+          <a class="footer-brand d-inline-flex align-items-center mb-3" href="index.html" aria-label="Hispeedcity">
+            <img src="images/HI LOGO.png" alt="Hispeedcity" class="footer-logo">
+          </a>
+          <p class="footer-blurb">
+            Smart mobility &amp; parking solutions powered by AI + IoT.
+            Reducing congestion and enabling connected smart cities in Malaysia.
+          </p>
+          <p class="copyright-text mt-3 mb-0">
+            © <span id="y"></span> Hispeedcity Sdn Bhd (1331446-H)
+          </p>
+        </div>
+
+        <!-- Quick links -->
+        <div class="col-lg-3 col-md-6 col-6 mb-4">
+          <h6 class="site-footer-title mb-3">Quick Links</h6>
+          <ul class="site-footer-links">
+            <li class="site-footer-link-item"><a href="about.html" class="site-footer-link">About Us</a></li>
+            <li class="site-footer-link-item"><a href="services.html" class="site-footer-link">Services</a></li>
+            <li class="site-footer-link-item"><a href="news.html" class="site-footer-link">Newsroom</a></li>
+            <li class="site-footer-link-item"><a href="contact.html" class="site-footer-link">Contact Us</a></li>
+            <li class="site-footer-link-item"><a href="joinus.html" class="site-footer-link">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- QR card -->
+        <div class="col-lg-3 col-md-6 col-6 mb-4">
+          <h6 class="site-footer-title mb-3">Download Our App</h6>
+          <a href="#" class="footer-qr card-qr d-inline-block" aria-label="Download Hispeedcity App">
+            <img src="images/hispeedcity_qr.png" alt="QR code to download Hispeedcity app" class="qr-img">
+          </a>
+          <small class="d-block mt-2 text-muted-contrast">Scan or click QR to download</small>
+        </div>
+
+        <!-- Contact + socials + language -->
+        <div class="col-lg-2 col-md-6 col-12 mb-4 ms-lg-auto">
+          <h6 class="site-footer-title mb-3">Get in Touch</h6>
+          <p class="text-white d-flex mb-1">
+            <a href="https://wa.me/601114200953" class="site-footer-link">+(60)11-1420 0953</a>
+          </p>
+          <p class="text-white d-flex mb-3">
+            <a href="mailto:hi@hispeedcity.com" class="site-footer-link">hi@hispeedcity.com</a>
+          </p>
+
+          <h6 class="site-footer-title mb-2">Follow Us</h6>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook" class="social-btn"><i class="bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram" class="social-btn"><i class="bi-instagram"></i></a>
+            <a href="#" aria-label="YouTube" class="social-btn"><i class="bi-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn" class="social-btn"><i class="bi-linkedin"></i></a>
+          </div>
+
+          <div class="dropdown mt-4">
+            <button class="btn btn-language dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              English
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><button class="dropdown-item" type="button">中文</button></li>
+              <li><button class="dropdown-item" type="button">ไทย</button></li>
+              <li><button class="dropdown-item" type="button">العربية</button></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="footer-divider">
+
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between small text-muted-contrast">
+          <span>Terms of Service</span>
+          <span>Privacy Policy</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Year in footer
+    document.getElementById('y')?.appendChild(document.createTextNode(new Date().getFullYear()));
+  </script>
+  <script>
+(() => {
+  const modal = document.getElementById('galleryModal');
+  if (!modal) return;
+  const modalImg = document.getElementById('galleryModalImg');
+  const modalCap = document.getElementById('galleryModalCap');
+
+  document.querySelectorAll('#gallery .g-img').forEach(img => {
+    img.addEventListener('click', () => {
+      modalImg.src = img.src;
+      modalImg.alt = img.alt || '';
+      modalCap.textContent = img.alt || '';
+    });
+  });
+
+  // Clear src on hide to free memory on mobile
+  modal.addEventListener('hidden.bs.modal', () => { modalImg.src = ''; });
+})();
+</script>
+</body>
+</html>

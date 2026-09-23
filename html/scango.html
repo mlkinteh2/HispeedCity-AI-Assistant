@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Scan & Go: start and stop parking with a QR, pay via e-wallet, and go touchless with Hispeedcity." />
+    <meta name="author" content="Hispeedcity" />
+    <title>Scan & Go — Hispeedcity</title>
+
+    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+
+    <style>
+
+      
+      :root{ --brand:#1EA64B; --brand2:#F2B705; }
+      .site-header .topics-detail-block-image{ border-radius:20px }
+      .step-card{background:#fff;border-radius:16px;padding:16px;box-shadow:0 10px 28px rgba(0,0,0,.08);height:100%}
+      .step-card img{width:72px;height:72px;object-fit:contain}
+      .badge-soft{background:rgba(30,166,75,.12);color:#1EA64B}
+      .tutorial-wrap{background:var(--section-bg-color);border-radius:18px;padding:18px}
+      .reveal{opacity:0;transform:translateY(10px)}
+      .reveal.in{opacity:1;transform:none;transition:.6s ease}
+      .watch-btn i{vertical-align:-2px}
+
+
+      
+
+      /* Enhance Three Simple Steps cards */
+        .step-card {
+          background: #fff;
+          border-radius: 18px;
+          padding: 24px 18px;
+          box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+          height: 100%;
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .step-card:hover {
+          transform: translateY(-8px) scale(1.05);
+          box-shadow: 0 14px 40px rgba(30, 166, 75, 0.25);
+        }
+
+        .step-card img {
+          width: 85px;
+          height: auto;
+          margin-bottom: 10px;
+          transition: transform 0.25s ease;
+        }
+
+        .step-card:hover img {
+          transform: scale(1.1);
+        }
+
+        .step-card h6 {
+          color: #1ea64b;
+          font-weight: 700;
+          font-size: 1.15rem;
+        }
+
+        .step-card p {
+          font-size: 1rem;
+          color: #555;
+        }
+
+        .badge-soft {
+          background: rgba(30, 166, 75, 0.15);
+          color: #1ea64b;
+          font-size: 0.9rem;
+          padding: 5px 10px;
+          border-radius: 10px;
+        }
+
+        /* --- FORCE SOLID GREEN HEADER --- */
+:root{
+  --hispeed-green:#1A7C34;
+}
+
+/* Make ALL navbar variants solid green */
+.navbar,
+.navbar.site-nav--glass,
+.custom-navbar{
+  background: var(--hispeed-green) !important;
+  border-bottom: none !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
+}
+
+/* Mobile stays green */
+@media (max-width: 992px){
+  .navbar{ background: var(--hispeed-green) !important; }
+}
+
+/* If your nav is fixed, add top offset so anchors don't hide */
+body{ scroll-padding-top: 78px; }
+
+/* === Make hero CTA buttons visible on green backgrounds === */
+/* Outline button (Read More) */
+.site-header .custom-border-btn,
+.topics-detail-header .custom-border-btn {
+  border-color: #fff !important;
+  color: #fff !important;
+  background: transparent !important;
+}
+.site-header .custom-border-btn:hover,
+.topics-detail-header .custom-border-btn:hover {
+  background: #fff !important;
+  color: var(--hispeed-green, #1A7C34) !important;
+}
+
+/* Solid button (Watch Video) */
+.site-header .custom-btn,
+.topics-detail-header .custom-btn {
+  background: #fff !important;
+  color: var(--hispeed-green, #1A7C34) !important;
+  border-color: #fff !important;
+}
+.site-header .custom-btn:hover,
+.topics-detail-header .custom-btn:hover {
+  background: #eaf7ef !important;  /* soft white-green */
+  color: var(--hispeed-green, #1A7C34) !important;
+}
+
+/* If the play icon is inside the button, keep it visible */
+.site-header .custom-btn i,
+.topics-detail-header .custom-btn i {
+  color: inherit !important;
+}
+
+/* === Language dropdown on green navbar === */
+.btn-language {
+  background: rgba(255,255,255,.14) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.45) !important;
+}
+.btn-language:hover,
+.btn-language:focus {
+  background: #fff !important;
+  color: var(--hispeed-green, #1A7C34) !important;
+  border-color: #fff !important;
+}
+.dropdown-menu-dark {
+  background: #1b221f !important;
+  color: #fff !important;
+  border-color: rgba(255,255,255,.12) !important;
+}
+.dropdown-menu-dark .dropdown-item { color: #fff !important; }
+.dropdown-menu-dark .dropdown-item:hover { background: rgba(255,255,255,.08) !important; }
+
+/* === FOOTER (dark) === */
+.site-footer--dark{
+  --footer-bg:#0f1412;               /* near black */
+  --footer-text:#e8efe9;
+  --footer-muted:#a7b2ab;
+  --footer-accent: var(--hispeed-teal, #80D0C7);
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding-top: 64px;
+  padding-bottom: 56px;
+}
+
+.site-footer--dark .site-footer-title { color: var(--footer-text); font-weight:700; }
+.site-footer--dark .site-footer-link { color: var(--footer-text); opacity:.9; text-decoration:none; }
+.site-footer--dark .site-footer-link:hover { opacity:1; color: var(--footer-accent); }
+.text-muted-contrast { color: var(--footer-muted) !important; }
+
+.footer-divider { border-color: rgba(255,255,255,.12); margin: 24px 0 0; }
+
+/* Brand logo */
+.footer-logo { height: 38px; width: auto; display:block; }
+.footer-brand { text-decoration: none; }
+
+/* QR card */
+.card-qr {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 10px;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+.card-qr:hover {
+  transform: translateY(-2px);
+  border-color: var(--footer-accent);
+  box-shadow: 0 12px 36px rgba(0,0,0,.24);
+}
+.qr-img { display:block; width: 148px; height: 148px; object-fit: contain; }
+
+/* Socials */
+.footer-socials .social-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; margin-right: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  color: var(--footer-text);
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+}
+.footer-socials .social-btn:hover {
+  transform: translateY(-2px);
+  background: var(--hispeed-green, #1A7C34);
+  color: #fff;
+}
+
+/* Language button in dark footer */
+.btn-language {
+  background: rgba(255,255,255,.06);
+  color: var(--footer-text);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.btn-language:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+.dropdown-menu-dark { background: #1b221f; color: #fff; border-color: rgba(255,255,255,.1); }
+.dropdown-menu-dark .dropdown-item { color: #fff; }
+.dropdown-menu-dark .dropdown-item:hover { background: rgba(255,255,255,.08); }
+
+/* Lists */
+.site-footer-links{ list-style:none; margin:0; padding:0; }
+.site-footer-link-item + .site-footer-link-item{ margin-top:.35rem; }
+
+/* Reduce padding on small screens */
+@media (max-width: 992px){
+  .site-footer--dark { padding-top: 44px; padding-bottom: 40px; }
+}
+
+
+    </style>
+  </head>
+
+  <body id="top">
+    <main>
+            <!-- NAV -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/HI-LOGO.png" alt="Hispeedcity Logo" height="45">
+          </a>
+
+          <div class="d-lg-none ms-auto me-4">
+            <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="index.html">Home</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="onstreet.html" id="solutionsMenu"
+                                      role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Solutions
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="solutionsMenu">
+                                      <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2" href="onstreet.html">
+                                          <i class="bi-geo"></i> On-street Parking
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2" href="offstreet.html">
+                                          <i class="bi-building"></i> Off-street Parking
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2" href="topics-detail.html">
+                                          <i class="bi-journal-text"></i> Private Car Park Sharing
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="howitwork.html">How it works</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="scango.html">Scan & Go</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="offering.html">Our Offering</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="team.html">Our Team</a>
+                            </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="pagesMenu">
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="contactus.html"><i class="bi-envelope"></i>Contact Us</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="joinus.html"><i class="bi-people"></i>Join Us</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="news.html"><i class="bi-newspaper"></i>Newsroom</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="cp.html"><i class="bi-diagram-3"></i>Project Reference</a></li>
+                </ul>
+              </li>
+            </ul>
+        </div>
+          </div>
+        </div>
+      </nav>
+
+      
+      <!-- HERO -->
+      <header class="site-header d-flex flex-column justify-content-center align-items-center">
+        <div class="container">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-lg-5 col-12 mb-5">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  
+                </ol>
+              </nav>
+
+              <h2 class="text-white">Scan &amp; Go</h2>
+              <p class="text-white mt-3">
+                Our smart parking app takes the hassle out of finding and paying for a spot. Simply scan a QR code to start and end your session, and pay seamlessly through our integrated e-wallet. Park smarter, not harder, with Hispeedcity Application.
+              </p>
+
+              <div class="d-flex align-items-center mt-4">
+                <a href="#steps" class="btn custom-btn custom-border-btn me-3 smoothscroll">Read More</a>
+                <a class="btn custom-btn watch-btn" href="https://youtu.be/13HJkeQBK_c">
+                  <i class="bi bi-play-fill me-1"></i>Watch Video
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-12">
+              <div class="topics-detail-block bg-white shadow-lg">
+                <!-- keep original mock paths -->
+                <img src="images/howbanner2.png" class="topics-detail-block-image img-fluid" alt="App mockup">
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- STEPS -->
+      <section class="topics-detail-section section-padding" id="steps">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-12 m-auto">
+              <h3 class="mb-4 text-center">Three Simple Steps</h3>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="step-card reveal text-center">
+                    <span class="badge badge-soft mb-2">Step 1</span>
+                    <img src="./images/register.png" alt="Download & Register" class="mb-2">
+                    <h6>Download &amp; Register</h6>
+                    <p class="mb-0">Get the app and create your account in minutes.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="step-card reveal text-center">
+                    <span class="badge badge-soft mb-2">Step 2</span>
+                    <img src="./images/scan3.png" alt="Scan to Start/Stop" class="mb-2">
+                    <h6>Scan to Start / Stop</h6>
+                    <p class="mb-0">Scan before leaving your car to start, and scan again to stop.</p>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="step-card reveal text-center">
+                    <span class="badge badge-soft mb-2">Step 3</span>
+                    <img src="images/mocks/banner-mock-back.png" alt="Topup & Pay" class="mb-2">
+                    <h6>Top up &amp; Pay</h6>
+                    <p class="mb-0">Use your e-wallet to pay automatically—no cash, no queues.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tutorial image (keep original path) -->
+              <div class="tutorial-wrap mt-5 reveal">
+                <div class="d-flex align-items-center justify-content-between flex-wrap mb-3">
+                  <h4 class="mb-0">Procedure to Use</h4>
+                  <small class="text-muted">Quick reference</small>
+                </div>
+                <img src="./images/Tutorial2.png" alt="Procedure to Use" class="img-fluid rounded-3 shadow-sm">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Helpline (kept from old content, but styled) -->
+      <section class="section-padding section-bg">
+        <div class="container">
+          <div class="row justify-content-center text-center">
+            <div class="col-lg-10">
+              <h4 class="mb-2">Helpline <i class="bi bi-telephone-outbound" style="color:#1EA64B"></i></h4>
+              <p class="mb-3">Need help getting started?</p>
+              <a class="btn custom-btn" href="https://wa.me/601114200953">+(60)11-1420 0953</a>
+              <div class="mt-3">
+                <a class="me-2" href="https://www.facebook.com/Hispeedcity-Sdn-Bhd-110082880393300/" target="_blank"><i class="bi bi-facebook"></i></a>
+                <a class="me-2" href="https://www.youtube.com/channel/UCX7H10eR_209frkyQNBBaMQ" target="_blank"><i class="bi bi-youtube"></i></a>
+                <a href="https://www.instagram.com/hispeedcity/" target="_blank"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer site-footer--dark section-padding">
+  <div class="container">
+    <div class="row align-items-start g-4">
+
+      <!-- Brand + blurb -->
+      <div class="col-lg-4 col-md-6">
+        <a class="footer-brand d-inline-flex align-items-center mb-3" href="index.html" aria-label="Hispeedcity">
+          <img src="images/HI-LOGO.png" alt="Hispeedcity" class="footer-logo">
+        </a>
+        <p class="footer-blurb">
+          Smart mobility &amp; parking solutions powered by AI + IoT.
+          Reducing congestion and enabling connected smart cities in Malaysia.
+        </p>
+        <p class="copyright-text mt-3 mb-0">
+          © <span id="y"></span> Hispeedcity Sdn Bhd (1331446-H)
+        </p>
+      </div>
+
+      <!-- Quick links -->
+      <div class="col-lg-3 col-md-6 col-6">
+        <h6 class="site-footer-title mb-3">Quick Links</h6>
+        <ul class="site-footer-links">
+          <li class="site-footer-link-item"><a href="index.html#section_1" class="site-footer-link">Home</a></li>
+          <li class="site-footer-link-item"><a href="index.html#section_2" class="site-footer-link">Solutions</a></li>
+          <li class="site-footer-link-item"><a href="index.html#section_3" class="site-footer-link">How it works</a></li>
+          <li class="site-footer-link-item"><a href="index.html#section_4" class="site-footer-link">FAQs</a></li>
+          <li class="site-footer-link-item"><a href="contactus.html" class="site-footer-link">Contact</a></li>
+          <li class="site-footer-link-item"><a href="news.html" class="site-footer-link">Newsroom</a></li>
+          <li class="site-footer-link-item"><a href="joinus.html" class="site-footer-link">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- QR card -->
+      <div class="col-lg-3 col-md-6 col-6 mb-4">
+        <h6 class="site-footer-title mb-3">View our showroom</h6>
+        <a href="#" class="footer-qr card-qr d-inline-block" aria-label="Download Hispeedcity App">
+          <img src="images/showroom.png" alt="QR code to download Hispeedcity app" class="qr-img">
+        </a>
+        <small class="d-block mt-2 text-muted-contrast">Our digital solution showroom</small>
+      </div>
+
+      <!-- Contact + socials + language -->
+      <div class="col-lg-2 col-md-6 ms-lg-auto">
+        <h6 class="site-footer-title mb-3">Get in Touch</h6>
+        <p class="text-white d-flex mb-1">
+          <a href="https://wa.me/601114200953" class="site-footer-link">+(60)11-1420 0953</a>
+        </p>
+        <p class="text-white d-flex mb-3">
+          <a href="mailto:hi@hispeedcity.com" class="site-footer-link">hi@hispeedcity.com</a>
+        </p>
+
+        <h6 class="site-footer-title mb-2">Follow Us</h6>
+        <div class="footer-socials mb-3">
+          <a href="#" aria-label="Facebook" class="social-btn"><i class="bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram" class="social-btn"><i class="bi-instagram"></i></a>
+          <a href="#" aria-label="YouTube" class="social-btn"><i class="bi-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn" class="social-btn"><i class="bi-linkedin"></i></a>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn btn-language dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            English
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark w-100">
+            <li><button class="dropdown-item" type="button">中文</button></li>
+            <li><button class="dropdown-item" type="button">ไทย</button></li>
+            <li><button class="dropdown-item" type="button">العربية</button></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="row">
+      <div class="col-12 d-flex justify-content-between small text-muted-contrast flex-wrap gap-2">
+        <span>Terms of Service</span>
+        <span>Privacy Policy</span>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!-- JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+      // simple scroll reveal
+      (function(){
+        const els = document.querySelectorAll('.reveal');
+        if(!('IntersectionObserver' in window)){ els.forEach(e=>e.classList.add('in')); return; }
+        const io = new IntersectionObserver((entries)=>{
+          entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+        }, {threshold:.18});
+        els.forEach(e=>io.observe(e));
+      })();
+    </script>
+  </body>
+</html>

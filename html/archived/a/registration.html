@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Season Parking Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #03ba51;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            text-align: left;
+            margin-bottom: -30px;
+            margin-left: -10%;
+        }
+        .logo img {
+            max-width: 300px;
+            height: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group input[type="radio"],
+        .form-group input[type="checkbox"] {
+            width: auto;
+        }
+        .form-group .radio-group,
+        .form-group .checkbox-group {
+            display: flex;
+            gap: 10px;
+        }
+        .form-group button {
+            padding: 10px 20px;
+            background-color: #fbbd23;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #e5a800;
+        }
+        .form-group.inline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .form-group.inline label {
+            margin: 0;
+            margin-right: 10px;
+        }
+        .form-group.inline input {
+            flex: 1;
+        }
+        .form-group.inline .date-group {
+            display: flex;
+            align-items: center;
+        }
+        .form-group.inline .date-group input {
+            margin-left: 10px;
+        }
+        .radio-group label.register {
+            color: #03ba51;
+        }
+        .radio-group label.deregister {
+            color: #fbbd23;
+        }
+    </style>
+    <script>
+        function toggleForm() {
+            var registrationFields = document.querySelectorAll('.registration');
+            var deregistrationFields = document.querySelectorAll('.deregistration');
+            var selectedAction = document.querySelector('input[name="action"]:checked').value;
+
+            if (selectedAction === "register") {
+                registrationFields.forEach(function(field) {
+                    field.style.display = 'block';
+                });
+                deregistrationFields.forEach(function(field) {
+                    field.style.display = 'none';
+                });
+            } else {
+                registrationFields.forEach(function(field) {
+                    field.style.display = 'none';
+                });
+                deregistrationFields.forEach(function(field) {
+                    field.style.display = 'block';
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('form').addEventListener('submit', function(event) {
+                alert('Form is being submitted!');
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <!-- Company Logo -->
+    <div class="logo">
+        <img src="Hispeedcity official logo.png" alt="Company Logo" aria-label="Company Logo">
+    </div>
+
+    <h1>Season Parking Registration / Deregistration Form</h1>
+
+    <!-- Ensure the form action points to the correct PHP script -->
+    <form action="welcome.php" method="POST">
+        <!-- Action Selection -->
+        <div class="form-group inline">
+            <div class="radio-group">
+                <label class="register"><input type="radio" name="action" value="register" checked onclick="toggleForm()"> Register</label>
+                <label class="deregister"><input type="radio" name="action" value="deregister" onclick="toggleForm()"> Deregister</label>
+            </div>
+        </div>
+
+        <!-- Registration Fields -->
+        <div class="registration">
+            <h2>Parker’s Information</h2>
+
+            <div class="form-group">
+                <label for="date-of-registration">Date of Registration:</label>
+                <input type="date" id="date-of-registration" name="date_of_registration" required>
+            </div>
+
+            <div class="form-group">
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="full_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone-number">Phone Number:</label>
+                <input type="tel" id="phone-number" name="phone_number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="company-name">Company Name:</label>
+                <input type="text" id="company-name" name="company_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="vehicle-number-1">Vehicle Number 1:</label>
+                <input type="text" id="vehicle-number-1" name="vehicle_number[]" required>
+            </div>
+
+            <div class="form-group">
+                <label for="vehicle-number-2">Vehicle Number 2:</label>
+                <input type="text" id="vehicle-number-2" name="vehicle_number[]">
+            </div>
+            
+            <div class="form-group">
+                <label for="vehicle-number-3">Vehicle Number 3:</label>
+                <input type="text" id="vehicle-number-3" name="vehicle_number[]">
+            </div>
+
+            <div class="form-group">
+                <label for="vehicle-model">Vehicle Model:</label>
+                <input type="text" id="vehicle-model" name="vehicle_model" required>
+            </div>
+
+            <div class="form-group">
+                <label for="vehicle-type">Vehicle Type:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="vehicle_type" value="sedan" required> Sedan</label>
+                    <label><input type="radio" name="vehicle_type" value="hatchback"> Hatchback</label>
+                    <label><input type="radio" name="vehicle_type" value="suv"> SUV</label>
+                    <label><input type="radio" name="vehicle_type" value="mini_van"> Mini Van</label>
+                    <label><input type="radio" name="vehicle_type" value="others"> Others</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="vehicle-color">Vehicle Color:</label>
+                <input type="text" id="vehicle-color" name="vehicle_color" required>
+            </div>
+
+            <div class="form-group">
+                <label for="staff-id">Staff ID:</label>
+                <input type="text" id="staff-id" name="staff_id">
+            </div>
+
+            <div class="form-group">
+                <label for="effective-date">Effective Date:</label>
+                <input type="date" id="effective-date" name="effective_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="date" id="expiry-date" name="expiry_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="parking-type">Parking Type:</label>
+                <select id="parking-type" name="parking_type" required>
+                    <option value="non_reserved">Non - Reserved (RM150)</option>
+                    <option value="reserved">Reserved (RM200)</option>
+                    <option value="premium">Premium (RM300)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="subscription-period">Subscription Period:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="subscription_period" value="monthly" required> Monthly</label>
+                    <label><input type="radio" name="subscription_period" value="quarterly"> Quarterly</label>
+                    <label><input type="radio" name="subscription_period" value="yearly"> Yearly</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deregistration Fields -->
+        <div class="deregistration" style="display:none;">
+            <h2>Deregistration Information</h2>
+
+            <div class="form-group">
+                <label for="date-of-deregistration">Date of Deregistration:</label>
+                <input type="date" id="date-of-deregistration" name="date_of_deregistration" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dereg-full-name">Full Name:</label>
+                <input type="text" id="dereg-full-name" name="dereg_full_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dereg-phone-number">Phone Number:</label>
+                <input type="tel" id="dereg-phone-number" name="dereg_phone_number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dereg-company-name">Company Name:</label>
+                <input type="text" id="dereg-company-name" name="dereg_company_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dereg-vehicle-number-1">Vehicle Number 1:</label>
+                <input type="text" id="dereg-vehicle-number-1" name="dereg_vehicle_number[]" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dereg-vehicle-number-2">Vehicle Number 2:</label>
+                <input type="text" id="dereg-vehicle-number-2" name="dereg_vehicle_number[]">
+            </div>
+            
+            <div class="form-group">
+                <label for="dereg-vehicle-number-3">Vehicle Number 3:</label>
+                <input type="text" id="dereg-vehicle-number-3" name="dereg_vehicle_number[]">
+            </div>
+
+            <div class="form-group">
+                <label for="dereg-effective-date">Effective Date:</label>
+                <input type="date" id="dereg-effective-date" name="dereg_effective_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dereg-expiry-date">Expiry Date:</label>
+                <input type="date" id="dereg-expiry-date" name="dereg_expiry_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dereg-parking-type">Parking Type:</label>
+                <select id="dereg-parking-type" name="dereg_parking_type" required>
+                    <option value="non_reserved">Non - Reserved (RM150)</option>
+                    <option value="reserved">Reserved (RM200)</option>
+                    <option value="premium">Premium (RM300)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="reason-for-deregistration">Reason for Deregistration:</label>
+                <textarea id="reason-for-deregistration" name="reason_for_deregistration" rows="4" required></textarea>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

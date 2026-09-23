@@ -1,0 +1,1377 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Hispeedcity — Smart Mobility & Parking Solutions (QR Scan & Go, LPR/ANPR, Enforcement, Smart Port, Tolling)">
+        <meta name="author" content="Hispeedcity">
+
+        <title>Hispeedcity - Smart Mobility & Parking Solutions</title>
+
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+                        
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="css/templatemo-topic-listing.css" rel="stylesheet">    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">  
+        <link href="css/chatbot.css" rel="stylesheet">
+
+<style>
+        :root{
+  --brand:#1EA64B;
+  --brand-soft:#ffe600;
+}
+
+.feedback-wrap{background:var(--section-bg-color);border-top-left-radius:28px;border-top-right-radius:28px}
+
+.feedback-slider{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns: min(320px, 86vw);
+  gap:16px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:6px 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width:none;
+}
+.feedback-slider::-webkit-scrollbar{display:none}
+
+.fb-card{
+  scroll-snap-align:center;
+  background:#fff;border-radius:18px;
+  padding:18px; box-shadow:0 10px 28px rgba(0,0,0,.08);
+  display:flex; flex-direction:column; justify-content:space-between; min-height:220px;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.fb-card:hover{ transform:translateY(-6px); box-shadow:0 16px 40px rgba(30,166,75,.20); }
+
+.fb-stars{color:#f7b500; font-size:14px; letter-spacing:1px; margin-bottom:8px}
+.fb-quote{font-size:1.02rem; line-height:1.5; color:#374151; margin:0 0 12px}
+.fb-user{display:flex; gap:10px; align-items:center}
+.fb-avatar{
+  width:40px; height:40px; border-radius:12px; display:grid; place-items:center;
+  background:linear-gradient(135deg,var(--brand),#80d0c7); color:#fff; font-weight:700;
+}
+.btn.fb-prev,.btn.fb-next{border-color:var(--brand); color:var(--brand)}
+.btn.fb-prev:hover,.btn.fb-next:hover{background:var(--brand); color:#fff}
+
+@media (min-width: 992px){
+  .feedback-slider{grid-auto-columns: 360px}
+}
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.5); /* darkens video slightly for readability */
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.hero-action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .78rem 1.35rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1ea64b, #0f8d3d);
+  color: #fff !important;
+  font-weight: 700;
+  letter-spacing: .02em;
+  box-shadow: 0 10px 24px rgba(30, 166, 75, .22);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.hero-action-link:hover,
+.hero-action-link:focus {
+  background: linear-gradient(135deg, #27b455, #118f40);
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 575.98px) {
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-action-link {
+    width: min(260px, 100%);
+  }
+}
+
+/* Keep Vision/Mission above what comes next and give it breathing room */
+.vision-mission-section{
+  position: relative;      /* create a stacking context */
+  z-index: 3;              /* sit above the next section's overlay */
+  background: #fff;        /* or var(--white-color) */
+  padding-top: 100px;
+  padding-bottom: 40px;    /* space below so nothing touches it */
+  margin-bottom: 40px;     /* extra separation */
+}
+
+
+.vision-video,
+.mission-video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.vision-mission-section h2 {
+  color: #1a7c34; /* match your Hispeedcity green */
+}
+
+.vision-mission-section p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Pages dropdown polish */
+.navbar .dropdown-menu {
+  min-width: 280px;
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.navbar .dropdown-item {
+  padding: .6rem 1rem;
+  border-radius: 10px;
+}
+
+.navbar .dropdown-item:hover {
+  background: var(--section-bg-color);
+  color: var(--primary-color);
+}
+
+.navbar .nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .72rem 1.15rem;
+  margin: .2rem 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1ea64b, #0f8d3d);
+  color: #fff !important;
+  font-weight: 700;
+  letter-spacing: .02em;
+  box-shadow: 0 10px 24px rgba(30, 166, 75, .22);
+  white-space: nowrap;
+}
+
+.navbar .nav-cta:hover,
+.navbar .nav-cta:focus {
+  background: linear-gradient(135deg, #27b455, #118f40);
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 991.98px) {
+  .navbar .nav-cta {
+    margin-top: .75rem;
+  }
+}
+
+/* Change section background globally */
+.section-muted,
+.section-bg,
+.bg-light {
+  background-color: #E8F5E9 !important; /* choose your desired color */
+}
+/* NAVBAR: always above interactive layers */
+.navbar, .site-header, .custom-navbar {
+  position: sticky;          /* or keep your existing fixed-top */
+  top: 0;
+  z-index: 3000;             /* higher than Leaflet's 1000 */
+}
+
+/* Map should not create a higher stacking context than the header */
+.leaflet-container {
+  position: relative;        /* normal */
+  z-index: 0;                /* ensure it's below the header */
+  border-radius: 16px;       /* keep your styling */
+  overflow: hidden;          /* keeps tiles and popups clipped to the card */
+}
+
+/* === FOOTER (dark) === */
+.site-footer--dark {
+  --footer-bg: #0f1412;             /* near black */
+  --footer-text: #e8efe9;
+  --footer-muted: #a7b2ab;
+  --footer-accent: var(--hispeed-teal, #80D0C7);
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding-top: 64px;
+  padding-bottom: 56px;
+}
+
+.site-footer--dark .site-footer-title { color: var(--footer-text); }
+.site-footer--dark .site-footer-link {
+  color: var(--footer-text);
+  opacity: .9;
+  text-decoration: none;
+}
+.site-footer--dark .site-footer-link:hover { opacity: 1; color: var(--hispeed-teal); }
+
+.text-muted-contrast { color: var(--footer-muted) !important; }
+
+.footer-divider {
+  border-color: rgba(255,255,255,.12);
+  margin: 24px 0 0;
+}
+
+/* Logo */
+.footer-logo {
+  height: 38px;
+  width: auto;
+  display: block;
+}
+.footer-brand { text-decoration: none; }
+
+/* QR card */
+.card-qr {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 10px;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+.card-qr:hover {
+  transform: translateY(-2px);
+  border-color: var(--hispeed-teal);
+  box-shadow: 0 12px 36px rgba(0,0,0,.24);
+}
+.qr-img {
+  display: block;
+  width: 148px;
+  height: 148px;
+  object-fit: contain;
+}
+
+/* Socials */
+.footer-socials .social-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; margin-right: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  color: var(--footer-text);
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+}
+.footer-socials .social-btn:hover {
+  transform: translateY(-2px);
+  background: var(--hispeed-green, #1A7C34);
+  color: #fff;
+}
+
+/* Language button to match dark footer */
+.btn-language {
+  background: rgba(255,255,255,.06);
+  color: var(--footer-text);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.btn-language:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+.dropdown-menu-dark { background: #1b221f; color: #fff; border-color: rgba(255,255,255,.1); }
+.dropdown-menu-dark .dropdown-item { color: #fff; }
+.dropdown-menu-dark .dropdown-item:hover { background: rgba(255,255,255,.08); }
+
+/* Make links inside dark footer legible */
+.site-footer--dark a { color: var(--footer-text); }
+.site-footer--dark a:hover { color: var(--hispeed-teal); }
+
+/* Make inline company logos bigger in the user line */
+.fb-user small img{
+  height: 1.2em;          /* tweak 1.2–1.6em to taste */
+  vertical-align: -0.2em; /* nudge down so baseline lines up nicely */
+  margin-left: .25em;     /* little spacing before the logo */
+  image-rendering: auto;  /* keeps them crisp */
+}
+
+/* --- Testimonial "big logo" card --- */
+.t-card{
+  position:relative;
+  background:#fff;
+  border-radius:18px;
+  padding:22px 22px 20px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  min-height:260px;
+  display:flex;flex-direction:column;
+}
+
+/* header: big company logo + name */
+.t-head{display:flex;align-items:center;gap:14px;margin-bottom:10px}
+.t-logo-wrap{
+  width:74px;height:74px;border-radius:50%;
+  display:grid;place-items:center;overflow:hidden;
+  border:3px dashed #ff5a5f1a;          /* subtle dashed ring */
+  outline:3px solid #ff5a5f33;           /* soft outer ring */
+}
+.t-logo{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.t-company{font-weight:800;font-size:1.55rem;margin:0;color:#e84151}
+
+/* quote */
+.t-quote{
+  font-size:1.12rem;line-height:1.65;color:#2C2F38;margin:6px 0 56px;
+}
+.t-quote::before{
+  content:"\f6b0"; /* bi-quote */
+  font-family:"bootstrap-icons";
+  color:#e84151; margin-right:.35rem;
+}
+
+/* reviewer (bottom-right) */
+.t-user{
+  position:absolute;right:18px;bottom:16px;display:flex;align-items:center;gap:12px;text-align:right;
+}
+.t-avatar-wrap{
+  width:66px;height:66px;border-radius:50%;
+  display:grid;place-items:center;overflow:hidden;
+  border:3px solid #e84151; background:#fff;
+}
+.t-avatar{width:60px;height:60px;border-radius:50%;object-fit:cover}
+.t-name{font-weight:800;font-size:1.35rem;margin:0}
+.t-title{margin:0;color:#6c7a74;font-size:.95rem}
+
+/* keep your existing slider nice on hover */
+.fb-card.t-card:hover{transform:translateY(-6px);box-shadow:0 18px 44px rgba(30,166,75,.18)}
+@media (max-width: 575.98px){
+  .t-quote{margin-bottom:72px}
+  .t-user{right:14px;bottom:14px}
+}
+
+/* Make each testimonial card wider */
+.feedback-slider{
+  display:flex;                 /* if you already use grid, see option B below */
+  gap:22px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+}
+
+.fb-card{                       /* the card */
+  flex: 0 0 clamp(480px, 50vw, 640px); /* ⬅️ increase these numbers to taste */
+  max-width: 100%;
+}
+
+/* If you use the big-logo layout */
+.t-card{ padding:28px 28px 24px; }
+
+/* Tighter layout on small screens */
+@media (max-width: 576px){
+  .fb-card{ flex-basis: 92vw; }
+}
+
+/* Controls container */
+.fb-controls{
+  display:flex; justify-content:center; gap:10px; margin-top:14px;
+}
+
+/* Buttons */
+.fb-btn{
+  width:42px; height:42px; border-radius:50%;
+  border:1px solid rgba(0,0,0,.08);
+  background:#fff; color:var(--hispeed-green,#1A7C34);
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  display:inline-flex; align-items:center; justify-content:center;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.fb-btn:hover{ transform:translateY(-2px); box-shadow:0 10px 26px rgba(0,0,0,.12); background:#eaf7ef; }
+.fb-btn:active{ transform:translateY(0) scale(.98); }
+
+/* If your slider uses horizontal scroll, keep cards on snap points */
+.feedback-slider{
+  scroll-snap-type:x mandatory;
+}
+.fb-card{ scroll-snap-align:center; }
+.fb-controls{ display:none !important; }
+
+
+</style>
+
+    </head>
+    
+    <body id="top">
+
+        <main>
+
+            <!-- NAV -->
+      <nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/HI-LOGO.png" alt="Hispeedcity Logo" height="45">
+    </a>
+
+
+    <div class="d-flex align-items-center ms-auto gap-2">
+  <!-- WhatsApp icon always visible -->
+  <a class="nav-link p-2 d-lg-none"
+   href="https://wa.me/601114200953"
+   target="_blank" rel="noopener"
+   aria-label="WhatsApp">
+  <i class="bi bi-whatsapp" style="font-size:1.4rem; color:#fff;"></i>
+</a>
+
+  <!-- Hamburger toggler -->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</div>
+
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-lg-5 me-lg-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#section_1">Home</a>
+        </li>
+
+        <!-- Solutions dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="solutionsMenu"
+             role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Solutions
+          </a>
+          <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="solutionsMenu">
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2" href="onstreet.html">
+                <i class="bi-geo"></i> On-street Parking
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2" href="offstreet.html">
+                <i class="bi-building"></i> Off-street Parking
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center gap-2" href="topics-detail.html">
+                <i class="bi-journal-text"></i> Private Car Park Sharing
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="howitwork.html">How it works</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="scango.html">Scan & Go</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="offering.html">Our Offering</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="team.html">Our Team</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link nav-cta" href="renew.html">QR Pay</a>
+        </li>
+
+        <!-- Pages dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Pages
+          </a>
+          <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="pagesMenu">
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="contactus.html"><i class="bi-envelope"></i> Contact Us</a></li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="joinus.html"><i class="bi-people"></i> Join Us</a></li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="news.html"><i class="bi-newspaper"></i> Newsroom</a></li>
+            <li><a class="dropdown-item d-flex align-items-center gap-2" href="cp.html"><i class="bi-diagram-3"></i> Project Reference</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item d-none d-lg-block">
+  <a class="nav-link d-flex align-items-center gap-2"
+     href="https://wa.me/601114200953"
+     target="_blank" rel="noopener"
+     aria-label="WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+    <span>WHATSAPP</span>
+  </a>
+</li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- add class 'pages' to enable the optional 2-col layout styles below -->
+  <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="pagesMenu">
+    <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="contactus.html">
+        <i class="bi-envelope"></i> Contact Us
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="joinus.html">
+        <i class="bi-people"></i> Join Us
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="news.html">
+        <i class="bi-newspaper"></i> Newsroom
+      </a>
+    </li>
+    <li>
+      <a class="dropdown-item d-flex align-items-center gap-2" href="cp.html">
+        <i class="bi-diagram-3"></i> Project Reference
+      </a>
+    </li>
+  </ul>
+</li>
+                        
+                    </div>
+                </div>
+            </nav>
+            
+
+                <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+                <video autoplay muted loop playsinline class="hero-bg-video">
+                    <source src="video/mobility.mp4" type="video/mp4">
+                </video>
+
+                <div class="container position-relative">
+                    <div class="row">
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h1 class="text-white text-center">Smart Parking & City Solutions Made Simple</h1>
+
+                        <h6 class="text-center">QR Scan & Go · LPR/ANPR · Real-time Enforcement · Highway Toll</h6>
+
+                        <div class="hero-actions">
+                          <a class="hero-action-link" href="https://digatal-registartion-form-z79f.vercel.app/application-type.html">Season pass registration</a>
+                          <a class="hero-action-link" href="https://digatal-registartion-form-z79f.vercel.app/renewal-type.html">Renew</a>
+                        </div>
+
+                        
+                    </div>
+                    </div>
+                </div>
+                </section>
+
+                <section class="vision-mission-section section-padding">
+                <div class="container">
+                    <div class="row align-items-center text-center">
+                    <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                        <video autoplay muted loop playsinline class="vision-video rounded-3 shadow-sm">
+                        <source src="video/new2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="col-lg-7 col-md-6">
+                        <h2 class="fw-bold mb-3">Vision</h2>
+                        <p>To pioneer connected <span class="text-success fw-semibold">smart parking</span> and 
+                        <span class="text-success fw-semibold">toll systems</span>, improving millions of lives 
+                        and shaping a landscape of <span class="fw-semibold">smart cities</span>.</p>
+                    </div>
+                    </div>
+
+                    <hr class="my-5">
+
+                    <div class="row align-items-center flex-md-row-reverse text-center">
+                    <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                        <video autoplay muted loop playsinline class="mission-video rounded-3 shadow-sm">
+                        <source src="video/new.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="col-lg-7 col-md-6">
+                        <h2 class="fw-bold mb-3">Mission</h2>
+                        <p>Transforming traditional <span class="fw-semibold">parking</span> and 
+                        <span class="fw-semibold">tolling</span> systems into a connected, real-time 
+                        platform that promotes <span class="text-success fw-semibold">cashless</span>, 
+                        <span class="text-success fw-semibold">touchless</span> operations and full 
+                        <span class="fw-semibold">visibility</span> for both operators and users, 
+                        enabling smoother mobility and improving urban life.</p>
+                    </div>
+                    </div>
+                </div>
+                </section>
+
+
+            <section class="featured-section">
+                <div class="container">
+                    <div class="row justify-content-center">
+
+                        <div class="col-lg-4 col-12 mb-4 mb-lg-0">
+                            <div class="custom-block bg-white shadow-lg">
+                                <a href="howitwork.html">
+                                    <div class="d-flex">
+                                        <div>
+                                            <h5 class="mb-2">How it Works</h5>
+
+                                            <p class="mb-0">Ticketless entry/exit, cashless payments, and fast deployment for car parks.</p>
+                                        </div>
+
+                                        <span class="badge bg-design rounded-pill ms-auto">Live</span>
+                                    </div>
+
+                                    <img src="images/how.png" class="custom-block-image img-fluid" alt="Scan & Go (QR)">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-12">
+                            <div class="custom-block custom-block-overlay">
+                                <div class="d-flex flex-column h-100">
+                                    <img src="images/businesswoman-using-tablet-analysis.jpg" class="custom-block-image img-fluid" alt="License Plate Recognition">
+
+                                    <div class="custom-block-overlay-text d-flex">
+                                        <div>
+                                            <h5 class="text-white mb-2">Scan & Go</h5>
+
+                                            <p class="text-white">Simply scan a QR code to start and end your session, and pay seamlessly through our integrated e-wallet</p>
+
+                                            <a href="scango.html" class="btn custom-btn mt-2 mt-lg-3">Learn More</a>
+                                        </div>
+
+                                        <span class="badge bg-finance rounded-pill ms-auto">AI</span>
+                                    </div>
+
+                                    <div class="social-share d-flex">
+                                        <p class="text-white me-4">Share:</p>
+
+                                        <ul class="social-icon">
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-twitter"></a>
+                                            </li>
+
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-facebook"></a>
+                                            </li>
+
+                                            <li class="social-icon-item">
+                                                <a href="#" class="social-icon-link bi-pinterest"></a>
+                                            </li>
+                                        </ul>
+
+                                        <a href="#" class="custom-icon bi-bookmark ms-auto"></a>
+                                    </div>
+
+                                    <div class="section-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="explore-section section-padding" id="section_2">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12 text-center">
+                            <h2 class="mb-4">Solutions</h2>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">Parking</button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">Enforcement</button>
+                            </li>
+
+                            
+
+                            
+
+                           
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-12">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab" tabindex="0">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="onstreet.html">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">On-Street Council Parking</h5>
+
+                                                            <p class="mb-0">Search, pay, and manage bays with real-time visibility and compliance tools.</p>
+                                                        </div>
+
+                                                      
+                                                    </div>
+
+                                                    <img src="images/i1.png" class="custom-block-image img-fluid" alt="On-street parking">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="offstreet.html">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">Off-Street / Commercial</h5>
+
+                                                                <p class="mb-0">Ticketless, cashless car parks with auto-deduct and minimal manpower.</p>
+                                                        </div>
+
+                                                        
+                                                    </div>
+
+                                                    <img src="images/ii2.png" class="custom-block-image img-fluid" alt="Off-street parking">
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 col-12">
+                                            <div class="custom-block bg-white shadow-lg">
+                                                <a href="topics-detail.html">
+                                                    <div class="d-flex">
+                                                        <div>
+                                                            <h5 class="mb-2">Private Car Park Sharing</h5>
+
+                                                                <p class="mb-0">Monetize idle bays with controlled access and dynamic pricing.</p>
+                                                        </div>
+
+                                                        
+                                                    </div>
+
+                                                    <img src="images/i3.png" class="custom-block-image img-fluid" alt="Car park sharing">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
+                                    <div class="row">
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
+                                                <div class="custom-block bg-white shadow-lg">
+                                                    <a href="enforcement.html">
+                                                        <div class="d-flex">
+                                                            <div>
+                                                                <h5 class="mb-2">Violation Detection</h5>
+
+                                                                <p class="mb-0">Detect no-pay, overstay, and restricted zones with evidence capture.</p>
+                                                            </div>
+
+                                                            
+
+                                                        <img src="images/e1.png" class="custom-block-image img-fluid" alt="Violation detection">
+                                                    </a>
+                                                </div>
+                                            </div>
+
+            </section>
+
+
+            
+            <section class="faq-section section-padding" id="section_4">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-6 col-12">
+                            <h2 class="mb-4">Frequently Asked Questions</h2>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="col-lg-5 col-12">
+                            <img src="images/faq_graphic.jpg" class="img-fluid" alt="FAQs">
+                        </div>
+
+                        <div class="col-lg-6 col-12 m-auto">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        How fast can we go live?
+                                        </button>
+                                    </h2>
+
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Typical pilot launches within <strong>7–14 days</strong>, depending on site complexity, hardware lead time, and integrations.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Do you support multiple payment methods?
+                                    </button>
+                                    </h2>
+
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            Yes — e-wallets, debit/credit cards, and municipal payment channels. We can integrate with your PSP.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        How accurate is the LPR/ANPR?
+                                    </button>
+                                    </h2>
+
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            With proper camera placement and calibration, production accuracy typically reaches <strong>100%</strong> under mixed conditions.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- FEEDBACK / TESTIMONIALS -->
+<section class="section-padding feedback-wrap" id="feedback">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-4">
+      <div class="col-lg-8">
+        <span class="badge bg-success-subtle text-success fw-semibold px-3 py-1">Feedback</span>
+        <h2 class="mt-3">What Our Customers Said</h2>
+        <p class="text-muted">Real stories from people using Hispeedcity every day.</p>
+      </div>
+    </div>
+
+    <div class="feedback-slider">
+      <article class="fb-card t-card">
+  <!-- header -->
+  <div class="t-head">
+    <span class="t-logo-wrap">
+      <img class="t-logo" src="./images-index/MCMC.jpg" alt="MCMC logo">
+    </span>
+    <h3 class="t-company">MCMC</h3>
+  </div>
+
+  <!-- quote -->
+  <p class="t-quote">
+    Beyond cashless! No more access cards! Enter &amp; exit without stopping or rolling down windows.
+  </p>
+
+  <!-- user -->
+  <div class="t-user">
+    <div class="t-avatar-wrap">
+      <img class="t-avatar" src="./images-bd/man.png" alt="Portrait of Zukhair">
+    </div>
+    <div>
+      <p class="t-name">Zukhair</p>
+      <p class="t-title">Vice director</p>
+    </div>
+  </div>
+</article>
+
+<!-- item 2: Deluxe Games (updated) -->
+<article class="fb-card t-card">
+  <!-- header -->
+  <div class="t-head">
+    <span class="t-logo-wrap">
+      <img class="t-logo" src="./images-index/deluxe_games_sb.jpeg" alt="Deluxe Games Sdn Bhd logo">
+    </span>
+    <h3 class="t-company">Deluxe Games Sdn Bhd</h3>
+  </div>
+
+  <!-- quote -->
+  <p class="t-quote">
+    Super flexible! Register 3 cars under one booking, no deposit, no lost card penalties.
+  </p>
+
+  <!-- user -->
+  <div class="t-user">
+    <div class="t-avatar-wrap">
+      <img class="t-avatar" src="./images-bd/woman.png" alt="Portrait of Amira Hamdan">
+    </div>
+    <div>
+      <p class="t-name">Amira Hamdan</p>
+      <p class="t-title">Admin &amp; HR Executive</p>
+    </div>
+  </div>
+</article>
+
+<!-- item 3: Iskandar Investment Berhad (updated) -->
+<article class="fb-card t-card">
+  <div class="t-head">
+    <span class="t-logo-wrap">
+      <img class="t-logo" src="./images-index/IIB.jpg" alt="Iskandar Investment Berhad logo">
+    </span>
+    <h3 class="t-company">Iskandar Investment Berhad</h3>
+  </div>
+
+  <p class="t-quote">
+    A fantastic experience! Smooth entry and exit, no need for tickets, cards, pay machines, or waiting in line.
+    Truly convenient and hassle-free! I’m really impressed.
+  </p>
+
+  <div class="t-user">
+    <div class="t-avatar-wrap">
+      <img class="t-avatar" src="./images-bd/woman.png" alt="Portrait of Hemavathih">
+    </div>
+    <div>
+      <p class="t-name">Hemavathih</p>
+      <p class="t-title">Associate</p>
+    </div>
+  </div>
+</article>
+
+<!-- item 4: EY Malaysia (updated) -->
+<article class="fb-card t-card">
+  <div class="t-head">
+    <span class="t-logo-wrap">
+      <img class="t-logo" src="./images-index/EY_malaysia.png" alt="EY Malaysia logo">
+    </span>
+    <h3 class="t-company">EY Malaysia</h3>
+  </div>
+
+  <p class="t-quote">
+    Super flexible! Register 3 cars under one booking, no deposit, no lost card penalties.
+  </p>
+
+  <div class="t-user">
+    <div class="t-avatar-wrap">
+      <img class="t-avatar" src="./images-bd/man.png" alt="Portrait of JX Tan">
+    </div>
+    <div>
+      <p class="t-name">JX Tan</p>
+      <p class="t-title">Partner</p>
+    </div>
+  </div>
+
+</article>
+
+<!-- Controls -->
+<div class="fb-controls">
+  <button class="fb-btn fb-prev" type="button" aria-label="Previous testimonial">
+    <i class="bi-chevron-left" aria-hidden="true"></i>
+  </button>
+  <button class="fb-btn fb-next" type="button" aria-label="Next testimonial">
+    <i class="bi-chevron-right" aria-hidden="true"></i>
+  </button>
+</div>
+  </div>
+</section>
+
+
+
+            <section class="contact-section section-padding section-bg" id="section_5">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-12 col-12 text-center">
+        <h2 class="mb-5">Get in touch</h2>
+      </div>
+
+      <!-- 1) Replace the old iframe column with this -->
+<div class="col-lg-5 col-12 mb-4 mb-lg-0">
+  <div id="branch-map" style="width:100%; height:250px; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.08)"></div>
+  <noscript>
+    <p class="mt-2">View on map:
+      <a href="https://www.openstreetmap.org/way/1153593836" target="_blank" rel="noopener">Kuala Lumpur (MRANTI)</a> ·
+      <a href="https://www.openstreetmap.org/search?query=Public%20Bank%20Tower%20Jalan%20Wong%20Ah%20Fook%20Johor%20Bahru" target="_blank" rel="noopener">Johor Branch</a>
+    </p>
+  </noscript>
+</div>
+
+      <!-- KL Head Office -->
+      <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg-0 mb-md-0 ms-auto">
+        <h4 class="mb-3">Johor</h4>
+
+        <p class="mb-2">
+          Lot 29.01, Level 29<br>
+          Public Bank Tower<br>
+          Jalan Wong Ah Fook<br>
+          80000 Johor Bahru<br>
+          Johor, Malaysia
+        </p>
+
+        <hr>
+
+        <p class="d-flex align-items-center mb-1">
+          <span class="me-2">Office Phone</span>
+          <a href="https://wa.me/6072071118" class="site-footer-link">
+            +6072071118
+          </a>
+        </p>
+
+        <p class="d-flex align-items-center mb-1">
+          <span class="me-2">Phone</span>
+          <a href="https://wa.me/601114200953" class="site-footer-link">
+            +(60)11-1420 0953
+          </a>
+        </p>
+
+        <p class="d-flex align-items-center">
+          <span class="me-2">Email</span>
+          <a href="mailto:hi@hispeedcity.com" class="site-footer-link">
+            hi@hispeedcity.com
+          </a>
+        </p>
+      </div>
+
+      <!-- Johor Branch -->
+      <div class="col-lg-3 col-md-6 col-12 mx-auto">
+        <h4 class="mb-3">Kuala Lumpur</h4>
+
+        <p class="mb-2">
+          Office 28, Level 1<br>
+          MRANTI Building Resource Centre,<br>
+          Taman Teknologi MRANTI, Bukit Jalil,<br>
+          57000 Kuala Lumpur, Malaysia
+        </p>
+
+        <hr>
+
+        <p class="d-flex align-items-center mb-1">
+          <span class="me-2">Office Phone</span>
+          <a href="https://wa.me/6072071118" class="site-footer-link">
+            +6072071118
+          </a>
+        </p>
+
+        <p class="d-flex align-items-center mb-1">
+          <span class="me-2">Phone</span>
+          <a href="https://wa.me/601114200953" class="site-footer-link">
+            +(60)11-1420 0953
+          </a>
+        </p>
+
+        <p class="d-flex align-items-center">
+          <span class="me-2">Email</span>
+          <a href="mailto:hi@hispeedcity.com" class="site-footer-link">
+            hi@hispeedcity.com
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer site-footer--dark section-padding">
+  <div class="container">
+    <div class="row align-items-start">
+
+      <!-- Brand + blurb -->
+      <div class="col-lg-4 col-md-6 col-12 mb-4">
+        <a class="footer-brand d-inline-flex align-items-center mb-3" href="index.html" aria-label="Hispeedcity">
+          <img src="images/HI LOGO.png" alt="Hispeedcity" class="footer-logo">
+        </a>
+        <p class="footer-blurb">
+          Smart mobility &amp; parking solutions powered by AI + IoT.
+          Reducing congestion and enabling connected smart cities in Malaysia.
+        </p>
+        <p class="copyright-text mt-3 mb-0">
+          © <span id="y"></span> Hispeedcity Sdn Bhd (1331446-H)
+        </p>
+      </div>
+
+      <!-- Quick links -->
+      <div class="col-lg-3 col-md-6 col-6 mb-4">
+        <h6 class="site-footer-title mb-3">Quick Links</h6>
+        <ul class="site-footer-links">
+          <li class="site-footer-link-item"><a href="about.html" class="site-footer-link">About Us</a></li>
+          <li class="site-footer-link-item"><a href="services.html" class="site-footer-link">Services</a></li>
+          <li class="site-footer-link-item"><a href="news.html" class="site-footer-link">Newsroom</a></li>
+          <li class="site-footer-link-item"><a href="contact.html" class="site-footer-link">Contact Us</a></li>
+          <li class="site-footer-link-item"><a href="joinus.html" class="site-footer-link">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- QR card -->
+      <div class="col-lg-3 col-md-6 col-6 mb-4">
+        <h6 class="site-footer-title mb-3">View our showroom</h6>
+        <a href="#" class="footer-qr card-qr d-inline-block" aria-label="Download Hispeedcity App">
+          <img src="images/showroom.png" alt="QR code to download Hispeedcity app" class="qr-img">
+        </a>
+        <small class="d-block mt-2 text-muted-contrast">Our digital solution showroom</small>
+      </div>
+
+      <!-- Contact + socials + language -->
+      <div class="col-lg-2 col-md-6 col-12 mb-4 ms-lg-auto">
+        <h6 class="site-footer-title mb-3">Get in Touch</h6>
+        <p class="text-white d-flex mb-1">
+          <a href="https://wa.me/601114200953" class="site-footer-link">+(60)11-1420 0953</a>
+        </p>
+        <p class="text-white d-flex mb-3">
+          <a href="mailto:hi@hispeedcity.com" class="site-footer-link">hi@hispeedcity.com</a>
+        </p>
+
+        <h6 class="site-footer-title mb-2">Follow Us</h6>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook" class="social-btn"><i class="bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram" class="social-btn"><i class="bi-instagram"></i></a>
+          <a href="#" aria-label="YouTube" class="social-btn"><i class="bi-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn" class="social-btn"><i class="bi-linkedin"></i></a>
+        </div>
+
+        <div class="dropdown mt-4">
+          <button class="btn btn-language dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            English
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><button class="dropdown-item" type="button">中文</button></li>
+            <li><button class="dropdown-item" type="button">ไทย</button></li>
+            <li><button class="dropdown-item" type="button">العربية</button></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="row">
+      <div class="col-12 d-flex justify-content-between small text-muted-contrast">
+        <span>Terms of Service</span>
+        <span>Privacy Policy</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/click-scroll.js"></script>
+        <script src="js/custom.js"></script>
+        <script>
+            // update footer year without changing structure
+            document.getElementById('y') && (document.getElementById('y').textContent = new Date().getFullYear());
+        </script>
+
+        <script>
+(function(){
+  const wrap = document.querySelector('.feedback-slider');
+  const prev = document.querySelector('.fb-prev');
+  const next = document.querySelector('.fb-next');
+  if(!wrap) return;
+
+  const cardWidth = () => wrap.querySelector('.fb-card')?.getBoundingClientRect().width + 16 || 320;
+
+  next.addEventListener('click', ()=> wrap.scrollBy({left: cardWidth(), behavior:'smooth'}));
+  prev.addEventListener('click', ()=> wrap.scrollBy({left:-cardWidth(), behavior:'smooth'}));
+
+  // Auto-slide (pause on hover)
+  let timer;
+  const start = ()=> timer = setInterval(()=> wrap.scrollBy({left: cardWidth(), behavior:'smooth'}), 3500);
+  const stop = ()=> clearInterval(timer);
+  start(); wrap.addEventListener('mouseenter', stop); wrap.addEventListener('mouseleave', start);
+
+  // Touch swipe works natively with overflow-x; below adds “snap-to” on drag end
+  let x=0, sx=0;
+  wrap.addEventListener('pointerdown', e=>{ sx = wrap.scrollLeft; x = e.clientX; wrap.setPointerCapture(e.pointerId); stop(); });
+  wrap.addEventListener('pointermove', e=>{ if(x) wrap.scrollLeft = sx + (x - e.clientX); });
+  wrap.addEventListener('pointerup', ()=>{ x=0; start(); });
+})();
+</script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+/>
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""
+></script>
+
+<script>
+  // Brand-friendly subtle map accent
+  const brandGreen = getComputedStyle(document.documentElement)
+    .getPropertyValue('--hispeed-green') || '#1A7C34';
+
+  // Approximate coordinates for both offices
+  // KL – MRANTI Building Resource Centre, Bukit Jalil
+  const KL = { lat: 3.0542, lng: 101.6939 };
+  // Johor – Public Bank Tower, Jalan Wong Ah Fook, Johor Bahru
+  const JB = { lat: 1.4616, lng: 103.7635 };
+
+  // Initialize map
+  const map = L.map('branch-map', { scrollWheelZoom: false });
+
+  // Base tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  // Markers + popups
+  const klPopup = `
+    <strong>Kuala Lumpur</strong><br>
+    Office 28, Level 1<br>
+    MRANTI Building Resource Centre,<br>
+    Taman Teknologi MRANTI, Bukit Jalil,<br>
+    57000 Kuala Lumpur
+  `;
+  const jbPopup = `
+    <strong>Johor </strong><br>
+    HISPEEDCITY SDN. BHD. (1331446-H)<br>
+    LOT 29.01, LEVEL 29, PUBLIC BANK TOWER<br>
+    JALAN WONG AH FOOK, 80000 JOHOR BAHRU<br>
+    JOHOR, MALAYSIA
+  `;
+
+  const klMarker = L.marker([KL.lat, KL.lng]).bindPopup(klPopup);
+  const jbMarker = L.marker([JB.lat, JB.lng]).bindPopup(jbPopup);
+
+  klMarker.addTo(map);
+  jbMarker.addTo(map);
+
+  // Fit bounds to show both pins, with a little padding
+  const group = L.featureGroup([klMarker, jbMarker]);
+  map.fitBounds(group.getBounds(), { padding: [30, 30] });
+
+  // Minor brand touch: focus ring on popup open
+  map.on('popupopen', (e) => {
+    const el = e.popup.getElement();
+    if (el) el.style.boxShadow = `0 0 0 3px ${brandGreen}22`;
+  });
+</script>
+
+<script>
+(function(){
+  const slider = document.querySelector('.feedback-slider');
+  if(!slider) return;
+
+  // Clone originals once so widths are consistent (not strictly required, but harmless)
+  const originals = Array.from(slider.querySelectorAll('.fb-card'));
+  const originalCount = originals.length;
+  originals.forEach(c => slider.appendChild(c.cloneNode(true)));
+
+  // --- helpers ---
+  function cardStep(){
+    const first = slider.querySelector('.fb-card');
+    if(!first) return 300;
+    const gap = parseFloat(getComputedStyle(slider).columnGap || getComputedStyle(slider).gap || 0);
+    return Math.ceil(first.getBoundingClientRect().width + gap);
+  }
+
+  let idx = 0;                 // index inside ORIGINAL set (0..originalCount-1)
+  let step = cardStep();
+  let playTimer = null;
+  let endPauseTimer = null;
+
+  function clearTimers(){
+    clearInterval(playTimer);  playTimer = null;
+    clearTimeout(endPauseTimer); endPauseTimer = null;
+  }
+
+  function goTo(left, behavior='smooth'){
+    slider.style.scrollBehavior = behavior;
+    slider.scrollTo({ left });
+  }
+
+  function advance(){
+    step = cardStep();
+
+    // move to next index within original set
+    idx = Math.min(originalCount - 1, idx + 1);
+    goTo(idx * step, 'smooth');
+
+    // if we just reached the LAST original card, pause 5s, then reset to start
+    if (idx === originalCount - 1) {
+      clearTimers(); // stop auto-advance
+      endPauseTimer = setTimeout(() => {
+        // jump back to start invisibly and continue autoplay
+        goTo(0, 'auto');
+        idx = 0;
+        start(); // resume autoplay
+      }, 5000); // ⬅️ 5 seconds pause at the end
+    }
+  }
+
+  function start(){
+    if (playTimer) return;
+    playTimer = setInterval(advance, 3500); // normal step cadence
+  }
+  function stop(){
+    clearTimers();
+  }
+
+  // autoplay
+  start();
+
+  // pause/resume on hover
+  slider.addEventListener('mouseenter', stop);
+  slider.addEventListener('mouseleave', start);
+
+  // keep step correct when layout changes
+  window.addEventListener('resize', () => { step = cardStep(); });
+
+  // optional keyboard nudge when focused
+  slider.tabIndex = 0;
+  slider.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') advance();
+    if (e.key === 'ArrowLeft') {
+      step = cardStep();
+      idx = Math.max(0, idx - 1);
+      goTo(idx * step, 'smooth');
+    }
+  });
+})();
+</script>
+
+<script src="js/chatbot.js"></script>
+
+    </body>
+
+</html>

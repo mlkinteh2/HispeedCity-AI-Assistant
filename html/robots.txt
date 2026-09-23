@@ -1,0 +1,8 @@
+#
+# robots.txt for Hispeedcity Frontend System
+# Version 1.0
+#
+
+
+User-agent: *
+Disallow: /archived/

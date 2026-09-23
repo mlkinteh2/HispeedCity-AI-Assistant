@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="Step into the future of parking — how Hispeedcity works from sign-up to payment and visibility." />
+    <meta name="author" content="Hispeedcity" />
+    <title>How It Works Hispeedcity</title>
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <!-- (Optional) keep your site theme variables if present -->
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+
+    <style>
+      /* Page accents (compatible with your theme variables) */
+      :root{
+        --brand: #1EA64B;       /* green from logo */
+        --brand-2: #F2B705;     /* yellow accent */
+        --step-card-padding: 28px;     /* inner padding */
+  --step-card-radius: 18px;
+  --step-card-shadow: 0 18px 60px rgba(0,0,0,.08);
+
+  --step-icon-size: 150px;        /* ⬅️ icon/image size */
+  --step-title-size: 28px;       /* ⬅️ "Scan & Download" size */
+  --step-text-size: 18px;        /* ⬅️ paragraph size */
+
+  --step-arrow-size: 32px;       /* arrow between cards */
+      }
+      .site-header .carousel-item img{ border-radius: 22px }
+      .section-muted{ background: var(--section-bg-color, #f7fbff); }
+      .reveal{ opacity:0; transform: translateY(14px) }
+      .reveal.in{ opacity:1; transform:none; transition: .6s ease }
+
+      /* Steps */
+      .steps-card{
+        background:#fff;border-radius:18px;padding:18px;box-shadow:0 18px 48px rgba(0,0,0,.08);
+        height:100%;
+      }
+      .steps-card img{ width:72px; height:72px; object-fit:contain }
+      .arrow-col{ display:flex; align-items:center; justify-content:center }
+      .arrow-col img{ width:42px; height:auto; opacity:.6 }
+
+      /* ===== Rotating circular payment wheel ===== */
+.pay-wheel-wrap{
+  position:relative; width:min(520px, 90vw); aspect-ratio:1/1; 
+  margin: 0 auto; filter: drop-shadow(0 16px 42px rgba(0,0,0,.12));
+}
+.pay-wheel{
+  position:absolute; inset:0; border-radius:50%;
+  animation: pay-rotate 26s linear infinite;
+}
+.pay-wheel img{
+  position:absolute; top:50%; left:50%;
+  width:74px; height:74px; object-fit:contain; 
+  transform-origin: -180px center; /* radius from center */
+  background:#fff; border-radius:50%;
+  padding:10px; border:1px solid #e7efe9;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+/* place each logo around the circle (8 items here) */
+.pay-wheel img:nth-child(1){ transform: rotate(0deg) translateX(-180px) rotate(0deg); }
+.pay-wheel img:nth-child(2){ transform: rotate(45deg) translateX(-180px) rotate(-45deg); }
+.pay-wheel img:nth-child(3){ transform: rotate(90deg) translateX(-180px) rotate(-90deg); }
+.pay-wheel img:nth-child(4){ transform: rotate(135deg) translateX(-180px) rotate(-135deg); }
+.pay-wheel img:nth-child(5){ transform: rotate(180deg) translateX(-180px) rotate(-180deg); }
+.pay-wheel img:nth-child(6){ transform: rotate(225deg) translateX(-180px) rotate(-225deg); }
+.pay-wheel img:nth-child(7){ transform: rotate(270deg) translateX(-180px) rotate(-270deg); }
+.pay-wheel img:nth-child(8){ transform: rotate(315deg) translateX(-180px) rotate(-315deg); }
+
+/* center badge */
+.pay-center{
+  position:absolute; inset:0; display:grid; place-items:center; text-align:center;
+}
+.pay-center-badge{
+  width:118px; height:118px; border-radius:50%;
+  background:linear-gradient(135deg, var(--brand,#1EA64B), #80D0C7);
+  color:#fff; display:grid; place-items:center; font-size:38px;
+  box-shadow:0 10px 28px rgba(30,166,75,.25);
+}
+
+/* motion + interaction */
+@keyframes pay-rotate{ to{ transform: rotate(360deg); } }
+.pay-wheel-wrap:hover .pay-wheel{ animation-play-state: paused; } /* pause on hover */
+
+@media (max-width:576px){
+  .pay-wheel img{ width:62px; height:62px; transform-origin: -150px center; }
+  .pay-wheel img:nth-child(n){ transform: none; } /* reset */
+  /* Recompute positions for smaller radius */
+  .pay-wheel img:nth-child(1){ transform: rotate(0deg) translateX(-150px) rotate(0deg); }
+  .pay-wheel img:nth-child(2){ transform: rotate(45deg) translateX(-150px) rotate(-45deg); }
+  .pay-wheel img:nth-child(3){ transform: rotate(90deg) translateX(-150px) rotate(-90deg); }
+  .pay-wheel img:nth-child(4){ transform: rotate(135deg) translateX(-150px) rotate(-135deg); }
+  .pay-wheel img:nth-child(5){ transform: rotate(180deg) translateX(-150px) rotate(-180deg); }
+  .pay-wheel img:nth-child(6){ transform: rotate(225deg) translateX(-150px) rotate(-225deg); }
+  .pay-wheel img:nth-child(7){ transform: rotate(270deg) translateX(-150px) rotate(-270deg); }
+  .pay-wheel img:nth-child(8){ transform: rotate(315deg) translateX(-150px) rotate(-315deg); }
+}
+
+.section-muted {
+  background: linear-gradient(180deg, #f8fff9 0%, #e9f7ee 100%);
+}
+
+/* Align and give consistent spacing */
+.pay-row img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border-radius: 18px;
+  background: #fff;
+  padding: 14px 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+}
+
+/* Hover lift with Hispeedcity green glow */
+.pay-row img:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 10px 28px rgba(255, 193, 7, 0.45);
+}
+
+/* Reveal animation (fade + slide) */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(.19,1,.22,1);
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: floating effect for a live fintech vibe */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.pay-row img.floaty {
+  animation: floaty 4s ease-in-out infinite;
+}
+
+/* Subtle kicker label style */
+.kicker {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #24A148;
+  font-weight: 700;
+}
+
+
+
+      /* Large banners */
+      .banner-img{
+        width:100%; height:auto; border-radius:22px; box-shadow:0 18px 50px rgba(0,0,0,.10)
+      }
+
+      /* Sticky phone (if you later add a phone column) */
+      .sticky-card{ position:sticky; top:96px }
+
+      /* Small helpers */
+      .kicker{ letter-spacing:.12em; text-transform: uppercase; color: var(--brand); font-weight:700 }
+      .accent{ color: var(--brand) }
+
+/* IR4.0 section styling (uses your tokens) */
+#ir4 .kicker{font-size:.9rem;text-transform:uppercase;letter-spacing:2px;color:#24A148;font-weight:700}
+.ir4-grid .ir4-card{
+  height:100%; background:#fff; border-radius:18px; padding:18px 20px;
+  box-shadow:0 8px 24px rgba(0,0,0,.06); transition:transform .25s ease, box-shadow .25s ease
+}
+.ir4-card:hover{transform:translateY(-6px); box-shadow:0 16px 40px rgba(255,193,7,.25)} /* yellow glow */
+.ir4-icon{font-size:28px; width:48px; height:48px; border-radius:12px; display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(135deg,#24A148, #80d03a); color:#fff; margin-bottom:10px}
+.ir4-card h6{margin:6px 0 4px}
+.ir4-card p{margin:0 0 8px; color:var(--p-color)}
+.chip{display:inline-block; font-size:.78rem; margin-right:6px; margin-top:4px; padding:4px 8px; border-radius:999px;
+  background:#f7f7f7; border:1px solid #eee}
+
+/* reuse your reveal scroll-in */
+.reveal{opacity:0; transform:translateY(16px); transition:all .6s cubic-bezier(.19,1,.22,1)}
+.reveal.in{opacity:1; transform:translateY(0)}
+
+/* --- FORCE SOLID GREEN HEADER --- */
+:root{
+  --hispeed-green:#1A7C34;
+}
+
+/* Make ALL navbar variants solid green */
+.navbar,
+.navbar.site-nav--glass,
+.custom-navbar{
+  background: var(--hispeed-green) !important;
+  border-bottom: none !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,.08);
+}
+
+
+
+/* Optional: keep your hover pill but on green bar */
+.navbar .nav-link::before{
+  background: rgba(255,255,255,.12);
+}
+
+/* Mobile stays green */
+@media (max-width: 992px){
+  .navbar{ background: var(--hispeed-green) !important; }
+}
+
+/* If your nav is fixed, add top offset so anchors don't hide */
+body{ scroll-padding-top: 78px; }
+
+/* full width (breaks out of .container) */
+.fullbleed{
+  width:100vw; margin-left:calc(50% - 50vw);
+}
+.fullbleed img{
+  display:block; width:100%; height:min(560px, 70vh);
+  object-fit:cover; /* cover the whole strip */
+}
+/* stop cropping for selected images */
+.fullbleed-img--contain{
+  width:100%;
+  height:auto !important;     /* remove the fixed height */
+  object-fit:contain !important;
+  background:#fff;            /* optional, so empty space looks clean */
+}
+
+/* card container */
+.steps-card{
+  padding: var(--step-card-padding);
+  border-radius: var(--step-card-radius);
+  box-shadow: var(--step-card-shadow);
+  background:#fff;
+}
+
+/* top image/icon inside the card */
+.steps-card > img{
+  width: var(--step-icon-size);
+  height: var(--step-icon-size);
+  object-fit: contain;
+  display:block;
+  margin: 0 auto 10px;
+}
+
+/* text sizes */
+.steps-card h6{
+  font-size: var(--step-title-size);
+  font-weight: 700;
+  color: var(--hispeed-green, #1A7C34);
+  margin-bottom: 6px;
+}
+.steps-card p{
+  font-size: var(--step-text-size);
+  line-height: 1.6;
+}
+
+/* arrow between cards */
+.arrow-col img{
+  height: var(--step-arrow-size);
+  width: auto;
+  opacity:.6;
+  margin-top: calc(var(--step-icon-size) / 2); /* vertical centering feel */
+}
+
+/* responsive: stack but keep bigger look */
+@media (max-width: 991.98px){
+  .arrow-col{ display:none !important; }  /* hide arrows on small screens */
+  .steps-card{ max-width: 720px; margin: 0 auto; }
+}
+
+    </style>
+  </head>
+
+  <body id="top">
+    <main>
+                  <!-- NAV -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/HI-LOGO.png" alt="Hispeedcity Logo" height="45">
+          </a>
+
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="index.html">Home</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="onstreet.html" id="solutionsMenu"
+                                      role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Solutions
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="solutionsMenu">
+                                      <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2" href="onstreet.html">
+                                          <i class="bi-geo"></i> On-street Parking
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2" href="offstreet.html">
+                                          <i class="bi-building"></i> Off-street Parking
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2" href="topics-detail.html">
+                                          <i class="bi-journal-text"></i> Private Car Park Sharing
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="howitwork.html">How it works</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="scango.html">Scan & Go</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="offering.html">Our Offering</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="team.html">Our Team</a>
+                            </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="pagesMenu">
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="contactus.html"><i class="bi-envelope"></i>Contact Us</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="joinus.html"><i class="bi-people"></i>Join Us</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="news.html"><i class="bi-newspaper"></i>Newsroom</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="cp.html"><i class="bi-diagram-3"></i>Project Reference</a></li>
+                </ul>
+              </li>
+            </ul>
+
+          
+          </div>
+        </div>
+      </nav>
+
+
+      <!-- HERO: image carousel using your existing images -->
+      <header class="site-header d-flex flex-column justify-content-center align-items-center">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active"><img src="images/howbanner.png" class="d-block w-100" alt="Smart Parking"></div>
+        
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+              <div class="text-center mt-4">
+                <span class="kicker">How it works</span>
+                <h2 class="text-white mt-2">From Sign-up to Seamless Parking</h2>
+                <p class="text-white-50 mt-2">A quick, intuitive flow powered by IoT, payments and real-time visibility.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+
+      <!-- 3-STEP ONBOARDING (uses your rhqz images & arrow) -->
+      <section class="section-padding section-muted">
+        <div class="container">
+          <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+              <span class="kicker">Step 1–3</span>
+              <h3 class="mt-2">Get started in minutes</h3>
+            </div>
+          </div>
+
+          <div class="row g-3 align-items-stretch">
+            <div class="col-md-4">
+              <div class="steps-card reveal h-100 text-center">
+                <img src="images/rhqz_a.png" alt="QR Scanning and Downloading" class="mb-2">
+                <h6>Scan & Download</h6>
+                <p class="mb-0">Scan the QR to download the app and register your vehicle profile.</p>
+              </div>
+            </div>
+
+            <div class="col-md-1 arrow-col d-none d-md-flex">
+              <img src="images/rhqz_jiantou.png" alt="Arrow">
+            </div>
+
+            <div class="col-md-3">
+              <div class="steps-card reveal h-100 text-center">
+                <img src="images/rhqz_b2.png" alt="Payment Method" class="mb-2">
+                <h6>Choose payment</h6>
+                <p class="mb-0">Set your preferred method (e-wallet / card / bank) and deposit.</p>
+              </div>
+            </div>
+
+            <div class="col-md-1 arrow-col d-none d-md-flex">
+              <img src="images/rhqz_jiantou.png" alt="Arrow">
+            </div>
+
+            <div class="col-md-3">
+              <div class="steps-card reveal h-100 text-center">
+                <img src="images/rhqz_c.png" alt="APP Ready for Use" class="mb-2">
+                <h6>Ready to go</h6>
+                <p class="mb-0">App is ready—book, navigate and pay touchlessly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- APP FEATURES BANNER (your big composite image) -->
+     <section class="fullbleed">
+  <img src="images/202001081131pic1.png" class="fullbleed-img--contain" alt="">
+</section>
+
+      <!-- PAYMENT METHODS — Cover-flow Carousel -->
+<section class="pay-cf" aria-labelledby="payHeading">
+  <div class="container">
+    <h2 id="payHeading" class="pay-cf__title">Payment Methods</h2>
+
+    <div class="pay-cf__wrap" role="region" aria-roledescription="carousel">
+      <button class="pay-cf__ctrl pay-cf__prev" aria-label="Previous slide">
+        ‹
+      </button>
+
+      <ul class="pay-cf__track" aria-live="polite">
+        <!-- Each li is a “card” -->
+        <li class="pay-cf__slide">
+          <img src="images/news/Slide1.PNG" alt="E-wallets and cards" loading="lazy">
+        </li>
+        <li class="pay-cf__slide">
+          <img src="images/news/Slide3.PNG" alt="Online banking set A" loading="lazy">
+        </li>
+        <li class="pay-cf__slide">
+          <img src="images/news/Slide4.PNG" alt="Online banking set B" loading="lazy">
+        </li>
+        <li class="pay-cf__slide">
+          <img src="images/news/Slide5.PNG" alt="Online banking set C" loading="lazy">
+        </li>
+        <li class="pay-cf__slide">
+          <img src="images/news/SlideNew.png" alt="More wallets" loading="lazy">
+        </li>
+      </ul>
+
+      <button class="pay-cf__ctrl pay-cf__next" aria-label="Next slide">
+        ›
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ===== Cover-flow payments ===== */
+.pay-cf{padding:56px 0;background:#f5f7f6}
+.pay-cf__title{
+  text-align:center;margin:0 0 28px;color:#373737;font-weight:700;
+  font-size:clamp(28px,3.8vw,54px); letter-spacing:.01em;
+}
+.pay-cf__wrap{
+  position:relative; max-width:1100px; margin:0 auto;
+  perspective: 1600px;   /* 3D space for the cards */
+}
+.pay-cf__track{
+  list-style:none;margin:0;padding:60px 0; position:relative; height:420px;
+}
+.pay-cf__slide{
+  --w: 760px; --h: 430px;
+  position:absolute; top:50%; left:50%; transform-style:preserve-3d;
+  width:var(--w); height:var(--h); transform:translate(-50%,-50%);
+  border-radius:12px; background:#fff; overflow:hidden;
+  box-shadow:0 18px 40px rgba(0,0,0,.18), 0 3px 10px rgba(0,0,0,.08);
+  transition: transform .6s cubic-bezier(.2,.7,.2,1), opacity .6s, filter .6s;
+}
+.pay-cf__slide img{width:100%;height:100%;object-fit:cover;display:block}
+
+.pay-cf__ctrl{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:44px;height:44px;border-radius:50%; border:0; cursor:pointer;
+  background:#fff; color:#1A7C34; font-size:30px; line-height:44px;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+.pay-cf__prev{left:-6px} .pay-cf__next{right:-6px}
+.pay-cf__ctrl:hover{background:#eaf7ef}
+
+@media (max-width: 1024px){
+  .pay-cf__slide{--w: 88vw; --h: clamp(260px, 48vw, 380px)}
+}
+
+/* Positions: center, sides, and deep sides */
+.pay-cf__slide[data-pos="0"]{ /* center (front) */
+  z-index:5; transform:translate(-50%,-50%) rotateY(0) translateZ(0) scale(1);
+  filter: none; opacity:1;
+}
+.pay-cf__slide[data-pos="-1"]{ /* left 1 */
+  z-index:4; transform:translate(calc(-50% - 250px),-50%) rotateY(26deg) scale(.92);
+  filter: saturate(.9) contrast(.95) brightness(.98);
+}
+.pay-cf__slide[data-pos="1"]{  /* right 1 */
+  z-index:4; transform:translate(calc(-50% + 250px),-50%) rotateY(-26deg) scale(.92);
+  filter: saturate(.9) contrast(.95) brightness(.98);
+}
+.pay-cf__slide[data-pos="-2"]{ /* left 2 (further back) */
+  z-index:3; transform:translate(calc(-50% - 500px),-50%) rotateY(26deg) scale(.86);
+  opacity:.75; filter: blur(.2px) saturate(.85) brightness(.97);
+}
+.pay-cf__slide[data-pos="2"]{  /* right 2 */
+  z-index:3; transform:translate(calc(-50% + 500px),-50%) rotateY(-26deg) scale(.86);
+  opacity:.75; filter: blur(.2px) saturate(.85) brightness(.97);
+}
+/* graceful crop on very narrow screens: flatten the angles a bit */
+@media (max-width:700px){
+  .pay-cf__slide[data-pos="-1"]{transform:translate(calc(-50% - 38vw),-50%) rotateY(18deg) scale(.93)}
+  .pay-cf__slide[data-pos="1"]{ transform:translate(calc(-50% + 38vw),-50%) rotateY(-18deg) scale(.93)}
+  .pay-cf__slide[data-pos="-2"]{transform:translate(calc(-50% - 68vw),-50%) rotateY(14deg) scale(.86)}
+  .pay-cf__slide[data-pos="2"]{ transform:translate(calc(-50% + 68vw),-50%) rotateY(-14deg) scale(.86)}
+}
+
+/* Pause auto-rotate on hover */
+.pay-cf__wrap:hover { --pause: 1 }
+</style>
+
+<script>
+(() => {
+  const wrap  = document.querySelector('.pay-cf__wrap');
+  const track = document.querySelector('.pay-cf__track');
+  const slides = [...track.querySelectorAll('.pay-cf__slide')];
+  const prevBtn = document.querySelector('.pay-cf__prev');
+  const nextBtn = document.querySelector('.pay-cf__next');
+
+  let idx = 0; // current center slide
+
+  function render() {
+    const n = slides.length;
+    slides.forEach((li, i) => {
+      // shortest signed distance from i to idx in circular array
+      let d = (i - idx + n) % n;
+      if (d > n/2) d -= n;
+      // limit to -2..2 for our positions; hide others (if any)
+      li.style.visibility = Math.abs(d) > 2 ? 'hidden' : 'visible';
+      li.setAttribute('data-pos', String(d));
+    });
+  }
+
+  function next() { idx = (idx + 1) % slides.length; render(); }
+  function prev() { idx = (idx - 1 + slides.length) % slides.length; render(); }
+
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  // Keyboard
+  wrap.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
+  wrap.tabIndex = 0;
+
+  // Auto-rotate every 4s; pause on hover
+  let timer = setInterval(next, 4000);
+  wrap.addEventListener('mouseenter', () => clearInterval(timer));
+  wrap.addEventListener('mouseleave', () => (timer = setInterval(next, 4000)));
+
+  render();
+})();
+</script>
+
+
+<!-- FULL-BLEED BANNER -->
+<section class="fullbleed">
+  <img src="images/index01.png" class="fullbleed-img--contain" alt="">
+</section>
+
+
+      <!-- HOW IT WORKS — IMAGELESS BOTTOM SECTION -->
+<section class="section-padding hiw-wrap">
+  <div class="container">
+
+    
+
+    <!-- 4) METRICS -->
+    <div class="row text-center g-3 mb-5">
+      <div class="col-6 col-lg-3">
+        <div class="hiw-metric reveal">
+          <div class="hiw-num" data-target="99.5" data-suffix="%">0</div>
+          <p class="mb-0 text-muted">Uptime</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="hiw-metric reveal">
+          <div class="hiw-num" data-target="24" data-suffix="/7">0</div>
+          <p class="mb-0 text-muted">Monitoring</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="hiw-metric reveal">
+          <div class="hiw-num" data-target="7" data-suffix="d">0</div>
+          <p class="mb-0 text-muted">Avg. go-live</p>
+        </div>
+      </div>
+      <div class="col-6 col-lg-3">
+        <div class="hiw-metric reveal">
+          <div class="hiw-num" data-target="1" data-suffix="x AI">0</div>
+          <p class="mb-0 text-muted">Analytics engine</p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+<!-- Styles for the imageless section -->
+<style>
+  :root{
+    --brand:#1EA64B;        /* Hispeedcity green */
+    --brand2:#F2B705;       /* yellow accent */
+  }
+  .hiw-wrap{padding-top:80px;padding-bottom:80px}
+
+  /* flow */
+  .hiw-flow{
+    display:flex;flex-wrap:wrap;gap:18px;justify-content:center;
+    background:var(--section-bg-color);border-radius:18px;padding:18px
+  }
+  .hiw-step{
+    background:#fff;border-radius:14px;padding:14px 16px;min-width:140px;
+    box-shadow:0 10px 28px rgba(0,0,0,.08);text-align:center
+  }
+  .hiw-icon{
+    width:48px;height:48px;display:grid;place-items:center;border-radius:12px;margin:0 auto 8px;
+    background:linear-gradient(135deg,var(--brand),#80d0c7);color:#fff;font-size:22px
+  }
+  .hiw-label{font-weight:600}
+  .hiw-arrow{align-self:center;width:42px;height:2px;background:linear-gradient(90deg,var(--brand),var(--brand2));border-radius:2px}
+
+  /* phone mock */
+  .hiw-phone{
+    width:100%;max-width:340px;margin:auto;background:#111;border-radius:28px;padding:12px;
+    box-shadow:0 18px 50px rgba(0,0,0,.12);animation:floatY 8s ease-in-out infinite
+  }
+  .hiw-status{height:6px;width:34%;background:#333;border-radius:6px;margin:6px auto 10px}
+  .hiw-screen{background:#fff;border-radius:22px;padding:14px}
+  .hiw-row{display:flex;gap:8px;align-items:center;justify-content:center}
+  .hiw-pill{height:8px;width:36px;border-radius:8px;background:#e6f6ee}
+  .hiw-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0
+  }
+  .hiw-tile{
+    aspect-ratio:1/1;border-radius:12px;display:grid;place-items:center;font-size:22px;
+    background:linear-gradient(135deg,#e8f8f1,#fff);color:var(--brand)
+  }
+  .hiw-nav{justify-content:space-between;color:#94a3b8}
+  .hiw-nav i{font-size:18px}
+
+  /* cards */
+  .hiw-card{
+    display:flex;gap:12px;align-items:flex-start;background:#fff;border-radius:14px;padding:14px 16px;
+    box-shadow:0 10px 28px rgba(0,0,0,.08);transition:transform .25s ease, box-shadow .25s ease
+  }
+  .hiw-card i{
+    width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--brand),#80d0c7);color:#fff;font-size:18px;flex:none
+  }
+  .hiw-card:hover{transform:translateY(-4px);box-shadow:0 16px 42px rgba(30,166,75,.22)}
+
+  /* pipeline */
+  .hiw-pipeline{
+    display:flex;align-items:center;gap:10px;justify-content:center;flex-wrap:wrap;
+    background:var(--section-bg-color);border-radius:18px;padding:18px
+  }
+  .hiw-node{
+    display:flex;flex-direction:column;align-items:center;gap:6px;background:#fff;border-radius:14px;
+    padding:10px 14px;box-shadow:0 10px 28px rgba(0,0,0,.08);min-width:110px
+  }
+  .hiw-node i{
+    width:40px;height:40px;border-radius:12px;display:grid;place-items:center;
+    background:linear-gradient(135deg,#80d0c7,var(--brand));color:#fff
+  }
+  .hiw-node span{font-weight:600}
+  .hiw-pipe{width:36px;height:2px;background:linear-gradient(90deg,var(--brand),var(--brand2));border-radius:2px}
+
+  /* metrics */
+  .hiw-metric{background:#fff;border-radius:18px;padding:18px;box-shadow:0 10px 28px rgba(0,0,0,.08)}
+  .hiw-num{font-size:32px;font-weight:800;color:var(--brand);line-height:1}
+
+  /* CTA */
+  .hiw-cta{
+    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    background:linear-gradient(135deg,var(--brand),#80d0c7);border-radius:18px;padding:22px
+  }
+
+  /* effects */
+  .reveal{opacity:0;transform:translateY(12px)}
+  .reveal.in{opacity:1;transform:none;transition:.6s ease}
+  @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+  @media (max-width: 991.98px){
+    .hiw-arrow{display:none}
+    .hiw-flow{gap:12px}
+  }
+
+  /* === FOOTER (dark) === */
+.site-footer--dark{
+  --footer-bg:#0f1412;               /* near black */
+  --footer-text:#e8efe9;
+  --footer-muted:#a7b2ab;
+  --footer-accent: var(--hispeed-teal, #80D0C7);
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding-top: 64px;
+  padding-bottom: 56px;
+}
+
+.site-footer--dark .site-footer-title { color: var(--footer-text); font-weight:700; }
+.site-footer--dark .site-footer-link { color: var(--footer-text); opacity:.9; text-decoration:none; }
+.site-footer--dark .site-footer-link:hover { opacity:1; color: var(--footer-accent); }
+.text-muted-contrast { color: var(--footer-muted) !important; }
+
+.footer-divider { border-color: rgba(255,255,255,.12); margin: 24px 0 0; }
+
+/* Brand logo */
+.footer-logo { height: 38px; width: auto; display:block; }
+.footer-brand { text-decoration: none; }
+
+/* QR card */
+.card-qr {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 10px;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+.card-qr:hover {
+  transform: translateY(-2px);
+  border-color: var(--footer-accent);
+  box-shadow: 0 12px 36px rgba(0,0,0,.24);
+}
+.qr-img { display:block; width: 148px; height: 148px; object-fit: contain; }
+
+/* Socials */
+.footer-socials .social-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; margin-right: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  color: var(--footer-text);
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+}
+.footer-socials .social-btn:hover {
+  transform: translateY(-2px);
+  background: var(--hispeed-green, #1A7C34);
+  color: #fff;
+}
+
+/* Language button in dark footer */
+.btn-language {
+  background: rgba(255,255,255,.06);
+  color: var(--footer-text);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.btn-language:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+.dropdown-menu-dark { background: #1b221f; color: #fff; border-color: rgba(255,255,255,.1); }
+.dropdown-menu-dark .dropdown-item { color: #fff; }
+.dropdown-menu-dark .dropdown-item:hover { background: rgba(255,255,255,.08); }
+
+/* Lists */
+.site-footer-links{ list-style:none; margin:0; padding:0; }
+.site-footer-link-item + .site-footer-link-item{ margin-top:.35rem; }
+
+/* Reduce padding on small screens */
+@media (max-width: 992px){
+  .site-footer--dark { padding-top: 44px; padding-bottom: 40px; }
+}
+
+</style>
+
+<!-- Tiny JS: counters + scroll reveal (no external lib) -->
+<script>
+(function(){
+  // reveal
+  const r = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es=>{
+      es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+    }, {threshold:.2});
+    r.forEach(el=>io.observe(el));
+  } else { r.forEach(el=>el.classList.add('in')); }
+
+  // counters
+  const nums = document.querySelectorAll('.hiw-num');
+  const animate = el=>{
+    const target = parseFloat(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    let cur = 0;
+    const dur = 1200, start = performance.now();
+    const step = t=>{
+      const p = Math.min((t - start)/dur, 1);
+      cur = target * p;
+      el.textContent = (Math.round(cur*10)/10) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  if ('IntersectionObserver' in window) {
+    const io2 = new IntersectionObserver(es=>{
+      es.forEach(e=>{ if(e.isIntersecting){ animate(e.target); io2.unobserve(e.target); }});
+    }, {threshold:.4});
+    nums.forEach(n=>io2.observe(n));
+  } else { nums.forEach(animate); }
+})();
+</script>
+
+    <footer class="site-footer site-footer--dark section-padding">
+  <div class="container">
+    <div class="row align-items-start g-4">
+
+      <!-- Brand + blurb -->
+      <div class="col-lg-4 col-md-6">
+        <a class="footer-brand d-inline-flex align-items-center mb-3" href="index.html" aria-label="Hispeedcity">
+          <img src="images/HI-LOGO.png" alt="Hispeedcity" class="footer-logo">
+        </a>
+        <p class="footer-blurb">
+          Smart mobility &amp; parking solutions powered by AI + IoT.
+          Reducing congestion and enabling connected smart cities in Malaysia.
+        </p>
+        <p class="copyright-text mt-3 mb-0">
+          © <span id="y"></span> Hispeedcity Sdn Bhd (1331446-H)
+        </p>
+      </div>
+
+      <!-- Quick links -->
+      <div class="col-lg-3 col-md-6 col-6">
+        <h6 class="site-footer-title mb-3">Quick Links</h6>
+        <ul class="site-footer-links">
+          <li class="site-footer-link-item"><a href="index.html#section_1" class="site-footer-link">Home</a></li>
+          <li class="site-footer-link-item"><a href="index.html#section_2" class="site-footer-link">Solutions</a></li>
+          <li class="site-footer-link-item"><a href="index.html#section_3" class="site-footer-link">How it works</a></li>
+          <li class="site-footer-link-item"><a href="index.html#section_4" class="site-footer-link">FAQs</a></li>
+          <li class="site-footer-link-item"><a href="contactus.html" class="site-footer-link">Contact</a></li>
+          <li class="site-footer-link-item"><a href="news.html" class="site-footer-link">Newsroom</a></li>
+          <li class="site-footer-link-item"><a href="joinus.html" class="site-footer-link">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- QR card -->
+      <div class="col-lg-3 col-md-6 col-6 mb-4">
+        <h6 class="site-footer-title mb-3">View our showroom</h6>
+        <a href="#" class="footer-qr card-qr d-inline-block" aria-label="Download Hispeedcity App">
+          <img src="images/showroom.png" alt="QR code to download Hispeedcity app" class="qr-img">
+        </a>
+        <small class="d-block mt-2 text-muted-contrast">Our digital solution showroom</small>
+      </div>>
+
+      <!-- Contact + socials + language -->
+      <div class="col-lg-2 col-md-6 ms-lg-auto">
+        <h6 class="site-footer-title mb-3">Get in Touch</h6>
+        <p class="text-white d-flex mb-1">
+          <a href="https://wa.me/601114200953" class="site-footer-link">+(60)11-1420 0953</a>
+        </p>
+        <p class="text-white d-flex mb-3">
+          <a href="mailto:hi@hispeedcity.com" class="site-footer-link">hi@hispeedcity.com</a>
+        </p>
+
+        <h6 class="site-footer-title mb-2">Follow Us</h6>
+        <div class="footer-socials mb-3">
+          <a href="#" aria-label="Facebook" class="social-btn"><i class="bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram" class="social-btn"><i class="bi-instagram"></i></a>
+          <a href="#" aria-label="YouTube" class="social-btn"><i class="bi-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn" class="social-btn"><i class="bi-linkedin"></i></a>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn btn-language dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            English
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark w-100">
+            <li><button class="dropdown-item" type="button">中文</button></li>
+            <li><button class="dropdown-item" type="button">ไทย</button></li>
+            <li><button class="dropdown-item" type="button">العربية</button></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="row">
+      <div class="col-12 d-flex justify-content-between small text-muted-contrast flex-wrap gap-2">
+        <span>Terms of Service</span>
+        <span>Privacy Policy</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scroll reveal (no external libs needed) -->
+    <script>
+      (function(){
+        const els = document.querySelectorAll('.reveal');
+        if(!('IntersectionObserver' in window)){ els.forEach(e=>e.classList.add('in')); return; }
+        const io = new IntersectionObserver((entries)=>{
+          entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+        }, { threshold:.18 });
+        els.forEach(e=>io.observe(e));
+      })();
+
+      document.addEventListener('DOMContentLoaded', () => {
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  reveals.forEach(r => observer.observe(r));
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.15});
+  els.forEach(el=>io.observe(el));
+});
+
+    </script>
+  </body>
+</html>

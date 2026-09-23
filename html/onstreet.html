@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="No more circling for parking! Hispeedcity's IoT-driven public parking helps you find spots in real-time, pay cashless, and save time.">
+    <meta name="author" content="Hispeedcity" />
+    <title>Public Parking — Hispeedcity</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+
+    <!-- Page tweaks -->
+    <style>
+      /* Hero */
+      .site-header .topics-detail-block-image{ border-radius:20px }
+      /* Split features */
+      .feature-split{ background: var(--section-bg-color); }
+      .phone-frame{
+        background:#fff;border-radius:24px;padding:18px;box-shadow:0 18px 50px rgba(0,0,0,.12);
+        position:sticky;top:96px;animation:floatY 8s ease-in-out infinite
+      }
+      @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+      .feature-card{
+        background:#fff;border-radius:16px;padding:14px 16px;box-shadow:0 10px 28px rgba(0,0,0,.08);
+        display:flex;gap:12px;align-items:flex-start;transition:transform .25s ease, box-shadow .25s ease
+      }
+      .feature-card img{ width:32px;height:32px;object-fit:contain }
+      .feature-card h6{ margin:0;color:var(--primary-color) }
+      .feature-card p{ margin:2px 0 0;color:var(--p-color) }
+      .feature-card:hover{ transform:translateY(-4px);box-shadow:0 16px 42px rgba(30,166,75,.22) }
+      @media (max-width:991.98px){ .phone-frame{ position:static;top:auto;margin-bottom:14px } }
+
+      /* Why Us (visual) */
+      .pain-card{ background:#fff;border-radius:18px;padding:18px;box-shadow:0 18px 50px rgba(0,0,0,.08);
+        transition:transform .25s ease, box-shadow .25s ease }
+      .pain-card:hover{ transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.12) }
+      .pain-title{ display:flex;align-items:center;gap:10px;font-weight:700;color:var(--primary-color);margin-bottom:10px }
+      .pain-title i{ font-size:22px;color:var(--primary-color) }
+      .pain-list{ list-style:none;padding-left:0;margin:0 }
+      .pain-list li{ display:flex;gap:10px;padding:8px 6px;border-radius:12px }
+      .pain-list li i{ color:#ff7a59;margin-top:2px }
+
+      .solution-tile{ background:#fff;border-radius:16px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;
+        box-shadow:0 10px 28px rgba(0,0,0,.08);transition:transform .25s ease, box-shadow .25s ease }
+      .solution-tile i{ font-size:22px;color:#1EA64B }
+      .solution-tile h6{ margin:0;color:var(--dark-color) }
+      .solution-tile p{ margin:2px 0 0;color:var(--p-color) }
+      .solution-tile:hover{ transform:translateY(-4px);box-shadow:0 16px 42px rgba(30,166,75,.22) }
+
+      /* Reveal on scroll */
+      .reveal{ opacity:0;transform:translateY(14px) }
+      .reveal.in{ opacity:1;transform:none;transition:.6s ease }
+
+      /* === FOOTER (dark) === */
+.site-footer--dark{
+  --footer-bg:#0f1412;               /* near black */
+  --footer-text:#e8efe9;
+  --footer-muted:#a7b2ab;
+  --footer-accent: var(--hispeed-teal, #80D0C7);
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding-top: 64px;
+  padding-bottom: 56px;
+}
+
+.site-footer--dark .site-footer-title { color: var(--footer-text); font-weight:700; }
+.site-footer--dark .site-footer-link { color: var(--footer-text); opacity:.9; text-decoration:none; }
+.site-footer--dark .site-footer-link:hover { opacity:1; color: var(--footer-accent); }
+.text-muted-contrast { color: var(--footer-muted) !important; }
+
+.footer-divider { border-color: rgba(255,255,255,.12); margin: 24px 0 0; }
+
+/* Brand logo */
+.footer-logo { height: 38px; width: auto; display:block; }
+.footer-brand { text-decoration: none; }
+
+/* QR card */
+.card-qr {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 10px;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+.card-qr:hover {
+  transform: translateY(-2px);
+  border-color: var(--footer-accent);
+  box-shadow: 0 12px 36px rgba(0,0,0,.24);
+}
+.qr-img { display:block; width: 148px; height: 148px; object-fit: contain; }
+
+/* Socials */
+.footer-socials .social-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; margin-right: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.06);
+  color: var(--footer-text);
+  transition: transform .15s ease, background .15s ease, color .15s ease;
+}
+.footer-socials .social-btn:hover {
+  transform: translateY(-2px);
+  background: var(--hispeed-green, #1A7C34);
+  color: #fff;
+}
+
+/* Language button in dark footer */
+.btn-language {
+  background: rgba(255,255,255,.06);
+  color: var(--footer-text);
+  border: 1px solid rgba(255,255,255,.12);
+}
+.btn-language:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+.dropdown-menu-dark { background: #1b221f; color: #fff; border-color: rgba(255,255,255,.1); }
+.dropdown-menu-dark .dropdown-item { color: #fff; }
+.dropdown-menu-dark .dropdown-item:hover { background: rgba(255,255,255,.08); }
+
+/* Lists */
+.site-footer-links{ list-style:none; margin:0; padding:0; }
+.site-footer-link-item + .site-footer-link-item{ margin-top:.35rem; }
+
+/* Reduce padding on small screens */
+@media (max-width: 992px){
+  .site-footer--dark { padding-top: 44px; padding-bottom: 40px; }
+}
+
+/* === Force high-contrast CTAs on hero sections === */
+/* Cover common wrappers used across pages */
+:where(.site-header, .topics-detail-header, .section-hero, .hero, .hero-section, .page-hero) :is(.custom-border-btn, .btn-outline-primary){
+  border-color: #fff !important;
+  color: #fff !important;
+  background: transparent !important;
+}
+:where(.site-header, .topics-detail-header, .section-hero, .hero, .hero-section, .page-hero) :is(.custom-border-btn, .btn-outline-primary):hover{
+  background: #fff !important;
+  color: var(--hispeed-green, #1A7C34) !important;
+  border-color: #fff !important;
+}
+
+:where(.site-header, .topics-detail-header, .section-hero, .hero, .hero-section, .page-hero) :is(.custom-btn, .btn-primary){
+  background: #fff !important;
+  color: var(--hispeed-green, #1A7C34) !important;
+  border-color: #fff !important;
+}
+:where(.site-header, .topics-detail-header, .section-hero, .hero, .hero-section, .page-hero) :is(.custom-btn, .btn-primary):hover{
+  background: #eaf7ef !important;   /* soft white-green */
+  color: var(--hispeed-green, #1A7C34) !important;
+}
+
+/* Keep any play icons visible inside CTAs */
+:where(.site-header, .topics-detail-header, .section-hero, .hero, .hero-section, .page-hero) .custom-btn i{
+  color: inherit !important;
+}
+
+/* === Navbar language dropdown on green header === */
+.btn-language{
+  background: rgba(255,255,255,.14) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.45) !important;
+}
+.btn-language:hover,
+.btn-language:focus{
+  background: #fff !important;
+  color: var(--hispeed-green, #1A7C34) !important;
+  border-color: #fff !important;
+}
+.dropdown-menu-dark{
+  background: #1b221f !important;
+  color: #fff !important;
+  border-color: rgba(255,255,255,.12) !important;
+}
+.dropdown-menu-dark .dropdown-item{ color:#fff !important; }
+.dropdown-menu-dark .dropdown-item:hover{ background:rgba(255,255,255,.08) !important; }
+
+
+    </style>
+  </head>
+
+  <body id="top">
+    <main>
+      <!-- NAV -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+                     <img src="images/HI-LOGO.png" alt="Hispeedcity" height="60" class="d-inline-block align-text-top">
+                    </a>
+
+          <div class="d-lg-none ms-auto me-4">
+            <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
+          </div>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="index.html">Home</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="onstreet.html" id="solutionsMenu"
+                                      role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Solutions
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="solutionsMenu">
+                                      <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2" href="onstreet.html">
+                                          <i class="bi-geo"></i> On-street Parking
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2" href="offstreet.html">
+                                          <i class="bi-building"></i> Off-street Parking
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2" href="topics-detail.html">
+                                          <i class="bi-journal-text"></i> Private Car Park Sharing
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="howitwork.html">How it works</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="scango.html">Scan & Go</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="offering.html">Our Offering</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="team.html">Our Team</a>
+                            </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="pagesMenu">
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="contactus.html"><i class="bi-envelope"></i>Contact Us</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="joinus.html"><i class="bi-people"></i>Join Us</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="news.html"><i class="bi-newspaper"></i>Newsroom</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="cp.html"><i class="bi-diagram-3"></i>Project Reference</a></li>
+                </ul>
+              </li>
+            </ul>
+          
+          </div>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <header class="site-header d-flex flex-column justify-content-center align-items-center">
+        <div class="container">
+          <div class="row justify-content-center align-items-center">
+            <div class="col-lg-6 col-12 mb-5">
+              <nav aria-label="breadcrumb">
+              
+              </nav>
+
+              <h2 class="text-white">Public Parking</h2>
+
+              <p class="text-white mt-3">
+                Upholding our vision and mission, and true to the name “Hi Speed City”, we collaborate with
+                governments, city authorities and private/commercial sectors to enhance urban traffic flow through
+                smart parking and smart toll solutions.
+              </p>
+
+              <div class="d-flex align-items-center mt-4">
+                <a href="#topics-detail" class="btn custom-btn custom-border-btn smoothscroll me-3">Read More</a>
+                <a class="btn custom-btn" href="https://www.youtube.com/watch?v=1Og4SVJAPfY" target="_blank" rel="noopener">
+                  <i class="bi bi-play-fill me-1"></i>Watch Video
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-5 col-12">
+              <div class="topics-detail-block bg-white shadow-lg">
+                <img src="images/publiccarpark.png" class="topics-detail-block-image img-fluid" alt="Smart public parking">
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- DETAIL -->
+      <section class="topics-detail-section section-padding" id="topics-detail">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-12 m-auto">
+              <h3 class="mb-4 text-center">Features</h3>
+
+              <!-- Side-by-side features -->
+              <section class="feature-split">
+                <div class="container">
+                  <div class="row align-items-center gy-4">
+                    <!-- Phone mock -->
+                    <div class="col-lg-5">
+                      <div class="phone-frame reveal">
+                        <img src="images/mocks/1.png" alt="App" class="img-fluid">
+                      </div>
+                    </div>
+
+                    <!-- Feature list -->
+                    <div class="col-lg-7">
+                      <div class="row g-3">
+                        <div class="col-md-6">
+                          <div class="feature-card reveal">
+                            <img src="images/ICON/all.png" alt="">
+                            <div>
+                              <h6>All on fingertips</h6>
+                              <p>Search & book before leaving, incl. monthly/season orders.</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="feature-card reveal">
+                            <img src="images/ICON/cash.png" alt="">
+                            <div>
+                              <h6>E-wallets</h6>
+                              <p>Cards, e-wallets & banks. Cashless, touchless, meterless.</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="feature-card reveal">
+                            <img src="images/ICON/meditor-time.png" alt="">
+                            <div>
+                              <h6>Save Time</h6>
+                              <p>See availability in real time. Book & park without circling.</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="feature-card reveal">
+                            <img src="images/ICON/Transactions.png" alt="">
+                            <div>
+                              <h6>Transaction statement</h6>
+                              <p>Top-ups & spending with statements, settlement & dashboard.</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="feature-card reveal">
+                            <img src="images/ICON/parking.png" alt="">
+                            <div>
+                              <h6>Anywhere, Anytime</h6>
+                              <p>Indoor or outdoor, one app, 24/7, hassle-free.</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="feature-card reveal">
+                            <img src="images/ICON/parking.png" alt="">
+                            <div>
+                              <h6>Pay parking penalty</h6>
+                              <p>Settle violations with your e-wallet in seconds.</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="feature-card reveal">
+                            <img src="images/ICON/navigate.png" alt="">
+                            <div>
+                              <h6>Navigate</h6>
+                              <p>Guides drivers on the shortest route to destination.</p>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="feature-card reveal">
+                            <img src="images/ICON/bank.png" alt="">
+                            <div>
+                              <h6>Secured as bank</h6>
+                              <p>OTP, banking-grade security for accounts & refunds.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div><!-- /row -->
+                    </div><!-- /col -->
+                  </div>
+                </div>
+              </section>
+
+              <!-- WHY US (visual) -->
+              <section class="whyus-visual section-padding">
+                <div class="container">
+                  <div class="row justify-content-center mb-4">
+                    <div class="col-lg-10">
+                      <h3 class="mb-3">Why Us</h3>
+                      <p class="text-muted">
+                        P&L pressure and operational complexity create losses. Here are the common pain points:
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-5">
+                      <div class="pain-card reveal">
+                        <div class="pain-title"><i class="bi-gear-wide-connected"></i><span>Operators</span></div>
+                        <ul class="pain-list">
+                          <li><i class="bi-exclamation-triangle"></i> Manpower</li>
+                          <li><i class="bi-cash-coin"></i> Cash management</li>
+                          <li><i class="bi-credit-card"></i> Payment methods</li>
+                          <li><i class="bi-tools"></i> Maintenance</li>
+                          <li><i class="bi-shield-exclamation"></i> Violations management</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-5">
+                      <div class="pain-card reveal">
+                        <div class="pain-title"><i class="bi-people"></i><span>Users</span></div>
+                        <ul class="pain-list">
+                          <li><i class="bi-hourglass-split"></i> Time & hassle</li>
+                          <li><i class="bi-cash-stack"></i> Cash change</li>
+                          <li><i class="bi-question-circle"></i> Where & how to pay?</li>
+                          <li><i class="bi-bug"></i> Faulty equipment?</li>
+                          <li><i class="bi-arrows-expand"></i> Lengthy processes</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-center mt-5">
+                    <div class="col-lg-10">
+                      <h5 class="mb-3">How Hispeedcity fixes this</h5>
+                    </div>
+                    <div class="col-lg-10">
+                      <div class="row g-3">
+                        <div class="col-12 col-sm-6 col-lg-4">
+                          <div class="solution-tile reveal">
+                            <i class="bi-qr-code-scan"></i>
+                            <div><h6>Fast, touchless entry</h6><p class="mb-0">IoT LPR / QR — free-flow in ~5s.</p></div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4">
+                          <div class="solution-tile reveal">
+                            <i class="bi-wallet2"></i>
+                            <div><h6>Cashless payments</h6><p class="mb-0">Cards, e-wallets & banks integrated.</p></div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4">
+                          <div class="solution-tile reveal">
+                            <i class="bi-diagram-3"></i>
+                            <div><h6>Unified platform</h6><p class="mb-0">Indoor & outdoor, one process.</p></div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4">
+                          <div class="solution-tile reveal">
+                            <i class="bi-eye"></i>
+                            <div><h6>Real-time visibility</h6><p class="mb-0">Availability, occupancy & analytics.</p></div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4">
+                          <div class="solution-tile reveal">
+                            <i class="bi-clipboard-data"></i>
+                            <div><h6>Automated settlement</h6><p class="mb-0">Statements, dashboards & OTP security.</p></div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-4">
+                          <div class="solution-tile reveal">
+                            <i class="bi-person-gear"></i>
+                            <div><h6>Lean operations</h6><p class="mb-0">Lower manpower & maintenance load.</p></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="mt-4 text-muted">
+                        Our IoT technology resolves these pain points and turns your operation more resilient and profitable.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Parking Rates -->
+              <section class="parking-rates section-padding">
+                <div class="container">
+                  <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                      <h3 class="mb-4 text-center">Parking Rates</h3>
+                      <div class="bg-white border-0 rounded-4 shadow-lg p-5">
+                        <div class="row g-4">
+                          <div class="col-md-6">
+                            <div class="text-center">
+                              <h5 class="text-success fw-bold mb-2">First Hour</h5>
+                              <p class="fs-4 fw-bold text-dark">RM 2.20</p>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="text-center">
+                              <h5 class="text-success fw-bold mb-2">Subsequent Hours</h5>
+                              <p class="fs-4 fw-bold text-dark">RM 1.10</p>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="text-center">
+                              <h5 class="text-success fw-bold mb-2">Maximum Daily Rate</h5>
+                              <p class="fs-4 fw-bold text-dark">RM 8.70</p>
+                            </div>
+                          </div>
+                        </div>
+                        <hr class="my-4">
+                        <p class="text-center text-muted mb-0"><small>Rates are applicable for on-street council parking. Rates may vary by location. For specific rates at your preferred location, contact our team.</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- Goodbye to the Old System -->
+              <div class="my-5">
+                <h4 class="mb-3">Goodbye to the Old System</h4>
+                <div class="row g-3">
+                  <div class="col-md-4 col-12">
+                    <img src="images/tpd.png" class="topics-detail-block-image img-fluid" alt="Autopay Machine">
+                  </div>
+                  <div class="col-md-4 col-12">
+                    <img src="images/tpe.png" class="topics-detail-block-image img-fluid" alt="Car Parking Ticket">
+                  </div>
+                  <div class="col-md-4 col-12">
+                    <img src="images/tpr.png" class="topics-detail-block-image img-fluid" alt="Car Parking Meters">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+    </main>
+
+    <footer class="site-footer site-footer--dark section-padding">
+  <div class="container">
+    <div class="row align-items-start g-4">
+
+      <!-- Brand + blurb -->
+      <div class="col-lg-4 col-md-6">
+        <a class="footer-brand d-inline-flex align-items-center mb-3" href="index.html" aria-label="Hispeedcity">
+          <img src="images/HI-LOGO.png" alt="Hispeedcity" class="footer-logo">
+        </a>
+        <p class="footer-blurb">
+          Smart mobility &amp; parking solutions powered by AI + IoT.
+          Reducing congestion and enabling connected smart cities in Malaysia.
+        </p>
+        <p class="copyright-text mt-3 mb-0">
+          © <span id="y"></span> Hispeedcity Sdn Bhd (1331446-H)
+        </p>
+      </div>
+
+      <!-- Quick links -->
+      <div class="col-lg-3 col-md-6 col-6">
+        <h6 class="site-footer-title mb-3">Quick Links</h6>
+        <ul class="site-footer-links">
+          <li class="site-footer-link-item"><a href="index.html#section_1" class="site-footer-link">Home</a></li>
+          <li class="site-footer-link-item"><a href="index.html#section_2" class="site-footer-link">Solutions</a></li>
+          <li class="site-footer-link-item"><a href="index.html#section_3" class="site-footer-link">How it works</a></li>
+          <li class="site-footer-link-item"><a href="index.html#section_4" class="site-footer-link">FAQs</a></li>
+          <li class="site-footer-link-item"><a href="contactus.html" class="site-footer-link">Contact</a></li>
+          <li class="site-footer-link-item"><a href="news.html" class="site-footer-link">Newsroom</a></li>
+          <li class="site-footer-link-item"><a href="joinus.html" class="site-footer-link">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- QR card -->
+      <div class="col-lg-3 col-md-6 col-6 mb-4">
+        <h6 class="site-footer-title mb-3">View our showroom</h6>
+        <a href="#" class="footer-qr card-qr d-inline-block" aria-label="Download Hispeedcity App">
+          <img src="images/showroom.png" alt="QR code to download Hispeedcity app" class="qr-img">
+        </a>
+        <small class="d-block mt-2 text-muted-contrast">Our digital solution showroom</small>
+      </div>
+
+      <!-- Contact + socials + language -->
+      <div class="col-lg-2 col-md-6 ms-lg-auto">
+        <h6 class="site-footer-title mb-3">Get in Touch</h6>
+        <p class="text-white d-flex mb-1">
+          <a href="https://wa.me/601114200953" class="site-footer-link">+(60)11-1420 0953</a>
+        </p>
+        <p class="text-white d-flex mb-3">
+          <a href="mailto:hi@hispeedcity.com" class="site-footer-link">hi@hispeedcity.com</a>
+        </p>
+
+        <h6 class="site-footer-title mb-2">Follow Us</h6>
+        <div class="footer-socials mb-3">
+          <a href="#" aria-label="Facebook" class="social-btn"><i class="bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram" class="social-btn"><i class="bi-instagram"></i></a>
+          <a href="#" aria-label="YouTube" class="social-btn"><i class="bi-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn" class="social-btn"><i class="bi-linkedin"></i></a>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn btn-language dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            English
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark w-100">
+            <li><button class="dropdown-item" type="button">中文</button></li>
+            <li><button class="dropdown-item" type="button">ไทย</button></li>
+            <li><button class="dropdown-item" type="button">العربية</button></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <div class="row">
+      <div class="col-12 d-flex justify-content-between small text-muted-contrast flex-wrap gap-2">
+        <span>Terms of Service</span>
+        <span>Privacy Policy</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <!-- JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/custom.js"></script>
+
+    <!-- Scroll reveal -->
+    <script>
+      (function(){
+        const els = document.querySelectorAll('.reveal');
+        if(!('IntersectionObserver' in window)){ els.forEach(e=>e.classList.add('in')); return; }
+        const io = new IntersectionObserver((entries)=>{
+          entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+        }, { threshold:.18 });
+        els.forEach(e=>io.observe(e));
+      })();
+    </script>
+  </body>
+</html>

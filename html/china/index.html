@@ -1,0 +1,304 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" >
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+	<meta name="description" content="探索最前沿的 IoT 智能停车技术，支持实时监控与无现金支付。优化城市交通，提升驾驶员便利性，让停车更轻松！" />
+	<title>关于我们公司</title>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/chushihua_style.css">
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<link rel="stylesheet" type="text/css" href="./layer/mobile/need/layer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/temp.css">
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css">
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./layer/layer.js"></script>
+	<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+	<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+
+</head>
+<style type="text/css">
+	.payway_case {
+		margin: 0px -35px;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.payway_case img {
+		width: calc(calc(100% - 350px) / 5);
+		font-size: 0;
+		height: 100px;
+		margin: 32px 35px;
+		box-shadow: 0 0 8px 0 #ddd;
+	}
+
+	.bodyer_b_bodyer ul li:hover{
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, .25);
+    	transition: all .2s ease-in-out;
+    	cursor:pointer;
+	}
+
+	video {
+	  
+	  width:100%
+	  height:100%;
+	  /*background:red;*/
+	  position: absolute;
+	  top: 0; left: 0; right: 0; bottom: 0;
+	}
+
+	.clear{
+		clear: both;
+	}
+</style>
+<script type="text/javascript">
+	window.onload=function(){
+		
+		$(".f1").fadeIn(1000);
+ 		$(".f3").fadeIn(1000);
+
+
+
+ 		
+      
+	}
+	
+	$(window).scroll(function(){
+
+ 			var topScroll = Math.floor($(window).scrollTop());
+            //设置滚动多少像素后透明度变为1
+            var scrollDist = 600;
+            //定义滚动条在向下滚动180像素后 变成完全不透明
+            if(topScroll <= scrollDist){
+              //通过浏览器标题栏显示并检查数据
+              //document.title = topScroll + '-' + opacity;
+              //计算当前透明度 当前所在的像素 除 180(topScroll的最大值 因为透明度的值是0-1之间的小数)
+
+                $('.f1').css('opacity',1-(topScroll/scrollDist));
+                $('.f3').css('opacity',1-(topScroll/scrollDist));
+            }else{
+                $('.f1').css('opacity',1);
+                $('.f3').css('opacity',1);
+			}
+ 	});
+	
+
+</script>
+
+<body>
+	<div class="elfsight-app-c7db89f3-f551-4682-8eff-474b0b5fae11"></div>
+	<div class="elfsight-app-04dbe7d6-5aae-4184-ac58-69d490ac90f5" data-elfsight-app-lazy></div>
+
+	<div style="width:1400px;margin: 0 auto">
+		<header>
+			<div class="new_header">
+				<a href="index.html"><img src="./images/HI LOGO.png"></a>
+				<!-- <div class="header_right" style="padding-right: 100px; margin-top: 23px;">
+					<a class="q_show" href="10.html"><img src="./images/kefu.png"></a>
+				</div> -->
+				<ul>
+					<li>
+						<div class="dropdown">
+							<a href="index.html" style="color:#363a45; border-bottom:2px solid #00b14f; padding-bottom: 2px;">关于我们</a>	
+							<div class="dropdown-content">
+								
+								<a href="team.html">我们的团队</a>
+							</div>
+						</div>
+					</li>
+
+					<li>
+						<div class="dropdown">
+							<a href="#">产品服务</a>
+							<div class="dropdown-content">
+								<a href="howwork.html">如何操作</a>
+								<a href="public_parking.html">公共停车</a>
+								<a href="commercial.html">商业停车</a>
+								<a href="enforcement.html">执法</a>
+								<a href="carparksharing.html">私人停车位共享</a>
+							</div>
+						</div>
+					</li>
+
+					
+
+					<li><a href="game.html">改变游戏规则</a></li>
+					<li><a href="offering.html">解决方案</a></li>
+					<li>
+						<div class="dropdown">
+							<a href="#">联系/其他</a>
+							<div class="dropdown-content">
+								<a href="contactus.html">联系我们</a>
+								<a href="joinus.html">加入我们</a>
+								<a href="news.html">相关资讯</a>
+								<a href="CP.html">足迹</a>
+								
+								<a href="certificate.html">公司认证</a>
+							</div>
+						</div>
+					</li>
+					
+					<div class="clearfix"></div>
+				</ul>
+				<div style="margin-top: 25px;">
+					<select name="" onchange="javascript:location.href=this.value;">
+						<option value="../index.html" >English</option>
+						<option value="china/index.html" selected="selected">中文</option>
+					</select>
+				</div>
+			</div>
+		</header>
+		<bodyer>
+
+			<div style="width:1400px;height:600px;margin-top:80px;margin: 80px auto 0">
+				
+				<!-- <div id="container">
+				  <video autoplay muted loop >
+				    <source src="video/Sensor.mp4" type="video/mp4">
+				  </video>
+				</div> -->
+
+				<div class="f1" style="width:400px;height:600px;float:left;position:relative;top: 0;left: 0;overflow: hidden;display: none;">
+					<div id="container">
+						<video autoplay muted loop style="height:600px;margin-left:-315px">
+							<source src="../video/new.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+				
+				<div class="f3" style="width:400px;height:600px;float:right;position:relative;top: 0;right: 0;overflow: hidden;display: none;">
+					<div id="container">
+						<video autoplay muted loop style="height:600px;margin-left:-305px;">
+							<source src="../video/new2.mp4" type="video/mp4">
+						</video>
+					</div>
+
+				</div>
+				
+				<div class="f2" style="width:600px;height:600px;margin:0 auto;text-align:center;">
+					
+						<p style="font-size:48px;margin-top:30px;padding-top:70px;padding-bottom:20px;">愿景</p>
+
+									<h5 style="font-size:14px;padding:0 40px;"><b>落实 <span style="font-size:18px;color: #009900">智慧出行</span><br/><span style="font-size:18px;color: #009900">改善民生</span> 发展 <span style="font-size:18px;color: #009900">智慧城市</span>	
+										</b>
+									</h5>
+						<div style="border-bottom:1px solid #666;width:75%;margin:70px auto 40px;"></div>	
+						
+						<p style="font-size:48px;margin-top:0;padding-top:20px;padding-bottom:20px;">使命</p>
+
+									<h5 style="font-size:14px;padding:0 40px;line-height:23px;"><b>采用互联互通，<span style="font-size:18px">实时</span>联网城市所有<span style="font-size:18px">停车位</span>及<br/><span style="font-size:18px">公路收费</span>与资源共享信息，以<span style="font-size:18px">全视</span>线上线下运营模式<br/> 改变传统复杂操作环节及痛点，让开车出行何时，何地，<br/><span style="font-size:18px">无现金，无触摸,，通畅无阻，轻松舒适 </span> 
+										</b>
+									</h5>	
+				</div>
+
+
+			</div>
+
+			<div style="width:1400px;height:950px;margin:0 auto">
+					<fieldset class="layui-elem-field layui-field-title" style="margin-top: 60px;text-align: center;">
+		  			<legend style="font-size:30px">我们的技术和解决方案可以为客户服务
+		  			<h3 style="line-height: 80px">无现金&nbsp;&nbsp;无接触&nbsp;&nbsp;通畅无阻</h3>
+		  			</legend>
+
+		  			</fieldset>
+					<div style="height:660px;width:760px;margin: 0 auto;position: relative;">
+					<div class="layui-inline" style="width:300px;height:300px;border-radius:50%; 
+			        overflow:hidden;">
+			  			<img src="../images-b/t1.jpg" class="layui-circle" style="width:100%;height: 100%">
+					</div>
+					<h3 style="position: absolute;left:80px;">智慧停车</h3>
+					<div class="layui-inline" style="width:300px;height:300px;border-radius:50%; 
+			        overflow:hidden;margin-left:150px">
+			  			<img src="./images-b/t2.png" class="layui-circle" style="width:100%;height: 100%">
+					</div>
+					<h3 style="position: absolute;right:75px;">行人收费</h3>
+					<br>
+					<div class="layui-inline" style="width:300px;height:300px;border-radius:50%; 
+        	overflow:hidden;margin-top: 50px;">
+			  			<img src="../images-b/t3.jpg" class="layui-circle" style="width:100%;height: 100%">
+					</div>
+					<h3 style="position: absolute;left:40px;">高速公路收费</h3>
+					<div class="layui-inline" style="width:300px;height:300px;border-radius:50%; 
+			        overflow:hidden;margin-left:150px;margin-top: 50px;">
+			  			<img src="../images-b/t4.jpg" class="layui-circle" style="width:100%;height: 100%">
+					</div>
+					<h3 style="position: absolute;right:75px;">隧道收费</h3>
+					</div>
+					<br><br>
+
+					<fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+  			
+					</fieldset>
+
+
+				</div>
+
+
+
+		</bodyer>
+		<section class="footer_nav" style="margin: 0 auto">
+			<div class="container">
+				<div class="row footer_row">
+					<!-- <div class="col-xs-12 col-sm-8 ">
+						<p>免费下载应用</p>
+						<ul class="download_store">
+							<li><a href="https://apps.apple.com/my/app/hispeedcity/id1445994325"><img src="./images/iphone2.png" height="45" width="143"/></a></li>
+							<li><a href="https://play.google.com/store/apps/details?id=com.qs.hispeedhaibo&hl=en"><img src="./images/google2.png" height="45" width="143"/></a></li>
+							<li><a href="https://appgallery.huawei.com/#/app/C103332779"><img src="./images/huawei.png" height="45" width="143"/></a></li>
+							<p>点击下载按钮或扫描二维码下载应用</p>
+							<li><a href="app/hispeedcity.apk"><img src="./images/ICON/downloadHi.png" height="45" width="143"/></a></li>
+							<li margin-top=10px><a href="https://www.unitag.io/qrcode"><img src="./images/ICON/HiQR.png" height="150" width="143" alt='QR Code'/></a> <b>Android</b> </li>
+							<li margin-top=10px><a href="https://www.unitag.io/qrcode"><img src="./images/ICON/HiQRIOS.png" height="150" width="143" alt='QR Code'/></a> <b>IOS</b> </li>
+						</ul>
+					</div> -->
+					<div class="col-xs-12 col-sm-4 ">
+						<p>关注我们并保持更新！</p>
+						<ul class="download_store">
+							<li><a href="https://www.facebook.com/Hispeedcity-Sdn-Bhd-110082880393300/" target="_blank" class="fa fa-facebook"></a></li>
+							<li><a href="https://www.youtube.com/channel/UCX7H10eR_209frkyQNBBaMQ" target="_blank" class="fa fa-youtube"></a></li>
+                        <li><a href="https://www.instagram.com/hispeedcity/" target="_blank" class="fa fa-instagram"></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				<div class="row footer_row">
+					<div class="col-xs-12 col-sm-12 copyright">
+						<ul>
+							<li><a href="1-1.html">Terms&nbsp;of&nbsp;service</a></li>&nbsp&nbsp
+							<li><a href="privacy.html">Privacy&nbsp;Policy</a></li>
+						</ul>
+						<P style="padding-top:8px;">Copyright &copy;2020 Hispeedcity Sdn Bhd (Company No: 1331446-H)</p>
+						<p><a href="https://beian.miit.gov.cn/"
+								target="_blank">苏ICP备17061270号-1</a></p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	</div>
+</body>
+
+</html>
+<script>
+	// $(function () {
+	// 	function footerPosition() {
+	// 		$("footer").removeClass("fixed-bottom");
+	// 		var contentHeight = document.body.scrollHeight, //网页正文全文高度
+	// 			winHeight = window.innerHeight; //可视窗口高度，不包括浏览器顶部工具栏
+	// 		if (!(contentHeight > winHeight)) {
+	// 			//当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+	// 			$("footer").addClass("fixed-bottom");
+	// 		} else {
+	// 			$("footer").removeClass("fixed-bottom");
+	// 		}
+	// 	}
+	// 	footerPosition();
+	// 	$(window).resize(footerPosition);
+	// });
+</script>

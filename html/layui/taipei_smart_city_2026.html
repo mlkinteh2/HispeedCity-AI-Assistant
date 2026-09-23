@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Taipei Smart City Summit & Expo 2026 - Hispeedcity</title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+:root{
+  --hispeed-green:#36A528;
+  --hispeed-green-dark:#1A7C34;
+}
+
+/* NAV */
+.custom-navbar{
+  background:var(--hispeed-green-dark);
+}
+
+/* HERO */
+.article-hero{
+  height:45vh;
+  background:url('images/taipei_sao_paulo.jpg') center/cover no-repeat;
+}
+
+/* CONTENT */
+.page-wrap{
+  max-width:1000px;
+  margin:auto;
+  padding:50px 20px;
+  line-height:1.7;
+}
+
+/* GALLERY */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
+  gap:16px;
+}
+
+.gallery-grid img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.03);
+}
+
+/* LIGHTBOX */
+.lightbox{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
+}
+
+.lightbox span{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:white;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/HI-LOGO.png" height="40">
+    </a>
+  </div>
+</nav>
+
+<!-- HERO IMAGE -->
+<section class="article-hero"></section>
+
+<!-- CONTENT -->
+<section class="page-wrap">
+
+<p><strong>Hispeedcity at Taipei Smart City Summit & Expo 2026</strong></p>
+
+<p><strong>Taipei, March 17, 2026</strong> – Taiwan's Smart City Summit & Expo officially kicked off, bringing together global leaders in smart city innovation and digital transformation.</p>
+
+<p>Hispeedcity proudly participated in this prestigious event, designed to highlight Taiwan's technological "soft power." The expo featured more than <strong>2,250 booths</strong> and over <strong>70 professional forums</strong> held across Taipei and Kaohsiung.</p>
+
+<p>The event was organized by the <strong>Taipei Computer Association (TCA)</strong> and the <strong>National Development Council</strong>, attracting representatives from <strong>174 cities across 53 countries</strong>, alongside more than <strong>3,000 international visitors</strong> and over <strong>250 startup teams</strong>.</p>
+
+<p>We would like to express our deepest gratitude to the Taipei Computer Association (TCA) for organizing this outstanding event. We also extend our sincere thanks to <strong>Malaysia Digital Economy Corporation (MDEC)</strong> for their invitation and leadership of the Malaysian delegation.</p>
+
+<p>The entire event was professionally structured, seamlessly executed, and thoughtfully designed for all participants. The interactive sessions were highly engaging and provided a strong platform for innovation, collaboration, and global partnerships.</p>
+
+<hr>
+
+<p>
+During the event, Hispeedcity engaged with international delegates and city leaders, including representatives from São Paulo, Africa, Vietnam, and Belize. These interactions highlight the growing global collaboration in smart city innovation and digital mobility solutions.
+</p>
+
+<h3>Gallery</h3>
+
+<div class="gallery-grid">
+  <img src="images/taipei_sao_paulo.jpg" alt="Meeting with Mayor Sao Paulo delegation" onclick="openLightbox(this)">
+  
+  <img src="images/taipei_africa.jpg" alt="Engagement with African representatives" onclick="openLightbox(this)">
+  
+  <img src="images/taipei_vietnam.jpg" alt="Discussion with Vietnam City Council" onclick="openLightbox(this)">
+  
+  <img src="images/taipei_belize.jpg" alt="Meeting with Mayor and team of Belize" onclick="openLightbox(this)">
+</div>
+
+<br>
+
+<a href="news.html">← Back to Newsroom</a>
+
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+  <span onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img">
+</div>
+
+<script>
+function openLightbox(img){
+  document.getElementById("lightbox").style.display="flex";
+  document.getElementById("lightbox-img").src = img.src;
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").style.display="none";
+}
+</script>
+
+</body>
+</html>

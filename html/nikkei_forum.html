@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<meta name="description" content="Get the newest insights and company news on Hispeedcity's advancements in cashless, touchless parking solutions.">
+<title>Nikkei forum Medini 2025</title>
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./css/chushihua_style.css">
+<link rel="stylesheet" type="text/css" href="./css/main.css?v=20250724"> <!-- v= To create a new URL link to prevent browser cache -->
+<link rel="stylesheet" type="text/css" href="./layer/mobile/need/layer.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript" src="./js/jquery-1.11.1.min.js" ></script>
+<script type="text/javascript" src="./js/bootstrap.min.js" ></script>
+<script type="text/javascript" src="./layer/layer.js" ></script>
+</head>
+<body>
+<div>
+	<header>
+		<div class="new_header">
+			<a href="index.html"><img src="./images/HI-LOGO.png" alt="Hispeedcity Logo"></a>
+			<!-- <div class="header_right" style="padding-right: 100px; margin-top: 23px;">
+				<a class="q_show" href="10.html"><img src="./images/kefu.png"></a>
+			</div> -->
+			<ul>
+				<li>
+					<div class="dropdown">
+								<a href="index.html">About Our Company</a>
+								<div class="dropdown-content">
+									
+									<a href="team.html">Our Team</a>
+								</div>
+							</div>
+
+				
+				</li>
+				<li>
+					<div class="dropdown">
+						<a href="#">Product Services</a>
+						<div class="dropdown-content">
+							<a href="howwork.html">How It Work</a>
+							<a href="public_parking.html">Public Parking</a>
+							<a href="commercial.html">Commercial Parking </a>
+							<a href="enforcement.html">Enforcement</a>
+							<a href="carparksharing.html">Private car park sharing</a>
+						</div>
+					</div>
+				</li>
+				
+				<li><a href="game.html">Game Changing</a></li>
+					<li><a href="offering.html">Our Offering </a></li>
+					<li>
+						<div class="dropdown">
+							<a href="#" style="color:#363a45; border-bottom:2px solid #00b14f; padding-bottom: 2px;">Contact/Sitemap</a>
+							<div class="dropdown-content">
+								<a href="contactus.html">Contact Us</a>
+								<a href="joinus.html">Join Us</a>
+								<a href="news.html">Newsroom</a>
+								<a href="CP.html">Project Reference</a>
+								
+							</div>
+						</div>
+					</li>
+				<div class="clearfix"></div>
+			</ul>
+			<div style="margin-top: 25px;">
+				<select name="" onchange="javascript:location.href=this.value;">
+					<option value="news.html" selected="selected">English</option>
+					<option value="china/news.html">中文</option>
+				</select>
+			</div>
+		</div>
+	</header>
+	<style>
+	/* Overall container styling */
+	.news-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		box-sizing: border-box;
+		font-family: Arial, sans-serif;
+		line-height: 1.7;
+		color: #333;
+		padding-bottom: 25px;
+	}
+
+	.news-header {
+		margin: 20px 0;
+	}
+
+	/* Headings */
+	#news-h1 {
+		padding-top: 95px; /* Top padding to push below header */
+		font-size: 4.8rem;
+		text-align: center;
+	}
+
+	/* Image wrapper for central alignment */
+	.banner img {
+		max-width: 1000px;
+		height: auto;
+		display: block;
+		margin: 0 auto;
+		border-radius: 12px;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+	}
+
+	#news-h2 {
+		font-size: 3.6rem;
+		margin: 30px 0 20px;
+		text-align: center;
+	}
+
+	/* Paragraph spacing */
+	.news-p {
+		text-align: justify;
+		margin-bottom: 18px;
+		font-size: 16px;
+	}
+
+	/* Bullet list style */
+	.news-p-list {
+		font-size: 16px;
+		list-style: none; 
+		line-height: 2;
+		margin-bottom: 10px;
+	}
+
+	#news-span {
+		font-size: 2.4rem;
+		font-weight: bold;
+		margin: 40px 0px;
+	}
+
+	.imagewall {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+		gap: 24px;
+		padding: 20px;
+		background-color: white;
+		justify-items: center;
+	}
+
+	.news-card {
+		width: 500px;
+		height: auto;
+		border-radius: 16px;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+		text-align: center;
+		padding: 16px;
+		opacity: 0;
+		transform: scale(0.95);
+		animation: fadeInZoom 0.6s ease forwards;
+	}
+
+	.news-card:hover {
+		transform: scale(1.05);
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+		cursor: pointer;
+	}
+
+	.news-card img {
+		width: 100%;
+		height: 350px;
+		object-fit: cover;
+		border-radius: 12px;
+		margin-bottom: 12px;
+	}
+
+	@keyframes fadeInZoom {
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	.lightbox {
+		display: none;
+		position: fixed;
+		z-index: 9999;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.85);
+		justify-content: center;
+		align-items: center;
+	}
+
+	.lightbox-img {
+		max-width: 90%;
+		max-height: 90%;
+		border-radius: 12px;
+		box-shadow: 0 8px 24px rgba(255,255,255,0.2);
+		animation: zoomIn 0.3s ease-in-out;
+	}
+
+	.lightbox-close {
+		position: absolute;
+		top: 24px;
+		right: 32px;
+		font-size: 48px;
+		color: white;
+		cursor: pointer;
+	}
+
+	@keyframes zoomIn {
+		from {
+			transform: scale(0.8);
+			opacity: 0;
+		}
+		to {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+
+	</style>
+
+	<bodyer>
+		<div class="news-container">
+			<div class="news-header">
+            	<h1 id="news-h1">Nikkei Forum Medini 2025</h1>
+			</div>
+            <div class="banner">
+                <img src="./images/nikkei2.jpg" alt="Nikkei Forum Medini 2025">
+            </div>
+            <h2 id="news-h2">Hispeedcity Champions Smart Mobility Revolution at Nikkei Forum Medini 2025 as Key Sponsor</h2>
+            <p class="news-p">
+            <b>MEDINI, JOHOR – June 30, 2025</b> – Hispeedcity Sdn Bhd, a pioneering Malaysian smart mobility solutions provider, 
+            solidified its commitment to disruptive digital innovation as an official sponsor of the prestigious Nikkei Forum Medini Johor 2025. 
+            The event, held at Sunway Big Box on June 18th & 19th, convened Asian industry leaders, government officials, and investors to explore 
+            the future of regional development.
+            </p>
+            <p class="news-p">
+            The forum's agenda centered on critical drivers of progress: Digital Transformation, Sustainable ESG & Net-Zero Carbon initiatives, 
+            Regional Collaboration, and Smart City Development. These pillars resonate deeply with Hispeedcity's core mission: revolutionizing urban 
+            ecosystems through IR4.0 technologies (IoT + AI), starting with its foundational IoT-Smart Parking solutions to enable cashless, touch-less 
+            experiences and fast-flow traffic.
+            </p>
+            <p class="news-p">
+            Hispeedcity's participation showcased its evolution beyond parking, demonstrating a comprehensive vision for smart mobility and city infrastructure.
+            The company highlighted its technical expertise to deliver end-to-end projects, including:
+            </p>
+			<!-- <ul class="news-list"> -->
+			<p class="news-p-list">
+				➤ <strong>Smart Toll Systems</strong> for efficient highway management.</br>
+				➤ <strong>Smart Traffic Solutions</strong> optimizing flow in CBDs.</br>
+				➤ <strong>Smart Tourism</strong> enabled by frictionless "Scan & Go" experiences.</br>
+				➤ <strong>Smart Subsidy Distribution</strong> systems supporting government initiatives.</br>
+			</p>
+			<!-- <ul class="news-list">
+				<li><strong>Smart Toll Systems</strong> for efficient highway management.</li>
+				<li><strong>Smart Traffic Solutions</strong> optimizing flow in CBDs.</li>
+				<li><strong>Smart Tourism</strong> enabled by frictionless "Scan & Go" experiences.</li>
+				<li><strong>Smart Subsidy Distribution</strong> systems supporting government initiatives.</li>
+			</ul> -->
+            <p class="news-p">
+            "This forum was the perfect platform to demonstrate how Hispeedcity is powering Malaysia and Johor's ascent as a regional innovation hub," 
+            said a company spokesperson. "We engaged deeply with government delegates, Japanese and ASEAN investors, and industry peers during exhibitions 
+            and networking, showcasing our disruptive approach to smart mobility and digital city solutions."
+            </p>
+            <p class="news-p">
+            Hispeedcity's sponsorship and active involvement positioned it as a key driver in the regional smart city dialogue. The forum successfully 
+            generated <b>strategic opportunities</b> to expand collaborations with local authorities, public hospitals, property developers, and highway operators 
+            seeking next-generation, integrated smart mobility digital solutions.
+            </p>
+
+			<div class="imagewall">
+				<div class="news-card">
+					<img src="./images/nikkei3.jpg" alt="Prime Minister Anwar Ibrahim">
+				</div>
+				<div class="news-card">
+					<img src="./images/nikkei4.jpg?v=2" alt="Nikkei Forum Medini 2025">
+				</div>
+				<div class="news-card">
+					<img src="./images/nikkei5.jpg" alt="Nikkei Forum Medini 2025">
+				</div>
+				<div class="news-card">
+					<img src="./images/nikkei6.jpg" alt="YAB Dato seri Anwar Ibrahim at Nikkei Forum Medini 2025">
+				</div>
+				<div class="news-card">
+					<img src="./images/nikkei7.jpg" alt="Noriyuki Shikata at Nikkei Forum Medini 2025">
+				</div>
+				<div class="news-card">
+					<img src="./images/nikkei8.jpg" alt="Dato Onn Hafiz Ghazi at Nikkei Forum Medini 2025">
+				</div>
+				<div class="news-card">
+					<img src="./images/nikkei9.jpg" alt="Panel discussion at Nikkei Forum Medini 2025">
+				</div>
+				<div class="news-card">
+					<img src="./images/nikkei10.jpg" alt="Hispeedcity booth at Nikkei Forum Medini 2025">
+				</div>
+				<div class="news-card">
+					<img src="./images/nikkei11.jpg" alt="Hispeedcity team at Nikkei Forum Medini 2025">
+				</div>
+			</div>
+
+            <span id="news-span">About Hispeedcity Sdn Bhd</span>
+            <p class="news-p">
+            Hispeedcity Sdn Bhd is a leading Malaysian technology innovator at the forefront of the smart city revolution. Leveraging Industry 4.0 technologies 
+            (IoT, AI, LPR), we design and implement integrated solutions that transform urban mobility and infrastructure. Starting with our core IoT-Smart Parking platform 
+            enabling cashless, touch-less transactions and traffic optimization, our expertise extends to Smart Tolling, Smart Traffic Management, Smart Tourism access, 
+            and Smart Subsidy systems, driving efficiency, sustainability, and enhanced citizen experiences.
+            </p>
+        </div>
+		<!-- <div class="rhqz_bodyer_b">
+			<div class=" comwidth">
+				<div class="rhqz_bodyer_b_bottom">
+					<div class="rhqz_bodyer_b_bottom_left">
+						<div class="rhqz_bodyer_b_bottom_left_a">
+						<img src="./images2/HIW_search.jpg" width="409" height="307">
+						<div class="rhqz_bodyer_b_bottom_left_postion">
+							<p>Find and compare garages and rates</p>
+							<p class="rhqz_bodyer_b_bottom_postion">Search</p>
+						</div>
+						</div>
+						<div class="rhqz_bodyer_b_bottom_left_a">
+						<img src="./images/Park.png">
+						<div class="rhqz_bodyer_b_bottom_left_postion">
+							<p>Follow the directions on your parking</p>
+							<p class="rhqz_bodyer_b_bottom_postion">Park</p>
+						</div>
+						</div>
+					</div>
+					<div class="rhqz_bodyer_b_bottom_center">
+						<img src="./images/xuhao.png">
+					</div>
+					<div class="rhqz_bodyer_b_bottom_right">
+						<div class="rhqz_bodyer_b_bottom_left_a">
+							<img src="./images2/HIW_book.png">
+							<div class="rhqz_bodyer_b_bottom_left_postion">
+								<p>Pre-pay to reserve your spot</p>
+								<p class="rhqz_bodyer_b_bottom_postion">Book</p>
+							</div>
+						</div>
+						<div class="rhqz_bodyer_b_bottom_left_a" style=" margin-bottom:60px;">
+							<img src="./images2/HIW_pay.png">
+							<div class="rhqz_bodyer_b_bottom_left_postion">
+								<p>End parking</p>
+								<p class="rhqz_bodyer_b_bottom_postion">Pay</p>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>  -->
+	
+	<!-- Lightbox Container -->
+	<div id="lightbox" class="lightbox">
+	<span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+	<img class="lightbox-img" id="lightbox-img" src="" alt="Zoomed Image">
+	</div>
+
+
+	</bodyer>	
+	<section class="footer_nav">
+		<div class="container">
+			<div class="row footer_row">
+				<!--
+					<div class="col-xs-12 col-sm-12 ">
+						<li><a href="app/hispeedcitylatestapp.apk"><img src="./images/ICON/downloadHi.png" alt="Download Hispeedcity APK" height="45" width="143"/></a></li>
+						<br>
+						<ul class="download_store">
+							<li><a href="https://apps.apple.com/my/app/hispeedcity/id1445994325"><img src="./images/iphone2.png" alt="Download Hispeedcity IOS" height="45" width="143"/></a></li>
+							<li><a href="https://play.google.com/store/apps/details?id=com.qs.hispeedhaibo&hl=en"><img src="./images/google2.png" alt="Download Hispeedcity Android" height="45" width="143"/></a></li>
+							<li><a href="https://appgallery.huawei.com/#/app/C103332779"><img src="./images/huawei.png" alt="Download Hispeedcity Huawei" height="45" width="143"/></a></li>
+							<p>OR scan QR code to download</p>
+							-->
+							<!--
+							<li><a href="app/hispeedcity.apk"><img src="./images/ICON/downloadHi.png" alt="Download Hispeedcity APK" height="45" width="143"/></a></li>
+							-->
+							<!--
+							<li margin-top=10px><a href="app/hispeedcitylatestapp.apk"><img src="./images/ICON/HiQR.png" height="150" width="143" alt='QR Code'/></a> <b>Android</b> </li>
+							<li margin-top=10px><a href="https://www.unitag.io/qrcode"><img src="./images/ICON/HiQRIOS.png" height="150" width="143" alt='QR Code'/></a> <b>IOS</b> </li>
+							<li margin-top="10px"><img src="./images/ICON/notice.png" height="150" width="500"/> </li>
+						</ul>
+					</div>
+					-->
+					<div class="col-xs-12 col-sm-12 ">
+					<h3 style="font-size: 32px; font-weight: 600; color: #222;">
+					Helpline 
+					<i class="fa fa-phone" style="color: green; font-size: 36px; vertical-align: middle; margin-left: 2px;"></i>
+					<!-- <span style="font-size: 36px; font-weight: bold; margin-left: 2px;">+(60)11-1420 0953</span> -->
+					<a style="font-size: 36px; font-weight: bold; margin-left: 2px;" href="https://wa.me/601114200953"> +(60)11-1420 0953 </a>
+					</h3>
+					</div>
+					<br>
+				<div class="col-xs-12 col-sm-4 ">
+					<p>Follow us and keep updated!</p>
+					<ul class="download_store">
+						<li><a href="https://www.facebook.com/Hispeedcity-Sdn-Bhd-110082880393300/" target="_blank" class="fa fa-facebook"></a></li>
+						<li><a href="https://www.youtube.com/channel/UCX7H10eR_209frkyQNBBaMQ" target="_blank" class="fa fa-youtube"></a></li>
+                        <li><a href="https://www.instagram.com/hispeedcity/" target="_blank" class="fa fa-instagram"></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="row footer_row">
+				<div class="col-xs-12 col-sm-12 copyright">
+					<ul>
+						<li><a href="1-1.html">Terms&nbsp;of&nbsp;service</a></li>&nbsp&nbsp
+						<li><a href="privacy_en.html">Privacy&nbsp;Policy</a></li>
+					</ul>
+					<P style="padding-top:8px;">Copyright &copy;2020 Hispeedcity Sdn Bhd (Company No: 1331446-H)</p>
+					<p><a href="https://beian.miit.gov.cn/"
+							target="_blank">苏ICP备17061270号-1</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	</div>
+</div>
+</body>
+</html>
+<script>
+	// $(function(){
+	// 	function footerPosition(){
+	// 		$("footer").removeClass("fixed-bottom");
+	// 		var contentHeight = document.body.scrollHeight,//网页正文全文高度
+	// 			winHeight = window.innerHeight;//可视窗口高度，不包括浏览器顶部工具栏
+	// 		if(!(contentHeight > winHeight)){
+	// 			//当网页正文高度小于可视窗口高度时，为footer添加类fixed-bottom
+	// 			$("footer").addClass("fixed-bottom");
+	// 		} else {
+	// 			$("footer").removeClass("fixed-bottom");
+	// 		}
+	// 	}
+	// 	footerPosition();
+	// 	$(window).resize(footerPosition);
+	// });
+	
+	$(".header_zhong ul li").click(function(){
+			$(this).addClass("header_dianji_in");
+			$(this).siblings().removeClass("header_dianji_in");
+		  });
+		  		 
+	$(".ggtc_bodyer_b_header ul li").click(function(){
+			$(this).addClass("ggtc_bodyer_b_header_ul_li_in");
+			$(this).siblings().removeClass("ggtc_bodyer_b_header_ul_li_in");
+		  }); 
+
+
+	// Show lightbox with clicked image
+	document.querySelectorAll('.news-card img').forEach(img => {
+		img.addEventListener('click', function () {
+		const lightbox = document.getElementById('lightbox');
+		const lightboxImg = document.getElementById('lightbox-img');
+		lightboxImg.src = this.src;
+		lightbox.style.display = 'flex';
+		});
+	});
+
+	// Close lightbox on background or close icon click
+	function closeLightbox() {
+		document.getElementById('lightbox').style.display = 'none';
+	}
+
+	// Close lightbox on click outside the image
+	document.getElementById('lightbox').addEventListener('click', function (e) {
+		if (e.target === this) closeLightbox();
+	});
+</script>
+

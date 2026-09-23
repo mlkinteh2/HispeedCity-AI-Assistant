@@ -1,0 +1,46 @@
+# Environment and local secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*.json
+*token*.json
+
+# Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# JavaScript dependencies and build artifacts
+node_modules/
+build/
+dist/
+coverage/
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local application artifacts
+*.log
+parking-registration/.emergent/
+parking-registration/.screenshots/
+parking-registration/test_reports/
+parking-registration/memory/
+
+# Sensitive source data (keep local)
+data/raw/whatsapp/
+data/processed/whatsapp_messages.csv
+
+# GitHub rejects individual files larger than 100 MB
+html/video/video.rar
+
+# Backup of the previous nested repository metadata
+.git.parking-registration-backup/

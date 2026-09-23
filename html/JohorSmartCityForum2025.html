@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Johor Smart City Forum 2025 - Hispeedcity</title>
+  <meta name="description" content="Hispeedcity exhibited Smart Parking at Johor Smart City Forum 2025 (JSCF 2025), Persada Johor. Recap, gallery and video."/>
+
+  <!-- Fonts & CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --hispeed-green:#36A528;
+      --hispeed-green-dark:#1A7C34;
+      --hispeed-teal:#80D0C7;
+    }
+
+    /* ===== NAVBAR (solid green) ===== */
+    .custom-navbar{
+      position: sticky; top: 0; z-index: 3000;
+      background: var(--hispeed-green-dark) !important;
+      box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    }
+    .custom-navbar .navbar-brand img{height:42px; width:auto}
+    .custom-navbar .nav-link,
+    .custom-navbar .navbar-brand,
+    .custom-navbar .navbar-toggler{ color:#fff !important; }
+    .custom-navbar .dropdown-menu{
+      border:0; box-shadow:0 12px 28px rgba(0,0,0,.12);
+    }
+    /* space for sticky header when scrolling to anchors */
+    body{ scroll-padding-top:78px; }
+
+    /* ===== HERO ===== */
+    .article-hero {
+      position: relative;
+      min-height: 44vh;
+      background: url('images/JohorSmartCityForum5.png') center/cover no-repeat;
+    }
+    /* Remove gradient overlay and text on hero (per your guideline) */
+    .article-hero::before,
+    .article-hero .container {
+      display: none !important;
+    }
+
+    /* ===== ARTICLE ===== */
+    .page-wrap{max-width:1000px;margin:auto;padding:48px 24px;line-height:1.65}
+    .leadish{font-size:1.05rem}
+
+    /* ===== GALLERY ===== */
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;margin:22px 0}
+    .gallery-grid img{width:100%;height:190px;object-fit:cover;border-radius:10px;cursor:pointer;transition:transform .25s,box-shadow .25s;box-shadow:0 10px 22px rgba(0,0,0,.06)}
+    .gallery-grid img:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.12)}
+
+    /* ===== LIGHTBOX ===== */
+    .lightbox{display:none;position:fixed;z-index:9999;inset:0;background:rgba(0,0,0,.92);justify-content:center;align-items:center}
+    .lightbox img{max-width:92vw;max-height:92vh;border-radius:12px}
+    .lightbox .close{position:absolute;top:18px;right:28px;font-size:44px;color:#fff;cursor:pointer}
+
+    .back-row{display:flex;justify-content:space-between;gap:12px;margin-top:28px}
+    .back-row a{color:var(--hispeed-green-dark);text-decoration:none;font-weight:600}
+    .back-row a:hover{text-decoration:underline}
+
+    /* ===== Video size fix ===== */
+    video {
+      display: block;
+      max-width: 720px;
+      width: 100%;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ===== FOOTER (dark) ===== */
+    .site-footer--dark {
+      --footer-bg: #0f1412;
+      --footer-text: #e8efe9;
+      --footer-muted: #a7b2ab;
+      --footer-accent: var(--hispeed-teal, #80D0C7);
+      background: var(--footer-bg);
+      color: var(--footer-text);
+      padding-top: 64px;
+      padding-bottom: 56px;
+    }
+    .site-footer--dark .site-footer-title { color: var(--footer-text); }
+    .site-footer--dark .site-footer-link { color: var(--footer-text); opacity:.9; text-decoration: none; }
+    .site-footer--dark .site-footer-link:hover { opacity:1; color: var(--hispeed-teal); }
+    .text-muted-contrast { color: var(--footer-muted) !important; }
+    .footer-divider { border-color: rgba(255,255,255,.12); margin: 24px 0 0; }
+
+    /* Logo */
+    .footer-logo { height: 38px; width: auto; display: block; }
+    .footer-brand { text-decoration: none; }
+
+    /* QR card */
+    .card-qr {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px;
+      padding: 10px;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+    }
+    .card-qr:hover {
+      transform: translateY(-2px);
+      border-color: var(--hispeed-teal);
+      box-shadow: 0 12px 36px rgba(0,0,0,.24);
+    }
+    .qr-img {
+      display: block;
+      width: 148px;
+      height: 148px;
+      object-fit: contain;
+    }
+
+    /* Socials */
+    .footer-socials .social-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; margin-right: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.06);
+      color: var(--footer-text);
+      transition: transform .15s ease, background .15s ease, color .15s ease;
+    }
+    .footer-socials .social-btn:hover {
+      transform: translateY(-2px);
+      background: var(--hispeed-green-dark);
+      color: #fff;
+    }
+
+    /* Language button to match dark footer */
+    .btn-language {
+      background: rgba(255,255,255,.06);
+      color: var(--footer-text);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .btn-language:hover { background: rgba(255,255,255,.12); color: #fff; }
+
+    .dropdown-menu-dark { background: #1b221f; color: #fff; border-color: rgba(255,255,255,.1); }
+    .dropdown-menu-dark .dropdown-item { color: #fff; }
+    .dropdown-menu-dark .dropdown-item:hover { background: rgba(255,255,255,.08); }
+
+    .site-footer--dark a { color: var(--footer-text); }
+    .site-footer--dark a:hover { color: var(--hispeed-teal); }
+  </style>
+</head>
+<body id="top">
+  <!-- ===== NAV (updated) ===== -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+    <div class="container">
+      <!-- Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="Hispeedcity">
+        <img src="images/HI-LOGO.png" alt="Hispeedcity">
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-lg-4 me-lg-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#section_1">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#section_2">Solutions</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#section_3">How it works</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#section_4">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#section_5">Contact</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+            <ul class="dropdown-menu dropdown-menu-light shadow" aria-labelledby="pagesMenu">
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="contactus.html"><i class="bi-envelope"></i>Contact Us</a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="joinus.html"><i class="bi-people"></i>Join Us</a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="news.html"><i class="bi-newspaper"></i>Newsroom</a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="cp.html"><i class="bi-diagram-3"></i>Project Reference</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right controls -->
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO (kept minimal per your guideline) -->
+    <section class="article-hero">
+      <div class="container text-center">
+        <!-- hidden by CSS: breadcrumb/title to keep hero clean -->
+        <nav aria-label="breadcrumb" class="mb-2">
+          <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item"><a href="index.html" class="text-white-50">Homepage</a></li>
+            <li class="breadcrumb-item"><a href="news.html" class="text-white-50">Newsroom</a></li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Johor Smart City Forum 2025</li>
+          </ol>
+        </nav>
+        <h1 class="display-6 mb-0">Johor Smart City Forum 2025</h1>
+      </div>
+    </section>
+
+    <!-- ARTICLE BODY -->
+    <section class="page-wrap">
+      <p class="leadish"><strong>Hispeedcity Smart Parking at Johor Smart City Forum 2025 (JSCF 2025) as Exhibitor</strong></p>
+
+      <p><strong>Johor Bahru, Johor – September 25, 2025</strong> – Hispeedcity Sdn. Bhd., a pioneering Malaysian smart mobility solutions provider, was honoured to participate as one of the exhibitors at the Johor Smart City Forum 2025. The event, held at the <strong>Persada International Convention Centre</strong>, Johor Bahru (22–24 Sept 2025), under <strong>PLANMalaysia Johor</strong>, supports the Johor Smart City 2030 agenda.</p>
+
+      <p>The forum aligned stakeholders and showcased urban solutions across <strong>80+ sessions, exhibitions, leadership forum, innovation awards and robotics competitions</strong>, drawing 15,000+ participants.</p>
+
+      <ul>
+        <li><strong>Smart Parking Off-Street</strong> — LPR-based seamless entry/exit.</li>
+        <li><strong>Smart Parking On-Street</strong> — Sensor/QR for live availability and payments.</li>
+      </ul>
+
+      <p>By mapping solutions to the <strong>Johor Smart City 2030 Blueprint</strong>, Hispeedcity is poised to scale deployments with councils unveiling action plans and ratings.</p>
+
+      <hr style="margin:38px 0"/>
+
+      <h3>Gallery</h3>
+      <div class="gallery-grid">
+        <img loading="lazy" src="images/JohorSmartCityForum2.jpg" alt="Booth Display"   onclick="openLightbox(this)"/>
+        <img loading="lazy" src="images/JohorSmartCityForum3.jpg" alt="Guests at Booth" onclick="openLightbox(this)"/>
+        <img loading="lazy" src="images/JohorSmartCityForum4.jpg" alt="Event Visual"    onclick="openLightbox(this)"/>
+        <img loading="lazy" src="images/JohorSmartCityForum6.jpg" alt="Team at Booth"   onclick="openLightbox(this)"/>
+        <img loading="lazy" src="images/JohorSmartCityForum7.jpg" alt="Conference Stage" onclick="openLightbox(this)"/>
+        <img loading="lazy" src="images/JohorSmartCityForum8.jpg" alt="Exhibition Floor" onclick="openLightbox(this)"/>
+        <img loading="lazy" src="images/JohorSmartCityForum9.jpg" alt="Closing Session"  onclick="openLightbox(this)"/>
+      </div>
+
+      <h3 style="margin-top:34px">Event Video</h3>
+      <video controls playsinline preload="metadata" poster="images/JohorSmartCityForum4.jpg">
+  <!-- Preferred: H.264/AAC MP4 -->
+  <source src="video/JohorSmartCityForum1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+  <!-- Fallback: VP9/Opus WebM (optional but helpful) -->
+  <source src="video/JohorSmartCityForum1.webm" type='video/webm; codecs="vp9, opus"'>
+  Sorry, your browser doesn’t support the video tag.
+</video>
+
+      <hr style="margin:38px 0"/>
+
+      <span id="news-span">About Hispeedcity Sdn Bhd</span>
+      <p class="news-p">
+        Hispeedcity delivers IoT + AI smart mobility: Smart Parking (off-street & on-street), Smart Tolling, Smart Traffic, Smart Tourism access and Smart Subsidy—driving efficiency, sustainability and better citizen experiences.
+      </p>
+
+      <div class="back-row">
+        <a href="news.html">&larr; Back to Newsroom</a>
+        <a href="EV_charging_platform_briefing_session.html">Next: EV Charging Platform Briefing &rarr;</a>
+      </div>
+    </section>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+      <span class="close" aria-label="Close preview" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" alt="Preview"/>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER (dark + QR) ===== -->
+  <footer class="site-footer site-footer--dark section-padding">
+    <div class="container">
+      <div class="row align-items-start">
+
+        <!-- Brand + blurb -->
+        <div class="col-lg-4 col-md-6 col-12 mb-4">
+          <a class="footer-brand d-inline-flex align-items-center mb-3" href="index.html" aria-label="Hispeedcity">
+            <img src="images/HI-LOGO.png" alt="Hispeedcity" class="footer-logo">
+          </a>
+          <p class="footer-blurb">
+            Smart mobility &amp; parking solutions powered by AI + IoT.
+            Reducing congestion and enabling connected smart cities in Malaysia.
+          </p>
+          <p class="copyright-text mt-3 mb-0">
+            © <span id="y"></span> Hispeedcity Sdn Bhd (1331446-H)
+          </p>
+        </div>
+
+        <!-- Quick links -->
+        <div class="col-lg-3 col-md-6 col-6 mb-4">
+          <h6 class="site-footer-title mb-3">Quick Links</h6>
+          <ul class="site-footer-links">
+            <li class="site-footer-link-item"><a href="about.html" class="site-footer-link">About Us</a></li>
+            <li class="site-footer-link-item"><a href="services.html" class="site-footer-link">Services</a></li>
+            <li class="site-footer-link-item"><a href="news.html" class="site-footer-link">Newsroom</a></li>
+            <li class="site-footer-link-item"><a href="contact.html" class="site-footer-link">Contact Us</a></li>
+            <li class="site-footer-link-item"><a href="joinus.html" class="site-footer-link">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- QR card -->
+      <div class="col-lg-3 col-md-6 col-6 mb-4">
+        <h6 class="site-footer-title mb-3">View our showroom</h6>
+        <a href="#" class="footer-qr card-qr d-inline-block" aria-label="Download Hispeedcity App">
+          <img src="images/showroom.png" alt="QR code to download Hispeedcity app" class="qr-img">
+        </a>
+        <small class="d-block mt-2 text-muted-contrast">Our digital solution showroom</small>
+      </div>
+
+        <!-- Contact + socials + language -->
+        <div class="col-lg-2 col-md-6 col-12 mb-4 ms-lg-auto">
+          <h6 class="site-footer-title mb-3">Get in Touch</h6>
+          <p class="text-white d-flex mb-1">
+            <a href="https://wa.me/601114200953" class="site-footer-link">+(60)11-1420 0953</a>
+          </p>
+          <p class="text-white d-flex mb-3">
+            <a href="mailto:hi@hispeedcity.com" class="site-footer-link">hi@hispeedcity.com</a>
+          </p>
+
+          <h6 class="site-footer-title mb-2">Follow Us</h6>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook" class="social-btn"><i class="bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram" class="social-btn"><i class="bi-instagram"></i></a>
+            <a href="#" aria-label="YouTube" class="social-btn"><i class="bi-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn" class="social-btn"><i class="bi-linkedin"></i></a>
+          </div>
+
+          <div class="dropdown mt-4">
+            <button class="btn btn-language dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              English
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><button class="dropdown-item" type="button">中文</button></li>
+              <li><button class="dropdown-item" type="button">ไทย</button></li>
+              <li><button class="dropdown-item" type="button">العربية</button></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="footer-divider">
+
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between small text-muted-contrast">
+          <span>Terms of Service</span>
+          <span>Privacy Policy</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Footer year
+    const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+
+    // Lightbox controls
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    function openLightbox(img){ lbImg.src = img.src; lb.style.display='flex'; document.body.style.overflow='hidden' }
+    function closeLightbox(){ lb.style.display='none'; lbImg.src=''; document.body.style.overflow='' }
+    lb.addEventListener('click', e=>{ if(e.target===lb) closeLightbox() });
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLightbox() });
+  </script>
+</body>
+</html>

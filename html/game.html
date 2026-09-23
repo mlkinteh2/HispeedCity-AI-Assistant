@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Game Changing • Hispeedcity</title>
+  <meta name="description" content="Revolutionize parking with Hispeedcity's IoT solutions. Say goodbye to tickets, queues, and manual payments.">
+
+  <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --hispeed-green:#1A7C34;
+      --hispeed-green-2:#36A528;
+      --hispeed-teal:#80D0C7;
+      --hispeed-slate:#2C2F38;
+    }
+    body{font-family:Montserrat,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#2c2f38;background:#f7fbf8}
+
+    /* NAVBAR (solid green, white links) */
+    .navbar{background:var(--hispeed-green)!important;border-bottom:1px solid rgba(128,208,199,.35)}
+
+    /* HERO */
+    .hero{
+      position:relative;min-height:46vh;display:flex;align-items:center;color:#fff;
+      background:#0e1713 url('images/gamee.png') center/cover no-repeat;
+      margin-left:calc(50% - 50vw);width:100vw;
+    }
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(26,124,52,.86), rgba(26,124,52,.78))}
+    .hero .container{position:relative;z-index:2}
+    .hero h1{font-weight:800}
+    .hero p.lead{max-width:60ch;opacity:.98}
+
+    .section-padding{padding:56px 0}
+    .kicker{display:inline-block;background:#eaf7ef;color:var(--hispeed-green);border:1px solid #cfe8d7;border-radius:999px;padding:.35rem .7rem;font-weight:700;font-size:.8rem}
+
+    /* Card grid from your old lists */
+    .gc-card{
+      background:#fff;border-radius:18px;overflow:hidden;border:1px solid #eef3ef;
+      box-shadow:0 10px 28px rgba(0,0,0,.06); height:100%;
+    }
+    .gc-card img{width:100%;height:200px;object-fit:cover}
+    .gc-card .gc-body{padding:14px 16px}
+    .gc-card .gc-body p{margin:0;font-weight:600;line-height:1.35}
+
+    @media (min-width:576px){.gc-card img{height:210px}}
+    @media (min-width:768px){.gc-card img{height:220px}}
+    @media (min-width:1200px){.gc-card img{height:230px}}
+
+    /* Soft content blocks */
+    .card-soft{background:#fff;border-radius:20px;box-shadow:0 12px 34px rgba(0,0,0,.08);border:0}
+
+    /* FOOTER (dark) */
+    .site-footer--dark{--footer-bg:#0f1412;--footer-text:#e8efe9;--footer-muted:#a7b2ab;--footer-accent:var(--hispeed-teal);
+      background:var(--footer-bg);color:var(--footer-text);padding-top:64px;padding-bottom:56px}
+    .site-footer--dark .site-footer-title{color:var(--footer-text)}
+    .site-footer--dark .site-footer-link{color:var(--footer-text);opacity:.9;text-decoration:none}
+    .site-footer--dark .site-footer-link:hover{opacity:1;color:var(--hispeed-teal)}
+    .text-muted-contrast{color:var(--footer-muted)!important}
+    .footer-divider{border-color:rgba(255,255,255,.12);margin:24px 0 0}
+    .footer-logo{height:38px;width:auto;display:block}
+    .card-qr{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:10px;
+      transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+    .card-qr:hover{transform:translateY(-2px);border-color:var(--hispeed-teal);box-shadow:0 12px 36px rgba(0,0,0,.24)}
+    .qr-img{display:block;width:148px;height:148px;object-fit:contain}
+    .footer-socials .social-btn{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;margin-right:8px;border-radius:50%;
+      background:rgba(255,255,255,.06);color:var(--footer-text);transition:transform .15s ease, background .15s ease, color .15s ease}
+    .footer-socials .social-btn:hover{transform:translateY(-2px);background:var(--hispeed-green);color:#fff}
+
+/* Put the background on the header, not the overlay */
+.site-header.no-overlay{
+  background: url('images/gamee.png') center/cover no-repeat !important;
+}
+
+/* Kill any overlay layer for this header */
+.site-header.no-overlay::before{
+  content: none !important;
+  background: none !important;
+}
+
+/* Make hero text white on the Game page */
+.site-header.no-overlay h1,
+.site-header.no-overlay p,
+.site-header.no-overlay .lead,
+.site-header.no-overlay .breadcrumb,
+.site-header.no-overlay .breadcrumb a {
+  color: #fff !important;
+}
+
+/* Optional: subtle glow for readability on bright areas */
+.site-header.no-overlay h1,
+.site-header.no-overlay .lead {
+  text-shadow: 0 2px 8px rgba(0,0,0,.35);
+}
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/HI-LOGO.png" alt="Hispeedcity Logo" height="45">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-lg-5 me-lg-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html#section_1">Home</a></li>
+
+          <!-- Solutions dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="solutionsMenu"
+               role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Solutions
+            </a>
+            <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="solutionsMenu">
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="onstreet.html"><i class="bi-geo"></i> On-street Parking</a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="offstreet.html"><i class="bi-building"></i> Off-street Parking</a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="topics-detail.html"><i class="bi-journal-text"></i> Private Car Park Sharing</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="howitwork.html">How it works</a></li>
+          <li class="nav-item"><a class="nav-link" href="scango.html">Scan &amp; Go</a></li>
+          <li class="nav-item"><a class="nav-link" href="offering.html">Our Offering</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
+
+          <!-- Pages dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+            <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="pagesMenu">
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="contactus.html"><i class="bi-envelope"></i>Contact Us</a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="joinus.html"><i class="bi-people"></i>Join Us</a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="news.html"><i class="bi-newspaper"></i>Newsroom</a></li>
+              <li><a class="dropdown-item d-flex align-items-center gap-2" href="cp.html"><i class="bi-diagram-3"></i>Project Reference</a></li>
+            </ul>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="site-header no-overlay">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-9">
+        
+          <h1 class="mt-3 mb-2">Game Changing</h1>
+          <p class="lead mb-0">Disruptive digital innovation
+comes with new rules that streamline complexity
+making lives easy</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- “No more …” GRID (from your old lists) -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-4">
+        <div class="col-lg-9">
+          <h2 class="mb-2">Goodbye to the old system</h2>
+          <p class="text-muted">From queues and tickets to fully automated, free-flow experiences.</p>
+        </div>
+      </div>
+
+      <!-- Row 1 -->
+      <div class="row g-3">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/51.jpg" alt="No Queueing At Autopay Machines" loading="lazy">
+            <div class="gc-body">
+              <p>No more wasting time to search &amp; queue at pay machines, cash changes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/52.jpg" alt="No More Walking To Autopay Machines" loading="lazy">
+            <div class="gc-body">
+              <p>No more walking to autopay machines.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/53.jpg" alt="No More Inserting Tickets" loading="lazy">
+            <div class="gc-body">
+              <p>No more inserting tickets into wrong slots, calling technician to help.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="row g-3 mt-1">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/54.jpg" alt="No More Stopping Car" loading="lazy">
+            <div class="gc-body">
+              <p>No more stopping car for tickets; no worries about loss/damage &amp; penalties.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/55.jpg" alt="No More Chaos" loading="lazy">
+            <div class="gc-body">
+              <p>No more chaos or jams when you forget to pay before exit.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/56.jpg" alt="No More Cashiers" loading="lazy">
+            <div class="gc-body">
+              <p>No more cashiers, toll booths … no more leakages.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="row g-3 mt-1">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/66.jpg" alt="No More Meters & Cards" loading="lazy">
+            <div class="gc-body">
+              <p>No more meters &amp; cards — no more “EXPIRED”.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/towing.jpg" alt="No More Towing" loading="lazy">
+            <div class="gc-body">
+              <p>No more towing — truly hassle-free.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/en1.png" alt="Less Manpower" loading="lazy">
+            <div class="gc-body">
+              <p>Less manpower needed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="row g-3 mt-1">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/57.jpg" alt="No More Stop To Pay" loading="lazy">
+            <div class="gc-body">
+              <p>No more stop to pay or touch cards that cause jams.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/58.jpg" alt="No More Wheel Clamping" loading="lazy">
+            <div class="gc-body">
+              <p>No more wheel clamping or panic/emotional moments.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/59.jpg" alt="No More Walk To Cashier" loading="lazy">
+            <div class="gc-body">
+              <p>No more walking to buy season passes or ask for vouchers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 5 -->
+      <div class="row g-3 mt-1">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/60.jpg" alt="No More Paper Vouchers" loading="lazy">
+            <div class="gc-body">
+              <p>No more paper vouchers for “Free Parking”.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/61.jpg" alt="No More Walk Enforcement" loading="lazy">
+            <div class="gc-body">
+              <p>No more walk enforcement under sun, rain, and pollution.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/62.jpg" alt="No More Paper Compound" loading="lazy">
+            <div class="gc-body">
+              <p>No more paper compound or hunting for payment kiosks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 6 -->
+      <div class="row g-3 mt-1">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/63.jpg" alt="No More Illegal Parking" loading="lazy">
+            <div class="gc-body">
+              <p>No more illegal parking when public can report on the spot.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/64.jpg" alt="No More Illegal Occupied" loading="lazy">
+            <div class="gc-body">
+              <p>No more illegal occupied bays — report instantly.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card h-100">
+            <img src="./images/65.jpg" alt="No More Wasted Space" loading="lazy">
+            <div class="gc-body">
+              <p>No more wasted space — maximize revenue.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual divider from your file -->
+      <div class="mt-4">
+        <img class="w-100 rounded-3 shadow-sm" src="./images/game-a.png" alt="Old School Method Replaced With New Technology" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits (from your bottom list) -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row justify-content-center text-center mb-4">
+        <div class="col-lg-7">
+          <h2 class="mb-2">Benefits</h2>
+          <p class="text-muted">Real-time visibility, booking, and free-flow experiences — all cashless and low manpower.</p>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card">
+            <img src="./images/67.jpeg" alt="Real Time Visibilities" loading="lazy">
+            <div class="gc-body"><p>Real-time visibilities</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card">
+            <img src="./images/68.png" alt="Search and Book" loading="lazy">
+            <div class="gc-body"><p>Search and book</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card">
+            <img src="./images/69.jpg" alt="Free Flow In And Out" loading="lazy">
+            <div class="gc-body"><p>Free flow in &amp; out</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3 mt-1">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card">
+            <img src="./images/70.png" alt="Cashless and Touchless" loading="lazy">
+            <div class="gc-body"><p>Cashless &amp; touchless</p></div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="gc-card">
+            <img src="./images/71.jpg" alt="Low Manpower" loading="lazy">
+            <div class="gc-body"><p>Low manpower</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer site-footer--dark section-padding">
+    <div class="container">
+      <div class="row align-items-start">
+
+        <!-- Brand + blurb -->
+        <div class="col-lg-4 col-md-6 col-12 mb-4">
+          <a class="footer-brand d-inline-flex align-items-center mb-3" href="index.html" aria-label="Hispeedcity">
+            <img src="images/HI LOGO.png" alt="Hispeedcity" class="footer-logo">
+          </a>
+          <p class="footer-blurb">
+            Smart mobility &amp; parking solutions powered by AI + IoT.
+            Reducing congestion and enabling connected smart cities in Malaysia.
+          </p>
+          <p class="copyright-text mt-3 mb-0">
+            © <span id="y"></span> Hispeedcity Sdn Bhd (1331446-H)
+          </p>
+        </div>
+
+        <!-- Quick links -->
+        <div class="col-lg-3 col-md-6 col-6 mb-4">
+          <h6 class="site-footer-title mb-3">Quick Links</h6>
+          <ul class="site-footer-links list-unstyled">
+            <li class="site-footer-link-item"><a href="about.html" class="site-footer-link">About Us</a></li>
+            <li class="site-footer-link-item"><a href="services.html" class="site-footer-link">Services</a></li>
+            <li class="site-footer-link-item"><a href="news.html" class="site-footer-link">Newsroom</a></li>
+            <li class="site-footer-link-item"><a href="contact.html" class="site-footer-link">Contact Us</a></li>
+            <li class="site-footer-link-item"><a href="joinus.html" class="site-footer-link">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- QR card -->
+      <div class="col-lg-3 col-md-6 col-6 mb-4">
+        <h6 class="site-footer-title mb-3">View our showroom</h6>
+        <a href="#" class="footer-qr card-qr d-inline-block" aria-label="Download Hispeedcity App">
+          <img src="images/showroom.png" alt="QR code to download Hispeedcity app" class="qr-img">
+        </a>
+        <small class="d-block mt-2 text-muted-contrast">Our digital solution showroom</small>
+      </div>
+
+        <!-- Contact + socials -->
+        <div class="col-lg-2 col-md-6 col-12 mb-4 ms-lg-auto">
+          <h6 class="site-footer-title mb-3">Get in Touch</h6>
+          <p class="text-white d-flex mb-1">
+            <a href="https://wa.me/601114200953" class="site-footer-link">+(60)11-1420 0953</a>
+          </p>
+          <p class="text-white d-flex mb-3">
+            <a href="mailto:hi@hispeedcity.com" class="site-footer-link">hi@hispeedcity.com</a>
+          </p>
+
+          <h6 class="site-footer-title mb-2">Follow Us</h6>
+          <div class="footer-socials">
+            <a href="#" aria-label="Facebook" class="social-btn"><i class="bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram" class="social-btn"><i class="bi-instagram"></i></a>
+            <a href="#" aria-label="YouTube" class="social-btn"><i class="bi-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn" class="social-btn"><i class="bi-linkedin"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="footer-divider">
+
+      <div class="row">
+        <div class="col-12 d-flex justify-content-between small text-muted-contrast">
+          <span>Terms of Service</span>
+          <span>Privacy Policy</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // footer year
+    document.getElementById('y')?.appendChild(document.createTextNode(new Date().getFullYear()));
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

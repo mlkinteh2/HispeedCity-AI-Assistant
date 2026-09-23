@@ -1,0 +1,5 @@
+This folder contains archived web pages that are no longer live but are stored for reference.
+
+- Do NOT delete files unless necessary.
+- These pages are not indexed by search engines (see robots.txt).
+- If a page needs to be restored, move it back to the main website directory (/var/www/website/hispeed_official).

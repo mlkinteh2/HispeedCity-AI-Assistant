@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Private Car Park — Hispeedcity</title>
+  <meta name="description" content="Host your private parking bay by the hour or month. List in minutes, QR access, secure payouts and full control with Hispeedcity.">
+
+  <!-- Fonts + Core CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/templatemo-topic-listing.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --hispeed-green:#1A7C34;
+      --hispeed-green-2:#36A528;
+      --hispeed-teal:#80D0C7;
+      --section-bg:#f8faf9;
+    }
+    body, .nav-link{ font-family:"Montserrat","Open Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; }
+
+    /* NAVBAR */
+    .navbar{ position:sticky; top:0; z-index:3000; background:var(--hispeed-green)!important;
+      border-bottom:1px solid rgba(0,0,0,.08); box-shadow:0 4px 18px rgba(0,0,0,.08);}
+    .navbar .navbar-brand img{ height:48px; width:auto; }
+    .btn-language{ background:rgba(255,255,255,.14)!important; color:#fff!important; border:1px solid rgba(255,255,255,.45)!important; }
+    .btn-language:hover{ background:#fff!important; color:var(--hispeed-green)!important; border-color:#fff!important; }
+    .dropdown-menu-dark{ background:#1b221f!important; color:#fff!important; border-color:rgba(255,255,255,.12)!important; }
+    .dropdown-menu-dark .dropdown-item{ color:#fff!important; }
+    .dropdown-menu-dark .dropdown-item:hover{ background:rgba(255,255,255,.08)!important; }
+
+    /* HERO */
+    .site-header{
+      background: radial-gradient(1200px 600px at 25% 5%, #9fe0c1 0%, #56bc84 35%, #2e8e56 100%);
+      padding:92px 0 48px; color:#fff;
+    }
+    .site-header h1{ font-weight:800; letter-spacing:.2px; }
+    .site-header .breadcrumb a{ color:#e7ffe7; opacity:.9; text-decoration:none; }
+    .site-header .breadcrumb a:hover{ opacity:1; text-decoration:underline; }
+    /* CTA visibility */
+    .site-header .custom-border-btn{ border-color:#fff!important; color:#fff!important; background:transparent!important; }
+    .site-header .custom-border-btn:hover{ background:#fff!important; color:var(--hispeed-green)!important; border-color:#fff!important; }
+    .site-header .custom-btn{ background:#fff!important; color:var(--hispeed-green)!important; border-color:#fff!important; }
+    .site-header .custom-btn:hover{ background:#eaf7ef!important; }
+
+    /* Hero media card */
+    .hero-media{ background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);
+      border-radius:22px; padding:18px; box-shadow:0 18px 48px rgba(0,0,0,.22);}
+    .hero-phone{ width:100%; height:auto; border-radius:18px; display:block; }
+
+    /* Sections */
+    .section-padding{ padding:64px 0; } .section-bg{ background:var(--section-bg); }
+
+    /* Cards / Steps */
+    .card-soft{ background:#fff; border:0; border-radius:18px; box-shadow:0 10px 28px rgba(0,0,0,.08);
+      height:100%; transition:transform .2s ease, box-shadow .2s ease;}
+    .card-soft:hover{ transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.14); }
+    .step-card{ padding:18px; text-align:center; }
+    .step-card p{ margin-bottom:10px; font-weight:700; }
+    .step-card img{ max-width:240px; width:100%; height:auto; }
+
+    /* Why Host */
+    .whyus{ padding:24px; }
+
+    /* Gallery + lightbox */
+    .gallery-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:14px; }
+    .gallery-grid img{ width:100%; height:180px; object-fit:cover; border-radius:14px; cursor:zoom-in; box-shadow:0 8px 20px rgba(0,0,0,.06); }
+    .gallery-grid img:hover{ transform:translateY(-3px); box-shadow:0 14px 28px rgba(0,0,0,.12); transition:.2s ease; }
+    .topics-detail-block-image{ border-radius:16px; }
+    .lightbox{ display:none; position:fixed; inset:0; z-index:1050; background:rgba(0,0,0,.9); align-items:center; justify-content:center; padding:24px; }
+    .lightbox img{ max-width:92vw; max-height:92vh; border-radius:12px; }
+    .lightbox .close{ position:absolute; top:16px; right:24px; font-size:40px; color:#fff; cursor:pointer; }
+
+    /* Footer (dark) */
+    .site-footer--dark{ --footer-bg:#0f1412; --footer-text:#e8efe9; --footer-muted:#a7b2ab;
+      background:var(--footer-bg); color:var(--footer-text); padding-top:64px; padding-bottom:56px; }
+    .site-footer--dark a{ color:var(--footer-text); text-decoration:none; }
+    .site-footer--dark a:hover{ color:var(--hispeed-teal); }
+    .site-footer-title{ color:var(--footer-text); font-weight:700; }
+    .footer-logo{ height:38px; width:auto; display:block; }
+    .footer-divider{ border-color:rgba(255,255,255,.12); margin:24px 0 0; }
+    .text-muted-contrast{ color:var(--footer-muted)!important; }
+    .card-qr{ background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:10px;
+      box-shadow:0 10px 30px rgba(0,0,0,.18); transition:transform .15s, box-shadow .15s, border-color .15s; }
+    .card-qr:hover{ transform:translateY(-2px); border-color:var(--hispeed-teal); box-shadow:0 12px 36px rgba(0,0,0,.24); }
+    .qr-img{ display:block; width:148px; height:148px; object-fit:contain; }
+    .footer-socials .social-btn{ display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; margin-right:8px;
+      border-radius:50%; background:rgba(255,255,255,.06); color:#fff; transition:transform .15s, background .15s; }
+    .footer-socials .social-btn:hover{ transform:translateY(-2px); background:var(--hispeed-green); }
+
+    @media (max-width:992px){ .section-padding{ padding:44px 0; } .site-header{ padding:86px 0 36px; } }
+    
+    /* Force dark text for the WHY HOST card only */
+.whyus,
+.whyus h4,
+.whyus li,
+.whyus p,
+.whyus a:not(.btn){
+  color: var(--hispeed-slate, #2C2F38) !important;
+}
+
+/* Nice spacing + subtle list styling */
+.whyus{
+  background:#fff;               /* keep the white card */
+  border-radius: 18px;
+  box-shadow: 0 22px 60px rgba(0,0,0,.08);
+  padding: 28px 32px;
+}
+.whyus ul{ margin: 0; padding-left: 1.1rem; }
+.whyus li{ margin: .45rem 0; line-height: 1.6; }
+
+/* Make the hero lead paragraph white (wins over earlier rules) */
+header.site-header p.lead {
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.25); /* optional for contrast */
+}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><img src="images/HI-LOGO.png" alt="Hispeedcity"></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="index.html">Home</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="onstreet.html" id="solutionsMenu"
+                                      role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Solutions
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="solutionsMenu">
+                                      <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2" href="onstreet.html">
+                                          <i class="bi-geo"></i> On-street Parking
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2" href="offstreet.html">
+                                          <i class="bi-building"></i> Off-street Parking
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a class="dropdown-item d-flex align-items-center gap-2" href="topics-detail.html">
+                                          <i class="bi-journal-text"></i> Private Car Park Sharing
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="howitwork.html">How it works</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="scango.html">Scan & Go</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="offering.html">Our Offering</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="team.html">Our Team</a>
+                            </li>
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                <ul class="dropdown-menu dropdown-menu-light shadow pages" aria-labelledby="pagesMenu">
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="contactus.html"><i class="bi-envelope"></i>Contact Us</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="joinus.html"><i class="bi-people"></i>Join Us</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="news.html"><i class="bi-newspaper"></i>Newsroom</a></li>
+                  <li><a class="dropdown-item d-flex align-items-center gap-2" href="cp.html"><i class="bi-diagram-3"></i>Project Reference</a></li>
+                </ul>
+              </li>
+            </ul>
+      
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="site-header">
+  <div class="container">
+    <nav aria-label="breadcrumb" class="mb-3">
+    </nav>
+
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6 text-white">
+        <h1 class="mb-3">Private Car Park<br>Sharing & Rental</h1>
+        <p class="lead mb-4">
+          The city is rapidly developing, however, the reality is that there is insufficient parking space due to a
+          lack of information to motorist. On Hispeedcity APP, everyone can now share the parking resource, enjoy full visibility on real 
+          time on APP, enable to park seamlessly anytime, anywhere.
+        </p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="#features" class="custom-border-btn btn btn-lg px-4">Explore Features</a>
+          <a href="#demo" class="custom-btn btn btn-lg px-4"><i class="bi-play-fill me-1"></i>Watch Demo</a>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="hero-media">
+    
+          <img src="images/image8.png" alt="Driver finds your bay" class="hero-phone" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- STEPS -->
+  <section id="features" class="section-padding">
+    <div class="container">
+      <h3 class="mb-4">List Your Bay in 6 Simple Steps</h3>
+      <div class="row g-4">
+        <div class="col-md-4 col-12"><div class="card-soft step-card">
+          <p>1. Setup Your Account</p>
+          <img src="images/11.png" alt="Setup your account" loading="lazy">
+        </div></div>
+
+        <div class="col-md-4 col-12"><div class="card-soft step-card">
+          <p>2. Tap “Car Park Sharing”</p>
+          <img src="images/12.png" alt="Tap Car Park Sharing" loading="lazy">
+        </div></div>
+
+        <div class="col-md-4 col-12"><div class="card-soft step-card">
+          <p>3. Tap “Publish Parking”</p>
+          <img src="images/13.png" alt="Publish parking" loading="lazy">
+        </div></div>
+
+        <div class="col-md-4 col-12"><div class="card-soft step-card">
+          <p>4. Fill Location & Rate</p>
+          <img src="images/14.png" alt="Fill details" loading="lazy">
+        </div></div>
+
+        <div class="col-md-4 col-12"><div class="card-soft step-card">
+          <p>5. Agree & Go Live</p>
+          <img src="images/15.png" alt="Agree terms" loading="lazy">
+        </div></div>
+
+        <div class="col-md-4 col-12"><div class="card-soft step-card">
+          <p>6. Get Bookings & Payouts</p>
+          <img src="images/16.png" alt="Post it and done" loading="lazy">
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY HOST -->
+  <section class="section-padding section-bg">
+    <div class="container">
+      <div class="card-soft whyus">
+        <h4 class="mb-2">Why Host with Hispeedcity</h4>
+        <ul class="mb-0">
+          <li><strong>Flexible earning</strong> - hourly, daily, or monthly pricing.</li>
+          <li><strong>Full control</strong> - blackout dates, instant on/off, and space rules.</li>
+          <li><strong>QR access</strong> - optional barrier/LPR access and digital proof of entry.</li>
+          <li><strong>Trusted payments</strong> - secure e-wallet and transparent payouts.</li>
+          <li><strong>Support</strong> - we help with setup, signage and best-practice.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section-padding">
+    <div class="container">
+      <h4 class="mb-3">Share parking spaces</h4>
+      <div class="gallery-grid mb-4">
+        <img src="images/01.jpg" alt="Private bay in condominium" loading="lazy" onclick="openLightbox(this)">
+        <img src="images/02.jpg" alt="Reserved parking with QR" loading="lazy" onclick="openLightbox(this)">
+        <img src="images/03.jpg" alt="Driveway/office lot" loading="lazy" onclick="openLightbox(this)">
+      </div>
+
+      
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lb" class="lightbox" aria-modal="true" role="dialog">
+      <span class="close" aria-label="Close" onclick="closeLightbox()">&times;</span>
+      <img id="lbimg" alt="">
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer site-footer--dark section-padding">
+  <div class="container">
+    <div class="row align-items-start g-4">
+
+      <div class="col-lg-4 col-md-6">
+        <a class="footer-brand d-inline-flex align-items-center mb-3" href="index.html" aria-label="Hispeedcity">
+          <img src="images/HI-LOGO.png" alt="Hispeedcity" class="footer-logo">
+        </a>
+        <p class="footer-blurb">Smart mobility &amp; parking solutions powered by AI + IoT. Reducing congestion and enabling connected smart cities in Malaysia.</p>
+        <p class="copyright-text mt-3 mb-0">© <span id="y"></span> Hispeedcity Sdn Bhd (1331446-H)</p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-6">
+        <h6 class="site-footer-title mb-3">Quick Links</h6>
+        <ul class="site-footer-links list-unstyled m-0">
+          <li class="site-footer-link-item"><a href="index.html#section_1" class="site-footer-link">Home</a></li>
+          <li class="site-footer-link-item"><a href="index.html#section_2" class="site-footer-link">Solutions</a></li>
+          <li class="site-footer-link-item"><a href="index.html#section_3" class="site-footer-link">How it works</a></li>
+          <li class="site-footer-link-item"><a href="index.html#section_4" class="site-footer-link">FAQs</a></li>
+          <li class="site-footer-link-item"><a href="contactus.html" class="site-footer-link">Contact</a></li>
+          <li class="site-footer-link-item"><a href="news.html" class="site-footer-link">Newsroom</a></li>
+          <li class="site-footer-link-item"><a href="joinus.html" class="site-footer-link">Careers</a></li>
+        </ul>
+      </div>
+
+      <!-- QR card -->
+      <div class="col-lg-3 col-md-6 col-6 mb-4">
+        <h6 class="site-footer-title mb-3">View our showroom</h6>
+        <a href="#" class="footer-qr card-qr d-inline-block" aria-label="Download Hispeedcity App">
+          <img src="images/showroom.png" alt="QR code to download Hispeedcity app" class="qr-img">
+        </a>
+        <small class="d-block mt-2 text-muted-contrast">Our digital solution showroom</small>
+      </div>
+
+      <div class="col-lg-2 col-md-6 ms-lg-auto">
+        <h6 class="site-footer-title mb-3">Get in Touch</h6>
+        <p class="text-white d-flex mb-1"><a href="https://wa.me/601114200953" class="site-footer-link">+(60)11-1420 0953</a></p>
+        <p class="text-white d-flex mb-3"><a href="mailto:hi@hispeedcity.com" class="site-footer-link">hi@hispeedcity.com</a></p>
+
+        <h6 class="site-footer-title mb-2">Follow Us</h6>
+        <div class="footer-socials mb-3">
+          <a href="#" aria-label="Facebook" class="social-btn"><i class="bi-facebook"></i></a>
+          <a href="#" aria-label="Instagram" class="social-btn"><i class="bi-instagram"></i></a>
+          <a href="#" aria-label="YouTube" class="social-btn"><i class="bi-youtube"></i></a>
+          <a href="#" aria-label="LinkedIn" class="social-btn"><i class="bi-linkedin"></i></a>
+        </div>
+
+        <div class="dropdown">
+          <button class="btn btn-language dropdown-toggle w-100" type="button" data-bs-toggle="dropdown" aria-expanded="false">English</button>
+          <ul class="dropdown-menu dropdown-menu-dark w-100">
+            <li><button class="dropdown-item" type="button">中文</button></li>
+            <li><button class="dropdown-item" type="button">ไทย</button></li>
+            <li><button class="dropdown-item" type="button">العربية</button></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="footer-divider">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-between small text-muted-contrast flex-wrap gap-2">
+        <span>Terms of Service</span>
+        <span>Privacy Policy</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- JS -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+  // Lightbox
+  const lb=document.getElementById('lb'), lbImg=document.getElementById('lbimg');
+  function openLightbox(el){ lbImg.src=el.src; lb.style.display='flex'; document.body.style.overflow='hidden'; }
+  function closeLightbox(){ lb.style.display='none'; lbImg.src=''; document.body.style.overflow=''; }
+  lb?.addEventListener('click', e=>{ if(e.target===lb) closeLightbox(); });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeLightbox(); });
+
+  // Footer year
+  document.getElementById('y')?.append(new Date().getFullYear());
+</script>
+</body>
+</html>
