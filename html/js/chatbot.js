@@ -4,7 +4,7 @@
 
 (function () {
   // Configuration
-  const API_CHAT_URL = "http://localhost:8001/api/chat";
+  const API_CHAT_URL = "https://hispeedcity-ai-assistant.onrender.com/api/chat";
   const SESSION_ID = "web_session_" + Math.random().toString(36).substring(2, 9);
 
   // Initialize Widget on DOM load
